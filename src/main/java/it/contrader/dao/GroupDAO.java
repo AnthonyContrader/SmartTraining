@@ -19,10 +19,7 @@ public class GroupDAO {
 	private final String QUERY_UPDATE = "UPDATE group SET id=?, idStudent=?,  WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM group WHERE id=?";
 	
-	
-	
-	
-	
+		
 	public GroupDAO() {
 
 	}
