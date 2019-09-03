@@ -12,8 +12,8 @@ public class TrainingService {
 	public TrainingService( ) {
 		this.trainingDAO = new TrainingDAO();
 	}
-	public List<Training> getAll();{
-		return this.trainingDAO.getAll():
+	public List<Training> getAll(){
+		return this.trainingDAO.getAll();
 	}
 	public Training read (int id) {
 		return this.trainingDAO.read(id);
