@@ -11,18 +11,31 @@ public class ContentDeleteView  extends AbstractView{
 	private final String mode = "DELETE";
 	
 	public ContentDeleteView() {
-		
-		
-		
-		public void showResults(Request request) {
-			if (request != null) {
-				System.out.println("Cancellazione andata a buon fine.\n");
-				MainDispatcher.getInstance().callView("Content", null);
-			}
+	}
+
+	@Override
+	public void showResults(Request request) {
+		// TODO Auto-generated method stub
+		if (request != null) {
+			System.out.println("Cancellazione andata a buon fine.\n");
+			MainDispatcher.getInstance().callView("Content", null);
 		}
+	}
+
+	@Override
+	public void showOptions() {
+		// TODO Auto-generated method stub
+		System.out.println("Inserisci id dell'utente:");
+		id = Integer.parseInt(getInput());
+	}
+
+	@Override
+	public void submit() {
+		// TODO Auto-generated method stub
+		request = new Request();
+		request.put("id", id);
+		request.put("mode", mode);
+		MainDispatcher.getInstance().callAction("User", "doControl", request);
 		
-		public void showOption() {
-			System.out.println("Inserisci id dell'utente:");
-		}
 	}
 }
