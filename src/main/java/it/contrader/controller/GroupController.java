@@ -53,6 +53,35 @@ public class GroupController implements Controller {
 			MainDispatcher.getInstance().callView(sub_package + "GroupRead", request);
 			break;
 			
+		case "INSERT":
+			id = Integer.parseInt(request.get("id").toString());
+			idStudent = Integer.parseInt(request.get("idStudent").toString());
+			Group groupToInsert = new Group(id, idStudent);
+			groupService.insert(groupToInsert);
+			request = new Request();
+			request.put("mode", "mode");
+			MainDispatcher.getInstance().callView(sub_package + "GroupInsert", request);
+			break;
+			
+		case "DELETE":
+			id = Integer.parseInt(request.get("id").toString());
+			groupService.delete(id);
+			request = new Request();
+			request.put("mode", "mode");
+			MainDispatcher.getInstance().callView(sub_package + "GroupDelete", request);
+			break;
+			
+		case "UPDATE":
+			id = Integer.parseInt(request.get("id").toString());
+			idStudent = Integer.parseInt(request.get("idStudent").toString());
+			Group groupToUpdate = new Group(id, idStudent);
+			groupToUpdate.setId(id);
+			groupService.update(groupToUpdate);
+			request = new Request();
+			request.put("mode", "mode");
+			MainDispatcher.getInstance().callView(sub_package + "GroupUpdate", request);
+			break;
+			
 		//Arriva qui dalla GroupView Invoca il Service e invia alla GroupView il risultato da mostrare 
 		case "GROUPLIST":
 			List<Group> users = groupService.getAll();
@@ -69,8 +98,19 @@ public class GroupController implements Controller {
 			switch (choice.toUpperCase()) {
 			
 			case "L":
-				MainDispatcher.getInstance().callView(sub_package + "UserRead", null);
+				MainDispatcher.getInstance().callView(sub_package + "GroupRead", null);
 				break;
+				
+			case "I":
+				MainDispatcher.getInstance().callView(sub_package + "GroupInsert", null);
+				break;
+				
+			case "M":
+				MainDispatcher.getInstance().callView(sub_package + "GroupUpdate", null);
+				break;
+				
+			case "C":
+				MainDispatcher.getInstance().callView(sub_package + "GroupDelete", null);
 				
 			case "E":
 				MainDispatcher.getInstance().callView("Login", null);
