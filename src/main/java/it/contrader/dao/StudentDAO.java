@@ -1,7 +1,9 @@
 package it.contrader.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,10 +46,98 @@ public class StudentDAO {
 		}
 		return studentList;
 	}
-	public boolean insert (Student studentToInsert) {
+	public boolean insert(Student studentToInsert) {
+		Connection connection = ConnectionSingleton.getInstance();
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
+			preparedStatement.setString(1,  studentToInsert.getName());
+			preparedStatement.setString(2, studentToInsert.getSurname());
+			preparedStatement.setInt(3, studentToInsert.getIdUser());
+			preparedStatement.execute();
+			return true;
+		}catch (SQLException e){
+			return false;
+		}
+	}
+	public Student read(int studentId) {
+		Connection connection = ConnectionSingleton.getInstance();
+		try {
+			
+			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
+			preparedStatement.setInt(1, studentId);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			resultSet.next();
+			String name, surname;
+			int idUser;
+			
+			name = resultSet.getString("name");
+			surname = resultSet.getString("surname");
+			idUser = resultSet.getInt("IdUser");
+			Student student = new Student(name, surname, idUser);
+			student.setId(resultSet.getInt("id"));
+			
+			return student;
+		}catch (SQLException e) {
+			return null;
+		}
+	}
+	
+	public boolean update(Student studentToUpdate) {
 		Connection connection = ConnectionSingleton.getInstance();
 		
+		// Controllo dell'esistenza dell'id
+		if(studentToUpdate.getId() == 0)
+			return false;
 		
+		Student studentRead = read(studentToUpdate.getId());
+		if(!studentRead.equals(studentToUpdate)) {
+			try {
+				
+				if(studentToUpdate.getName() == null || studentToUpdate.getName().equals("")) {
+					studentToUpdate.setName(studentRead.getName());	
+				}
+				
+				if(studentToUpdate.getSurname() == null|| studentToUpdate.getSurname().equals("")) {
+					studentToUpdate.setSurname(studentRead.getSurname());
+				}
+				
+				if(studentToUpdate.getIdUser() == 0 ) {
+					studentToUpdate.setIdUser(studentRead.getIdUser());
+				}
+				
+				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
+				preparedStatement.setString(1, studentToUpdate.getName());
+				preparedStatement.setString(2, studentToUpdate.getSurname());
+				preparedStatement.setInt(3, studentToUpdate.getIdUser());
+				preparedStatement.setInt(4, studentToUpdate.getId());
+				int a = preparedStatement.executeUpdate();
+				if(a > 0)
+					return false;
+				else 
+					return false;
+			
+			}catch (SQLException e) {
+				return false;
+				
+			}
 		}
+			
+			return false;
+			
+		}
+		
+		public boolean delete(int id) {
+			Connection connection = ConnectionSingleton.getInstance();
+			try {
+				PreparedStatement preparedStatement = connection.prepareStatement(QUERY_DELETE);
+				preparedStatement.setInt(1, id);
+				int n = preparedStatement.executeUpdate();
+				if (n != 0)
+					return false;
+				
+			}catch (SQLException e) {
+				}
+			return false;
+			
 	}
 }
