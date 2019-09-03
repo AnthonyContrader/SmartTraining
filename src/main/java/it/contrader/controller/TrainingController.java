@@ -1,6 +1,8 @@
 package it.contrader.controller;
 
 import it.contrader.main.MainDispatcher;
+import it.contrader.model.Training;
+import it.contrader.service.TrainingService;
 
 public class TrainingController implements Controller {
 	private static String sub_package = "training.";
@@ -32,6 +34,7 @@ public class TrainingController implements Controller {
 		
 		case "INSERT":
 			nameTraining = request.get("nameTraining").toString();
+			idGroup = Integer.parseInt(request.get("idGroup").toString());
 		}
 	}
 
