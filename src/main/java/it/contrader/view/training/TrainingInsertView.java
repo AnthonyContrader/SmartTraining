@@ -31,6 +31,10 @@ public class TrainingInsertView extends AbstractView{
 		// TODO Auto-generated method stub
 		System.out.println("Inserisci nome training");
 		nameTraining = getInput();
+		System.out.println("Inserisci id del gruppo");
+		idGroup = Integer.parseInt(getInput());
+		System.out.println("Inserisci id dello studente");
+		idStudent = Integer.parseInt(getInput());
 		
 	}
 
@@ -39,6 +43,9 @@ public class TrainingInsertView extends AbstractView{
 		// TODO Auto-generated method stub
 		request = new Request();
 		request.put("nameTraining", nameTraining);
+		request.put("idGroup", idGroup);
+		request.put("idStudent", idStudent);
+		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Training", "doControl", request);
 		
 	}
