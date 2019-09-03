@@ -14,7 +14,13 @@ import it.contrader.model.Group;
 public class GroupDAO {
 	
 	private final String QUERY_ALL = "SELECT * FROM group";
+	private final String QUERY_CREATE = "INSERT INTO group (id, idStudent) VALUES (?,?)";
 	private final String QUERY_READ = "SELECT * FROM group WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE group SET id=?, idStudent=?,  WHERE id=?";
+	private final String QUERY_DELETE = "DELETE FROM group WHERE id=?";
+	
+	
+	
 	
 	
 	public GroupDAO() {
@@ -41,7 +47,19 @@ public class GroupDAO {
 		return groupList;
 	}
 
+	public boolean insert(Group groupToInsert) {
+		Connection connection = ConnectionSingleton.getInstance();
+		try {	
+			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
+			preparedStatement.setInt(1, groupToInsert.getId());
+			preparedStatement.setInt(2, groupToInsert.getIdStudent());
+			preparedStatement.execute();
+			return true;
+		} catch (SQLException e) {
+			return false;
+		}
 
+	}
 
 	public Group read(int groupId) {
 		Connection connection = ConnectionSingleton.getInstance();
@@ -64,6 +82,58 @@ public class GroupDAO {
 			return null;
 		}
 
+	}
+	
+	public boolean update(Group groupToUpdate) {
+		Connection connection = ConnectionSingleton.getInstance();
+
+		// Check if id is present
+		if (groupToUpdate.getId() == 0)
+			return false;
+
+		Group groupRead = read(groupToUpdate.getId());
+		if (!groupRead.equals(groupToUpdate)) {
+			try {
+				// Fill the groupToUpdate object
+				if (groupToUpdate.getId() == 0) {
+					groupToUpdate.setId(groupRead.getId());
+				}
+
+				if (groupToUpdate.getIdStudent() == 0) {
+					groupToUpdate.setIdStudent(groupRead.getIdStudent());
+				}
+
+				// Update the group
+				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
+				preparedStatement.setInt(1, groupToUpdate.getId());
+				preparedStatement.setInt(2, groupToUpdate.getIdStudent());
+				int a = preparedStatement.executeUpdate();
+				if (a > 0)
+					return true;
+				else
+					return false;
+
+			} catch (SQLException e) {
+				return false;
+			}
+		}
+
+		return false;
+
+	}
+
+	public boolean delete(int id) {
+		Connection connection = ConnectionSingleton.getInstance();
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_DELETE);
+			preparedStatement.setInt(1, id);
+			int n = preparedStatement.executeUpdate();
+			if (n != 0)
+				return true;
+
+		} catch (SQLException e) {
+		}
+		return false;
 	}
 
 	
