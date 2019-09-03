@@ -1,5 +1,7 @@
 package it.contrader.controller;
 
+import java.util.List;
+
 import it.contrader.main.MainDispatcher;
 import it.contrader.model.Student;
 import it.contrader.service.StudentService;
@@ -29,10 +31,10 @@ public class StudentController implements Controller{
 		case "READ":
 			id = Integer.parseInt(request.get("id").toString());
 			Student student = studentService.read(id);
-			request.put("student", studente);
+			request.put("student", student);
 			MainDispatcher.getInstance().callView(sub_package + "StudentRead", request);
 			break;
-		case "INSERT":
+		case "INSERT":studentService.insert(studentinsert);
 			name = request.get("name").toString();
 			surname = request.get("surname").toString();
 			idUser = Integer.parseInt(request.get("idUser").toString());
@@ -65,7 +67,7 @@ public class StudentController implements Controller{
 			studentService.update(studentupdate);
 			request = new Request();
 			request.put("mode", "mode");
-			MainDispatcher.getInstance().callView(sub_package + "StudentUpdate"_, request);
+			MainDispatcher.getInstance().callView(sub_package + "StudentUpdate", request);
 			break;
 			
 		case "USERLIST":
@@ -77,7 +79,7 @@ public class StudentController implements Controller{
 			
 		case "GETCHOICE":
 			
-			switch (choice.ToUpperCase()) {
+			switch (choice.toUpperCase()) {
 			
 			case "L":
 				MainDispatcher.getInstance().callView(sub_package + "StudentRead", null);
@@ -93,7 +95,7 @@ public class StudentController implements Controller{
 				
 			case "C":
 				MainDispatcher.getInstance().callView(sub_package + "StudentDelete", null);
-				break:
+				break;
 					
 			case "E":
 				MainDispatcher.getInstance().callView("Login", null);
