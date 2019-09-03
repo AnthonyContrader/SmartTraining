@@ -12,7 +12,7 @@ public Content () {
 	
 }
 
-public Content ( String title, String text, String tag, int idStudent) {
+public Content (String title, String text, String tag, int idStudent) {
 	this.title = title;
 	this.text = text;
 	this.tag = tag;
