@@ -8,7 +8,7 @@ import it.contrader.service.StudentService;
 
 public class StudentController implements Controller{
 
-	private static String sub_package = "user.";
+	private static String sub_package = "student.";
 	
 	private StudentService studentService;
 	
@@ -34,14 +34,14 @@ public class StudentController implements Controller{
 			request.put("student", student);
 			MainDispatcher.getInstance().callView(sub_package + "StudentRead", request);
 			break;
-		case "INSERT":studentService.insert(studentinsert);
+		case "INSERT":
 			name = request.get("name").toString();
 			surname = request.get("surname").toString();
 			idUser = Integer.parseInt(request.get("idUser").toString());
 			
-			Student studentinsert = new Student (name, surname, idUser);
+			Student studentInsert = new Student (name, surname, idUser);
 			
-		    studentService.insert(studentinsert);
+		    studentService.insert (studentInsert);
 		    request = new Request();
 		    request.put("mode", "mode");
 		    
@@ -71,9 +71,8 @@ public class StudentController implements Controller{
 			break;
 			
 		case "USERLIST":
-			List<Student> student = studentService.getAll();
-			
-			request.put("student", student);
+			List<Student> students = studentService.getAll();
+			request.put("student", students);
 			MainDispatcher.getInstance().callView("Student", request);
 			break;
 			
