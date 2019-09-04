@@ -31,7 +31,7 @@ public class StudentView extends AbstractView {
 		
 	public void showOptions() {
 		System.out.println("          Scegli l'operazione da effettuare:");
-		System.out.println("[L]eggi [I]nserisci [M]odifica [C]ancella [B]ack [E]sci");
+		System.out.println("[L]eggi [I]nserisci [M]odifica [C]ancella [B]ack [V]isualizza [E]sci");
 
 		this.choice = getInput();
 	}

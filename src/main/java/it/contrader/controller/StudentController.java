@@ -17,10 +17,9 @@ public class StudentController implements Controller{
 	}
 	
 	public void doControl(Request request) {
+		
 		String mode = (String) request.get("mode");
-		
-		String choice = (String) request.get("choice");
-		
+	    String choice = (String) request.get("choice");
 		int id;
 		String name;
 		String surname;
@@ -75,6 +74,8 @@ public class StudentController implements Controller{
 			request.put("students", students);
 			MainDispatcher.getInstance().callView("Student", request);
 			break;
+		
+		
 			
 		case "GETCHOICE":
 			
@@ -95,6 +96,11 @@ public class StudentController implements Controller{
 			case "C":
 				MainDispatcher.getInstance().callView(sub_package + "StudentDelete", null);
 				break;
+				
+			case "V":
+				request.put("mode", "STUDENTLIST");
+	        	MainDispatcher.getInstance().callAction("Student", "doControl", request);
+	        	break;
 					
 			case "E":
 				MainDispatcher.getInstance().callView("Login", null);
