@@ -25,7 +25,7 @@ public class ContentDeleteView  extends AbstractView{
 	@Override
 	public void showOptions() {
 		// TODO Auto-generated method stub
-		System.out.println("Inserisci id dell'utente:");
+		System.out.println("Inserisci id del contenuto:");
 		id = Integer.parseInt(getInput());
 	}
 
@@ -35,7 +35,7 @@ public class ContentDeleteView  extends AbstractView{
 		request = new Request();
 		request.put("id", id);
 		request.put("mode", mode);
-		MainDispatcher.getInstance().callAction("User", "doControl", request);
+		MainDispatcher.getInstance().callAction("Content", "doControl", request);
 		
 	}
 }

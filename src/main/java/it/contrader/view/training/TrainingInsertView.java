@@ -21,7 +21,7 @@ public class TrainingInsertView extends AbstractView{
 		// TODO Auto-generated method stub
 		if(request!=null) {
 			System.out.println("Inserimento andato a buon fine.\n");
-			MainDispatcher.getInstance().callView("User", null);
+			MainDispatcher.getInstance().callView("Training", null);
 		}
 		
 	}

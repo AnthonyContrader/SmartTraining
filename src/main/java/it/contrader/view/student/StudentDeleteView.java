@@ -20,7 +20,7 @@ public class StudentDeleteView extends AbstractView {
 		}
 	}
 	public void showOptions () {
-		System.out.println("Inserisci id dell'utente:");
+		System.out.println("Inserisci id dello studente:");
 		id = Integer.parseInt(getInput());
 	}
 	public void submit() {
