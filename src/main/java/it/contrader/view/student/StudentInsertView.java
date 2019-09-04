@@ -10,7 +10,6 @@ public class StudentInsertView extends AbstractView {
 	private String name;
 	private String surname;
 	private int idUser;
-	private int id;
 	private final String mode = "INSERT";
 	
 	public StudentInsertView() {
@@ -29,16 +28,15 @@ public class StudentInsertView extends AbstractView {
 		surname=getInput();
 		System.out.println("Inserisci idUser:");
 		idUser=Integer.parseInt(getInput());
-		System.out.println("Inserisci il tuo Id:");
-		id=Integer.parseInt(getInput());
+		
 		
 	}
 	public void submit() {
 		request=new Request();
-		request.put("Nome", name);
-		request.put("Cognome" , surname);
+		request.put("name", name);
+		request.put("surname" , surname);
 		request.put("idUser", idUser);
-		request.put("id", id);
+		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Student", "doControl" , request);
 	}
 

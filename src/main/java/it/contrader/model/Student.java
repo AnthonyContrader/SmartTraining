@@ -43,4 +43,31 @@ public class Student {
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", surname=" + surname + ", idUser=" + idUser + "]";
 	}
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		if (id != other.id)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (surname == null) {
+			if (other.surname != null)
+				return false;
+		} else if (!surname.equals(other.surname))
+			return false;
+		if (idUser == 0) {
+			if (other.idUser != 0)
+				return false;
+		} else if (!(Integer.toString(idUser).equals(other.idUser)))
+			return false;
+		return true;
+	}
 }

@@ -43,7 +43,7 @@ public class StudentUpdateView extends AbstractView {
 		public void submit() {
 			request = new Request();
 			request.put("id", id);
-			request.put("Name", name);
+			request.put("name", name);
 			request.put("surname", surname);
 			request.put("idUser", idUser);
 			request.put("mode", mode);
