@@ -70,7 +70,7 @@ public class StudentController implements Controller{
 			MainDispatcher.getInstance().callView(sub_package + "StudentUpdate", request);
 			break;
 			
-		case "USERLIST":
+		case "STUDENTLIST":
 			List<Student> students = studentService.getAll();
 			request.put("student", students);
 			MainDispatcher.getInstance().callView("Student", request);
