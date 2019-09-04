@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package it.contrader.view.student;
 
 import it.contrader.controller.Request;
@@ -32,38 +31,3 @@ public class StudentDeleteView extends AbstractView {
 	}
 
 }
-=======
-package it.contrader.view.student;
-
-import it.contrader.controller.Request;
-import it.contrader.main.MainDispatcher;
-import it.contrader.view.AbstractView;
-
-public class StudentDeleteView extends AbstractView {
-	private Request request;
-	
-	private int id;
-	private final String mode = "DELETE";
-	
-	public StudentDeleteView() {
-	}
-	public void showResults (Request request) {
-		if (request!=null) {
-			System.out.println("Cancellazione andata a buon fine.\n");
-			MainDispatcher.getInstance().callView("Student", null);
-			
-		}
-	}
-	public void showOptions () {
-		System.out.println("Inserisci id dell'utente:");
-		id = Integer.parseInt(getInput());
-	}
-	public void submit() {
-		request= new Request();
-		request.put("id", id);
-		request.put("mode", mode);
-		MainDispatcher.getInstance().callAction("Student", "doControl", request);
-	}
-
-}
->>>>>>> 465011633f9dbbbd733b2e69b501b4530a2d0770

@@ -4,7 +4,7 @@ import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
 import it.contrader.view.AbstractView;
 
-public class TrainigUpdateView extends AbstractView {
+public class TrainingUpdateView extends AbstractView {
 	private Request request;
 	
 	private int id;
