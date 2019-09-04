@@ -37,7 +37,7 @@ public class GroupReadView extends AbstractView {
 	 */
 	@Override
 	public void showOptions() {
-		System.out.println("Inserisci l'ID dell'utente:");
+		System.out.println("Inserisci l'ID del gruppo:");
 		id = Integer.parseInt(getInput());
 	}
 

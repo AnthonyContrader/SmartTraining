@@ -8,8 +8,8 @@ public class GroupUpdateView extends AbstractView {
 	
 	private Request request;
 
-	private int Id;
-	private int IdStudent;
+	private int id;
+	private int idStudent;
 	
 	private final String mode = "UPDATE";
 
@@ -35,9 +35,9 @@ public class GroupUpdateView extends AbstractView {
 	public void showOptions() {
 		try {
 			System.out.println("Inserisci id del Group:");
-			Id = Integer.parseInt(getInput());
+			id = Integer.parseInt(getInput());
 			System.out.println("Inserisci Id studente:");
-			IdStudent = Integer.parseInt(getInput());
+			idStudent = Integer.parseInt(getInput());
 			
 		} catch (Exception e) {
 
@@ -51,8 +51,8 @@ public class GroupUpdateView extends AbstractView {
 	@Override
 	public void submit() {
 		request = new Request();
-		request.put("id", Id);
-		request.put("IdStudent", IdStudent);
+		request.put("id", id);
+		request.put("idStudent", idStudent);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Group", "doControl", request);
 	}

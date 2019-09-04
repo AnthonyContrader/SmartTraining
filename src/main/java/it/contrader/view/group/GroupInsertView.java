@@ -7,8 +7,8 @@ import it.contrader.view.AbstractView;
 public class GroupInsertView extends AbstractView{
 	private Request request;
 
-	private int Id;
-	private int IdStudent;
+	private int id;
+	private int idStudent;
 	private final String mode = "INSERT";
 
 	public GroupInsertView() {
@@ -31,10 +31,10 @@ public class GroupInsertView extends AbstractView{
 	 */
 	@Override
 	public void showOptions() {
-			System.out.println("Inserisci Id del gruppo:");
-			Id = Integer.parseInt(getInput());
-			System.out.println("Inserisci Id dello studente:");
-			IdStudent = Integer.parseInt(getInput());		 
+			System.out.println("Inserisci id del gruppo:");
+			id = Integer.parseInt(getInput());
+			System.out.println("Inserisci id dello studente:");
+			idStudent = Integer.parseInt(getInput());		 
 	}
 
 	/**
@@ -43,8 +43,8 @@ public class GroupInsertView extends AbstractView{
 	@Override
 	public void submit() {
 		request = new Request();
-		request.put("Id", Id);
-		request.put("IdStudent", IdStudent);
+		request.put("id", id);
+		request.put("idStudent", idStudent);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Group", "doControl", request);
 	}

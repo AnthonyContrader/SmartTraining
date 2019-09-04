@@ -84,9 +84,9 @@ public class GroupController implements Controller {
 			
 		//Arriva qui dalla GroupView Invoca il Service e invia alla GroupView il risultato da mostrare 
 		case "GROUPLIST":
-			List<Group> users = groupService.getAll();
+			List<Group> groups = groupService.getAll();
 			//Impacchetta la request con la lista degi user
-			request.put("users", users);
+			request.put("groups", groups);
 			MainDispatcher.getInstance().callView("Group", request);
 			break;
 			

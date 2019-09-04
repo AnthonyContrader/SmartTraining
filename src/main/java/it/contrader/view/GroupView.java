@@ -20,8 +20,8 @@ public class GroupView extends AbstractView {
 			System.out.println("ID\tidStudent");
 			System.out.println("----------------------------------------------------\n");
 			
-			List<Group> group=(List<Group>) request.get("group");
-			for(Group g:group)
+			List<Group> groups = (List<Group>) request.get("groups");
+			for(Group g:groups)
 				System.out.println(g);
 			System.out.println();
 		}
@@ -38,7 +38,7 @@ public class GroupView extends AbstractView {
 		request = new Request();
 		request.put("choice", choice);
 		request.put("mode", "GETCHOICE");
-		MainDispatcher.getInstance().callAction("Grouè", "doControl", this.request);
+		MainDispatcher.getInstance().callAction("Group", "doControl", this.request);
 	}
 
 }

@@ -11,7 +11,6 @@ public class Group {
 
 
 	public Group(int id, int idStudent) {
-		super();
 		this.id = id;
 		this.idStudent = idStudent;
 	}
