@@ -65,6 +65,39 @@ public String toString() {
 			+ "]";
 }
 
+@Override
+public boolean equals(Object obj) {
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	Content other = (Content) obj;
+	if (Id != other.Id)
+		return false;
+	if (title == null) {
+		if (other.title != null)
+			return false;
+	} else if (!title.equals(other.title))
+		return false;
+	if (text == null) {
+		if (other.text != null)
+			return false;
+	} else if (!text.equals(other.text))
+		return false;
+	if (tag == null) {
+		if (other.tag != null)
+			return false;
+	} else if (!tag.equals(other.tag))
+		return false;
+	if (idStudent == 0) {
+		if(other.idStudent != 0)
+			return false;
+	} else if (!(Integer.toString(idStudent).equals(other.idStudent)))
+		return false;
+	return true;
+	}
 }
 
 
