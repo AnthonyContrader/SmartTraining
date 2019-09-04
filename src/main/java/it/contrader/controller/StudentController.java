@@ -72,7 +72,7 @@ public class StudentController implements Controller{
 			
 		case "STUDENTLIST":
 			List<Student> students = studentService.getAll();
-			request.put("student", students);
+			request.put("students", students);
 			MainDispatcher.getInstance().callView("Student", request);
 			break;
 			
