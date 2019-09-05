@@ -25,7 +25,7 @@ public class TrainingUpdateView extends AbstractView {
 	public void showResults(Request request) {
 		if (request!=null) {
 			System.out.println("Modifica andata a buon fine.\n");
-			MainDispatcher.getInstance().callView("User", null);
+			MainDispatcher.getInstance().callView("Training", null);
 		}
 	}
 	
@@ -35,7 +35,7 @@ public class TrainingUpdateView extends AbstractView {
 	@Override
 	public void showOptions() {
 		try {
-			System.out.println("Inserisci id del Trainig:");
+			System.out.println("Inserisci id del Training:");
 			id = Integer.parseInt(getInput());
 			System.out.println("Inserisci nome del Training:");
 			nameTraining = toString();
@@ -59,7 +59,7 @@ public class TrainingUpdateView extends AbstractView {
 		request.put("idGroup", idGroup);
 		request.put("idStudent", idStudent);
 		request.put("mode", mode);
-		MainDispatcher.getInstance().callAction("User", "doControl", request);
+		MainDispatcher.getInstance().callAction("Training", "doControl", request);
 		
 	}
 }
