@@ -11,7 +11,7 @@ public class ContentInsertView extends AbstractView{
 	private String title;
 	private String text;
 	private int idStudent;
-	private int id;
+	//private int id;
 	private final String mode = "INSERT";
 	
 	public ContentInsertView() {
@@ -38,8 +38,8 @@ public class ContentInsertView extends AbstractView{
 		text = getInput();
 		System.out.println("Inserisci idStudent:");
 		idStudent = Integer.parseInt(getInput());
-		System.out.println("Inserisci il tuo id:");
-		id = Integer.parseInt(getInput());
+		//System.out.println("Inserisci il tuo id:");
+		//id = Integer.parseInt(getInput());
 		
 	}
 
@@ -48,11 +48,11 @@ public class ContentInsertView extends AbstractView{
 		// TODO Auto-generated method stub
 		request = new Request();
 		request.put("tag", tag);
-		request.put("titolo", title);
-		request.put("testo", text);
+		request.put("title", title);
+		request.put("text", text);
 		request.put("idStudent", idStudent);
-		request.put("id", id);
-		MainDispatcher.getInstance().callAction("Student", "doControl", request);
+		//request.put("id", id);
+		MainDispatcher.getInstance().callAction("Content", "doControl", request);
 		
 	}
 	

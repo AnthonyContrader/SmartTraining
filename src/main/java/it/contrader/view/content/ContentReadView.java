@@ -3,8 +3,9 @@ package it.contrader.view.content;
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
 import it.contrader.model.Content;
+import it.contrader.view.AbstractView;
 
-public class ContentReadView {
+public class ContentReadView extends AbstractView {
 	
 	private int id;
 	private Request request;
@@ -13,7 +14,8 @@ public class ContentReadView {
 	public  ContentReadView () {
 	}
 	
-	public void showResult(Request request) {
+	@Override
+	public void showResults(Request request) {
 		if(request != null) {
 			Content content = (Content) request.get("content");
 			System.out.println(content);
@@ -21,16 +23,18 @@ public class ContentReadView {
 		}
 	}
 	
-	public void showOption() {
-		System.out.println("Inserisci l'ID dell'utente:");
+	@Override
+	public void showOptions() {
+		System.out.println("Inserisci l'ID del contenuto:");
 		id = Integer.parseInt(getInput());
 	}
 	
-	private String getInput() {
+	//private String getInput() {
 		// TODO Auto-generated method stub
-		return null;
-	}
+		//return null;
+	//}
 
+	@Override
 	public void submit () {
 		request = new Request();
 		request.put("id", id);

@@ -7,6 +7,7 @@ import it.contrader.model.Content;
 import it.contrader.service.ContentService;
 
 public class ContentController implements Controller {
+	
 	private static String sub_package = "content.";
 	
 	private ContentService contentService;
@@ -42,8 +43,8 @@ public class ContentController implements Controller {
 			tag = request.get("tag").toString();
 			idStudent = Integer.parseInt(request.get("idStudent").toString());
 			
-			Content contentinsert = new Content(title, text, tag, idStudent);
-			contentService.insert(contentinsert);
+			Content contenttoinsert = new Content(title, text, tag, idStudent);
+			contentService.insert(contenttoinsert);
 			request = new Request();
 			request.put("mode", "mode");
 			MainDispatcher.getInstance().callView(sub_package + "ContentInsert", request);

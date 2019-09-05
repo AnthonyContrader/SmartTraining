@@ -37,7 +37,6 @@ public class UserController implements Controller {
 		
 		//Estrae dalla request mode e choice
 		String mode = (String) request.get("mode");
-		
 		String choice = (String) request.get("choice");
 
 		//Definisce i campi della classe (serviranno sempre, tanto vale definirli una sola volta)

@@ -1,12 +1,14 @@
 package it.contrader.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+//import java.sql.PreparedStatement;
+//import java.sql.ResultSet;
+//import java.sql.SQLException;
+//import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import it.contrader.main.ConnectionSingleton;
+import it.contrader.model.Content;
 
 import it.contrader.main.ConnectionSingleton;
 import it.contrader.model.Content;
@@ -17,33 +19,33 @@ public class ContentDAO {
 	private final String QUERY_CREATE = "INSERT INTO content (titel, text, tag, idStudent) VALUES (?,?,?,?)";
 	private final String QUERY_READ = "SELECT * from content WHERE id=?";
 	private final String QUERY_UPDATE = "UPDATE content SET title=?, text=?, tag=?, idStudent=? WHERE id=?";
-	private final String QUERY_DELETE = "DELETE FROM content user WHERE id=?";
+	private final String QUERY_DELETE = "DELETE FROM content WHERE id=?";
 	
 	public ContentDAO() {
 		
 	}
 	
 	public List<Content> getALL() {
-		List<Content> contentList = new ArrayList<>();
+		List<Content> contentsList = new ArrayList<>();
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			Statement statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(QUERY_ALL);
-			Content content;
+			Content contents;
 			while (resultSet.next()) {
 				int id = resultSet.getInt("id");
 				String title = resultSet.getString("title");
 				String text = resultSet.getString("text");
 				String tag = resultSet.getString("tag");
 				int idStudent = resultSet.getInt("idStudent");
-				content = new Content( title, text, tag, idStudent);
-				content.setIdStudent(id);
-				contentList.add(content);
+				contents = new Content( title, text, tag, idStudent);
+				contents.setid(id);
+				contentsList.add(contents);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return contentList;
+		return contentsList;
 	}
 	
 	public boolean insert(Content contentToInsert) {
@@ -97,15 +99,15 @@ public class ContentDAO {
 		if (!contentRead.equals(contentToUpdate)) {
 			try {
 				//Final the contentToUpdate object
-				if (contentToUpdate.getTitle() == null || contentToUpdate.getTitle().contentEquals("")) {
+				if (contentToUpdate.getTitle() == null || contentToUpdate.getTitle().equals("")) {
 					contentToUpdate.setTitle(contentRead.getTitle());
 				}
 				
-				if (contentToUpdate.getText() == null || contentToUpdate.getText().contentEquals("")) {
+				if (contentToUpdate.getText() == null || contentToUpdate.getText().equals("")) {
 					contentToUpdate.setText(contentRead.getText());
 				}
 				
-				if (contentToUpdate.getTag() == null || contentToUpdate.getTag().contentEquals("")) {
+				if (contentToUpdate.getTag() == null || contentToUpdate.getTag().equals("")) {
 					contentToUpdate.setTag(contentRead.getTag());
 				}
 				

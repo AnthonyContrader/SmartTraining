@@ -69,7 +69,7 @@ public class HomeAdminView extends AbstractView {
         	break;
         	
         case "c":
-        	this.request.put("mode", "CONTENT");
+        	this.request.put("mode", "CONTENTLIST");
         	MainDispatcher.getInstance().callAction("Content", "doControl", request);
         	break;
         
