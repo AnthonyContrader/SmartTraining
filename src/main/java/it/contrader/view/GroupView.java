@@ -16,7 +16,7 @@ public class GroupView extends AbstractView {
 	
 	public void showResults (Request request) {
 		if (request!=null) {
-			System.out.println ("\n------------------- Gestione utenti ----------------\n");
+			System.out.println ("\n------------------- Gestione gruppi ----------------\n");
 			System.out.println("ID\tidStudent");
 			System.out.println("----------------------------------------------------\n");
 			

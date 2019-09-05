@@ -13,11 +13,11 @@ import it.contrader.model.Group;
 
 public class GroupDAO {
 	
-	private final String QUERY_ALL = "SELECT * FROM group";
-	private final String QUERY_CREATE = "INSERT INTO group (id, idStudent) VALUES (?,?)";
-	private final String QUERY_READ = "SELECT * FROM group WHERE id=?";
-	private final String QUERY_UPDATE = "UPDATE group SET id=?, idStudent=?,  WHERE id=?";
-	private final String QUERY_DELETE = "DELETE FROM group WHERE id=?";
+	private final String QUERY_ALL = "SELECT * FROM smarttraining.group";
+	private final String QUERY_CREATE = "INSERT INTO smarttraining.group (id, idStudent) VALUES (?,?)";
+	private final String QUERY_READ = "SELECT * FROM smarttraining.group WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE smarttraining.group SET id=?, idStudent=?,  WHERE id=?";
+	private final String QUERY_DELETE = "DELETE FROM smarttraining.group WHERE id=?";
 	
 		
 	public GroupDAO() {
@@ -37,6 +37,7 @@ public class GroupDAO {
 				group = new Group(id, idStudent);
 				group.setId(id);
 				groupList.add(group);
+				System.out.println("true");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
