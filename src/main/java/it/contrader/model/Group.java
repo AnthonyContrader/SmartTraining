@@ -17,7 +17,7 @@ public class Group {
 
 
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
 
@@ -27,7 +27,7 @@ public class Group {
 
 
 	public int getIdStudent() {
-		return idStudent;
+		return this.idStudent;
 	}
 
 
@@ -38,7 +38,7 @@ public class Group {
 
 	@Override
 	public String toString() {
-		return "Group [id=" + id + ", idStudent=" + idStudent + "]";
+		return id + "\t" + idStudent;
 	}
 	
 	@Override

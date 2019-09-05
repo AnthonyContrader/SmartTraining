@@ -7,7 +7,7 @@ import it.contrader.model.Content;
 import it.contrader.service.ContentService;
 
 public class ContentController implements Controller {
-	private static String sub_package = "content";
+	private static String sub_package = "content.";
 	
 	private ContentService contentService;
 	
@@ -19,10 +19,12 @@ public class ContentController implements Controller {
 	public void doControl(Request request) {
 		//Estrae mode choice
 		String mode = (String) request.get("mode");
-		String choice = (String) request.get("choise");
+		String choice = (String) request.get("choice");
 		
 		int id;
-		String text, title, tag;
+		String text;
+		String title;
+		String tag;
 		int idStudent;
 		
 		switch (mode) {

@@ -23,7 +23,7 @@ public class TrainingDAO {
 	}
 	
 	public List<Training> getAll(){
-		List<Training> trainingList = new ArrayList<>();
+		List<Training> trainingsList = new ArrayList<>();
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			Statement statement = connection.createStatement();
@@ -36,12 +36,12 @@ public class TrainingDAO {
 				int idStudent = resultSet.getInt("idStudent");
 				training = new Training(nameTraining, idGroup, idStudent);
 				training.setId(id);
-				trainingList.add(training);
+				trainingsList.add(training);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return trainingList;
+		return trainingsList;
 	}
 	
 	public boolean insert(Training trainingToInsert) {
@@ -65,7 +65,8 @@ public class TrainingDAO {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			String nameTraining;
-			int idGroup, idStudent;
+			int idGroup;
+			int idStudent;
 			nameTraining = resultSet.getString("nameTraining");
 			idGroup = resultSet.getInt("idGroup");
 			idStudent = resultSet.getInt("idStudent");

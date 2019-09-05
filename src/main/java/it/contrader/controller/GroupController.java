@@ -56,8 +56,8 @@ public class GroupController implements Controller {
 		case "INSERT":
 			id = Integer.parseInt(request.get("id").toString());
 			idStudent = Integer.parseInt(request.get("idStudent").toString());
-			Group groupToInsert = new Group(id, idStudent);
-			groupService.insert(groupToInsert);
+			Group grouptoinsert = new Group(id, idStudent);
+			groupService.insert(grouptoinsert);
 			request = new Request();
 			request.put("mode", "mode");
 			MainDispatcher.getInstance().callView(sub_package + "GroupInsert", request);
@@ -74,9 +74,9 @@ public class GroupController implements Controller {
 		case "UPDATE":
 			id = Integer.parseInt(request.get("id").toString());
 			idStudent = Integer.parseInt(request.get("idStudent").toString());
-			Group groupToUpdate = new Group(id, idStudent);
-			groupToUpdate.setId(id);
-			groupService.update(groupToUpdate);
+			Group grouptoupdate = new Group(id, idStudent);
+			grouptoupdate.setId(id);
+			groupService.update(grouptoupdate);
 			request = new Request();
 			request.put("mode", "mode");
 			MainDispatcher.getInstance().callView(sub_package + "GroupUpdate", request);

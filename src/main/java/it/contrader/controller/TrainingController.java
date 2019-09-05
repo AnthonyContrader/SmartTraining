@@ -23,7 +23,8 @@ public class TrainingController implements Controller {
 		
 		int id;
 		String nameTraining;
-		int idGroup, idStudent;
+		int idGroup;
+		int idStudent;
 		
 		switch (mode) {
 		
@@ -51,6 +52,7 @@ public class TrainingController implements Controller {
 			id= Integer.parseInt(request.get("id").toString());
 			trainingService.delete(id);
 			request = new Request();
+			request.put("mode", "mode");
 			MainDispatcher.getInstance().callView(sub_package + "TrainingDelete", request);
 			break;
 			
@@ -59,9 +61,9 @@ public class TrainingController implements Controller {
 			nameTraining = request.get("nameTraining").toString();
 			idGroup = Integer.parseInt(request.get("idGroup").toString());
 			idStudent = Integer.parseInt(request.get("idStudent").toString());
-			Training trainingToUpdate = new Training(nameTraining, idGroup, idStudent);
-			trainingToUpdate.setId(id);
-			trainingService.update(trainingToUpdate);
+			Training trainingtoupdate = new Training(nameTraining, idGroup, idStudent);
+			trainingtoupdate.setId(id);
+			trainingService.update(trainingtoupdate);
 			request = new Request();
 			request.put("mode", "mode");
 			MainDispatcher.getInstance().callView(sub_package + "TrainingToUpdate" , request);
@@ -70,7 +72,7 @@ public class TrainingController implements Controller {
 		case "TRAININGLIST":
 			List<Training> trainings = trainingService.getAll();
 			request.put("trainings", trainings);
-			MainDispatcher.getInstance().callView("Trainig", request);
+			MainDispatcher.getInstance().callView("Training", request);
 			break;
 			
 		case "GETCHOICE":
