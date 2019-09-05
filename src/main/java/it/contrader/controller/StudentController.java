@@ -112,7 +112,7 @@ public class StudentController implements Controller{
 				MainDispatcher.getInstance().callView("Login", null);
 			}
 			default:
-				MainDispatcher.getInstance().callView("login", null);
+				MainDispatcher.getInstance().callView("Login", null);
 			
 		}
 	}
