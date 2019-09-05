@@ -16,7 +16,7 @@ import it.contrader.model.Content;
 public class ContentDAO {
 	
 	private final String QUERY_ALL = "SELECT * FROM content";
-	private final String QUERY_CREATE = "INSERT INTO content (titel, text, tag, idStudent) VALUES (?,?,?,?)";
+	private final String QUERY_CREATE = "INSERT INTO content (title, text, tag, idStudent) VALUES (?,?,?,?)";
 	private final String QUERY_READ = "SELECT * from content WHERE id=?";
 	private final String QUERY_UPDATE = "UPDATE content SET title=?, text=?, tag=?, idStudent=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM content WHERE id=?";
@@ -39,7 +39,7 @@ public class ContentDAO {
 				String tag = resultSet.getString("tag");
 				int idStudent = resultSet.getInt("idStudent");
 				contents = new Content( title, text, tag, idStudent);
-				contents.setid(id);
+				contents.setId(id);
 				contentsList.add(contents);
 			}
 		} catch (SQLException e) {
@@ -79,8 +79,8 @@ public class ContentDAO {
 			text = resultSet.getString("text");
 			tag = resultSet.getString("tag");
 			idStudent = resultSet.getInt("idStudent");
-			Content content = new Content(title, tag, text, idStudent);
-			content.setid(resultSet.getInt("id"));
+			Content content = new Content(title, text, tag, idStudent);
+			content.setId(resultSet.getInt("id"));
 			
 			return content;
 		} catch (SQLException e) {
@@ -92,10 +92,10 @@ public class ContentDAO {
 		Connection connection = ConnectionSingleton.getInstance();
 		
 		//Check if id is present
-		if (contentToUpdate.getid() == 0)
+		if (contentToUpdate.getId() == 0)
 			return false;
 		
-		Content contentRead = read(contentToUpdate.getid());
+		Content contentRead = read(contentToUpdate.getId());
 		if (!contentRead.equals(contentToUpdate)) {
 			try {
 				//Final the contentToUpdate object
@@ -122,7 +122,7 @@ public class ContentDAO {
 				preparedStatement.setString(2, contentToUpdate.getTag());
 				preparedStatement.setString(3, contentToUpdate.getText());
 				preparedStatement.setInt(4, contentToUpdate.getIdStudent());
-				preparedStatement.setInt(5, contentToUpdate.getid());
+				preparedStatement.setInt(5, contentToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return false;

@@ -65,7 +65,7 @@ public class ContentController implements Controller {
 			tag = request.get("tag").toString();
 			idStudent = Integer.parseInt(request.get("idStudent").toString());
 			Content contenttoupdate = new Content(title, text, tag, idStudent);
-			contenttoupdate.setid(id);
+			contenttoupdate.setId(id);
 			contentService.update(contenttoupdate);
 			request = new Request();
 			request.put("mode", "mode");

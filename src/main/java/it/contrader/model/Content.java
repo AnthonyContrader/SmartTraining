@@ -2,7 +2,7 @@ package it.contrader.model;
 
 public class Content {
 	
-	private int Id;
+	private int id;
 	private String title;
 	private String text;
 	private String tag;
@@ -19,12 +19,12 @@ public Content (String title, String text, String tag, int idStudent) {
 	this.idStudent = idStudent;
 }
 
-public int getid() {
-	return Id;
+public int getId() {
+	return this.id;
 }
 
-public void setid(int id) {
-	this.Id = id;
+public void setId(int id) {
+	this.id = id;
 }
 
 public String getTitle() {
@@ -61,7 +61,7 @@ public void setIdStudent(int idStudent) {
 
 @Override
 public String toString() {
-	return "Content [id=" + Id + ", title=" + title + ", text=" + text + ", tag=" + tag + ", idStudent=" + idStudent
+	return "Content [id=" + id + ", title=" + title + ", text=" + text + ", tag=" + tag + ", idStudent=" + idStudent
 			+ "]";
 }
 
@@ -74,7 +74,7 @@ public boolean equals(Object obj) {
 	if (getClass() != obj.getClass())
 		return false;
 	Content other = (Content) obj;
-	if (Id != other.Id)
+	if (id != other.id)
 		return false;
 	if (title == null) {
 		if (other.title != null)
