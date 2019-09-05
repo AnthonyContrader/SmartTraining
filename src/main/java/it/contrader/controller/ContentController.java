@@ -97,6 +97,10 @@ public class ContentController implements Controller {
 				MainDispatcher.getInstance().callView(sub_package + "ContentDelete", null);
 				break;
 				
+			case "V":
+				request.put("mode", "CONTENTLIST");
+				MainDispatcher.getInstance().callAction("Content", "doControl", request);
+				
 			case "E":
 				MainDispatcher.getInstance().callView("Login", null);
 				break;

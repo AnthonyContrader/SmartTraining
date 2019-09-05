@@ -96,8 +96,8 @@ public class GroupDAO {
 
 				// Update the group
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
-				preparedStatement.setInt(1, groupToUpdate.getId());
-				preparedStatement.setInt(2, groupToUpdate.getIdStudent());
+				preparedStatement.setInt(1, groupToUpdate.getIdStudent());
+				preparedStatement.setInt(2, groupToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
 				System.out.println("true");
 				if (a > 0)

@@ -93,9 +93,11 @@ public class GroupController implements Controller {
 		//Esegue uno switch sulla base del comando inserito dall'utente e reindirizza tramite il Dispatcher alla View specifica per ogni operazione
 		//con REQUEST NULL (vedi una View specifica)
 		case "GETCHOICE":
+			
 					
 					//toUpperCase() mette in maiuscolo la scelta
 			switch (choice.toUpperCase()) {
+			
 			
 			case "L":
 				MainDispatcher.getInstance().callView(sub_package + "GroupRead", null);
