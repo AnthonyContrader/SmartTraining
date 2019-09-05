@@ -16,7 +16,7 @@ public class GroupDAO {
 	private final String QUERY_ALL = "SELECT * FROM smarttraining.group";
 	private final String QUERY_CREATE = "INSERT INTO smarttraining.group (id, idStudent) VALUES (?,?)";
 	private final String QUERY_READ = "SELECT * FROM smarttraining.group WHERE id=?";
-	private final String QUERY_UPDATE = "UPDATE smarttraining.group SET id=?, idStudent=?,  WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE smarttraining.group SET idStudent=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM smarttraining.group WHERE id=?";
 	
 		
@@ -37,7 +37,6 @@ public class GroupDAO {
 				group = new Group(id, idStudent);
 				group.setId(id);
 				groupList.add(group);
-				System.out.println("true");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -62,8 +61,6 @@ public class GroupDAO {
 	public Group read(int groupId) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
-
-
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
 			preparedStatement.setInt(1, groupId);
 			ResultSet resultSet = preparedStatement.executeQuery();
@@ -92,10 +89,6 @@ public class GroupDAO {
 		Group groupRead = read(groupToUpdate.getId());
 		if (!groupRead.equals(groupToUpdate)) {
 			try {
-				// Fill the groupToUpdate object
-				if (groupToUpdate.getId() == 0) {
-					groupToUpdate.setId(groupRead.getId());
-				}
 
 				if (groupToUpdate.getIdStudent() == 0) {
 					groupToUpdate.setIdStudent(groupRead.getIdStudent());
@@ -106,14 +99,16 @@ public class GroupDAO {
 				preparedStatement.setInt(1, groupToUpdate.getId());
 				preparedStatement.setInt(2, groupToUpdate.getIdStudent());
 				int a = preparedStatement.executeUpdate();
+				System.out.println("true");
 				if (a > 0)
 					return true;
 				else
 					return false;
 
 			} catch (SQLException e) {
+				System.out.println("false");
 				return false;
-			}
+			}catch (Exception ex){}
 		}
 
 		return false;

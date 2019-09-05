@@ -112,6 +112,11 @@ public class GroupController implements Controller {
 			case "C":
 				MainDispatcher.getInstance().callView(sub_package + "GroupDelete", null);
 				
+			case "V":
+	        	request.put("mode", "GROUPLIST");
+	        	MainDispatcher.getInstance().callAction("Group", "doControl", request);
+	        	break;
+				
 			case "E":
 				MainDispatcher.getInstance().callView("Login", null);
 				break;
