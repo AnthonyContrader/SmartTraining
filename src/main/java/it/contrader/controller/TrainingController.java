@@ -66,7 +66,7 @@ public class TrainingController implements Controller {
 			trainingService.update(trainingtoupdate);
 			request = new Request();
 			request.put("mode", "mode");
-			MainDispatcher.getInstance().callView(sub_package + "TrainingToUpdate" , request);
+			MainDispatcher.getInstance().callView(sub_package + "TrainingUpdate" , request);
 			break;
 			
 		case "TRAININGLIST":

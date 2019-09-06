@@ -51,6 +51,7 @@ public class TrainingDAO {
 			preparedStatement.setString(1, trainingToInsert.getNameTraining());
 			preparedStatement.setInt(2, trainingToInsert.getIdGroup());
 			preparedStatement.setInt(3, trainingToInsert.getIdStudent());
+			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
 			return false;
