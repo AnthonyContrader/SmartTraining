@@ -5,7 +5,7 @@ import it.contrader.dao.TrainingDAO;
 import it.contrader.dto.TrainingDTO;
 import it.contrader.model.Training;
 
-public class TrainingService extends AbstractiveSrrvice<training, TrainingDTO> {
+public class TrainingService extends AbstractService<Training, TrainingDTO> {
 	
 	public TrainingService() {
 		this.dao = new TrainingDAO();
