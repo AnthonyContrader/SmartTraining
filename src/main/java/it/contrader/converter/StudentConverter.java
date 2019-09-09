@@ -8,7 +8,7 @@ import it.contrader.model.Student;
 
 public class StudentConverter implements Converter<Student, StudentDTO> {
 	public StudentDTO toDTO(Student student) {
-		StudentDTO studentdto = new StudentDTO(student.getId(), studentDTO.getName(), StudentDTO.getSurname(), studentDTO.getidUser());
+		StudentDTO studentDTO = new StudentDTO(student.getId(), student.getName(), student.getSurname(), student.getIdUser());
 		return studentDTO;
 	}
 	
