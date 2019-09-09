@@ -9,8 +9,8 @@ import it.contrader.model.Group;
 public class GroupService extends AbstractService<Group, GroupDTO>  {
 	
 	public GroupService() {
-		this.dao = new ContentDAO();
-		this.converter = new ContentConverter();
+		this.dao = new GroupDAO();
+		this.converter = new GroupConverter();
 	}
 
 }

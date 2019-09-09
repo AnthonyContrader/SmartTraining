@@ -1,8 +1,10 @@
 package it.contrader.servlets;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import it.contrader.dto.ContentDTO;
@@ -17,7 +19,7 @@ public class ContentServlet extends HttpServlet {
 	
 	public void updateList(HttpServletRequest request) {
 		Service<ContentDTO> service = new ContentService();
-		List<ContentDTO>listDTO = service.getALL();
+		List<ContentDTO>listDTO = service.getAll();
 		request.setAttribute("list", listDTO);
 	}
 	
@@ -33,7 +35,7 @@ public class ContentServlet extends HttpServlet {
 		
 		case "CONTENTLIST":
 			updateList(request);
-			getServletContext().getRequestDispatcher("/content/contentmanager.jsp").foward(request, response);
+			getServletContext().getRequestDispatcher("/content/contentmanager.jsp").forward(request, response);
 			break;
 			
 		case "READ":
@@ -42,9 +44,9 @@ public class ContentServlet extends HttpServlet {
 			request.setAttribute("dto", dto);
 			
 			if (request.getParameter("update") == null) {
-				getServeletContext().getRequestDispatcher("/content/readcontent.jsp").forwars(request, response);
+				getServletContext().getRequestDispatcher("/content/readcontent.jsp").forward(request, response);
 			}
-			else getServletContext().getrequestDispatcher("/content/updatecontent.jsp").forward(request, response);
+			else getServletContext().getRequestDispatcher("/content/updatecontent.jsp").forward(request, response);
 			
 			break;
 		
