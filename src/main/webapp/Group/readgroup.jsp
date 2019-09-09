@@ -23,7 +23,7 @@
 		<th>id</th>
 	</tr>
 	<tr>
-		<td><%=g.getIdGroup() %></td>
+		<td><%=g.getIdStudent()%></td>
 		<td><%=g.getId() %></td>
 	</tr>
 	</table>
