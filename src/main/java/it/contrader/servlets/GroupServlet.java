@@ -33,6 +33,7 @@ public class GroupServlet extends HttpServlet {
 		int id;
 		boolean ans;
 		
+		Object idStudent;
 		switch (mode.toUpperCase()) {
 		
 		case "GROUPLIST":
@@ -53,10 +54,8 @@ public class GroupServlet extends HttpServlet {
 			
 			break;
 		case "INSERT":
-			String name = request.getParameter("name").toString();
-			String surname = request.getParameter("surname").toString();
-			int idGroup = Integer.parseInt(request.getParameter("idGroup"));
-			dto = new GroupDTO (name,surname,idGroup);
+			int idGroup = Integer.parseInt(request.getParameter("idStudent"));
+			dto = new GroupDTO (idStudent);
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
@@ -64,11 +63,9 @@ public class GroupServlet extends HttpServlet {
 			break;
 			
 		case "UPDATE":
-			name = request.getParameter("name");
-			surname = request.getParameter("surname");
-			idGroup = Integer.parseInt(request.getParameter("idGroup"));
+			idStudent = Integer.parseInt(request.getParameter("idStudent"));
 			id = Integer.parseInt(request.getParameter("id"));
-			dto = new GroupDTO (id,name, surname, idGroup);
+			dto = new GroupDTO (id, idStudent);
 			ans = service.update(dto);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/group/groupmanager.jsp").forward(request, response);
