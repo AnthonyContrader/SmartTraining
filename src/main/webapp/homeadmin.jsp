@@ -15,7 +15,7 @@
 <div class="navbar">
   <a class="active" href="homeadmin.jsp">Home</a>
   <a href="UserServlet?mode=userlist">Users</a>
-  <a href="StudentServlet?mode=studentlist">Users</a>
+  <a href="StudentServlet?mode=studentlist">Students</a>
   <a href="ContentServlet?mode=contentlist">Contents</a>
   <a href="TrainingServlet?mode=traininglist">Trainings</a>
   <a href="GroupServlet?mode=grouplist">Groups</a>
