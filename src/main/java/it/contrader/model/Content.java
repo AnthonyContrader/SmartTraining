@@ -19,18 +19,18 @@ public class Content {
 	public Content(String title, String text, String tag, int idStudent) {
 		
 		this.title = title;
-		this.title = title;
-		this.title = title;
-		this.title = title;	
+		this.text = text;
+		this.tag = tag;
+		this.idStudent = idStudent;	
 	}
 	
 	public Content(int id, String title, String text, String tag, int idStudent) {
 		
 		this.id = id;
 		this.title = title;
-		this.title = title;
-		this.title = title;
-		this.title = title;	
+		this.text = text;
+		this.tag = tag;
+		this.idStudent = idStudent;	
 	}
 
 	public int getId() {
