@@ -11,15 +11,6 @@
 <body>
 <%@ include file="../css/header.jsp" %>
 
-<div class="navbar">
-  <a href="homeadmin.jsp">Home</a>
-  <a href="UserServlet?mode=userlist">Users</a>
-  <a href="StudentServlet?mode=studentlist">Students</a>
-  <a href="ContentServlet?mode=contentlist">Contents</a>
-  <a class="active" href="TrainingServlet?mode=traininglist">Training</a>
-  <a href="GroupServlet?mode=grouplist">Groups</a>
-  <a href="LogoutServlet" id="logout">Logout</a>
-</div>
 
 <div class="main">
 	<%
@@ -61,32 +52,31 @@
 <form id="floatright" action="TrainingServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="user">nameTraining</label>
+      <label for="nametraining">nameTraining</label>
     </div>
     <div class="col-75">
-      <input type="text" id="user" name="nameTraining" placeholder="inserisci nameTraining">
+      <input type="text" id="nametraining" name="nameTraining" placeholder="inserisci nameTraining">
     </div>
   </div>
+  
   <div class="row">
     <div class="col-25">
-     <label for="pass">idGroup</label>
+     <label for="idgroup">idGroup</label>
     </div>
     <div class="col-75">
-      <input type="text" id="pass" name="idGroup" placeholder="inserisci idGroup"> 
+      <input type="text" id="idgroup" name="idGroup" placeholder="inserisci idGroup"> 
     </div>
   </div>
+  
   <div class="row">
     <div class="col-25">
       <label for="type">idStudent</label>
     </div>
    		 <div class="col-75">
- 			<select id="type" name="idStudent">
-  				<option value="idStudent1">idStudent1</option>
-  				<option value="idStudent2">idStudent2</option>
- 
-			</select>
+   		 <input type="text" id="idstudent" name="idStudent" placeholder="inserisci idStudent"> 
     	</div>
   </div>
+  
       <button type="submit" >Insert</button>
 </form>
 
