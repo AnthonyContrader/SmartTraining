@@ -33,6 +33,15 @@
 					type="text" id="title" name="title" value=<%c.getTitle(); %>>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-25">
+			<label for="text">Text</label>
+		</div>
+		<div class="col-75">
+			<input 
+					type="text" id="text" name="text" value=<%c.getText(); %>>
+		</div>
+	</div>
 	<div>
 		<div>
 			<label for="type">Text</label>
