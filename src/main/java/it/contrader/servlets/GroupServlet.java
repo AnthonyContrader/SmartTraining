@@ -53,9 +53,13 @@ public class GroupServlet extends HttpServlet {
 			break;
 			
 		case "INSERT":
+			System.out.println("in insert idS: "+request.getParameter("idStudent").toString());
+			System.out.println("in insert idS: "+request.getParameter("groupcol").toString());
+			
 			int idStudent = Integer.parseInt(request.getParameter("idStudent").toString());
 			String groupcol = request.getParameter("groupcol").toString();
 			dto = new GroupDTO (idStudent, groupcol);
+			System.out.println("gruppo: "+dto.toString());
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
