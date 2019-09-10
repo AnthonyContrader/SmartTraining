@@ -10,7 +10,6 @@ import java.util.List;
 
 
 import it.contrader.model.Content;
-import it.contrader.model.User;
 import it.contrader.utils.ConnectionSingleton;
 
 public class ContentDAO  implements DAO<Content>{
@@ -23,7 +22,7 @@ public class ContentDAO  implements DAO<Content>{
 	@Override
 	public List<Content> getAll() {
 		// TODO Auto-generated method stub
-		List <Content> contentList = new ArrayList<>();
+		List <Content> contentsList = new ArrayList<>();
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			Statement statement = connection.createStatement();
@@ -37,21 +36,37 @@ public class ContentDAO  implements DAO<Content>{
 				int idStudent = resultSet.getInt("idStudent");
 				content = new Content(tag, title, text, idStudent);
 				content.setId(id);
-				contentList.add(content);
+				contentsList.add(content);
 			}
 		}catch (SQLException e){
 			e.printStackTrace();
 		}
-		return contentList;
+		return contentsList;
 	}
+	
+	public boolean insert(Content contentToInsert) {
+		Connection connection = ConnectionSingleton.getInstance();
+		try {	
+			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
+			preparedStatement.setString(1, contentToInsert.getTag());
+			preparedStatement.setString(2, contentToInsert.getTitle());
+			preparedStatement.setString(3, contentToInsert.getText());
+			preparedStatement.setInt(4, contentToInsert.getIdStudent());
+			preparedStatement.execute();
+			return true;
+		} catch (SQLException e) {
+			return false;
+		}
 
-	@Override
-	public Content read(int id) {
-		// TODO Auto-generated method stub
+	}
+	
+	public Content read(int contentId) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
+
+
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
-			preparedStatement.setInt(1, id);
+			preparedStatement.setInt(1, contentId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			String tag, title, text;
@@ -68,24 +83,10 @@ public class ContentDAO  implements DAO<Content>{
 		} catch (SQLException e) {
 			return null;
 		}
+
 	}
 
-	@Override
-	public boolean insert(Content contentToInsert) {
-		// TODO Auto-generated method stub
-		Connection connection = ConnectionSingleton.getInstance();
-		try {
-			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
-			preparedStatement.setString(1, contentToInsert.getTag());
-			return true;
-		}catch(SQLException e) {
-		return false;
-		}
-	}
-
-	@Override
 	public boolean update(Content contentToUpdate) {
-		// TODO Auto-generated method stub
 		Connection connection = ConnectionSingleton.getInstance();
 		
 		if(contentToUpdate.getId() == 0) {
@@ -111,7 +112,6 @@ public class ContentDAO  implements DAO<Content>{
 					contentToUpdate.setIdStudent(contentRead.getIdStudent());
 				}
 
-				// Update the user
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setString(1, contentToUpdate.getTag());
 				preparedStatement.setString(2, contentToUpdate.getTitle());
@@ -131,9 +131,7 @@ public class ContentDAO  implements DAO<Content>{
 		return false;
 	}
 
-	@Override
 	public boolean delete(int id) {
-		// TODO Auto-generated method stub
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_DELETE);
@@ -146,7 +144,5 @@ public class ContentDAO  implements DAO<Content>{
 		}
 		return false;
 	}
-	
-	
 
 }

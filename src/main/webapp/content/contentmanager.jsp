@@ -28,7 +28,7 @@
 			<th>Tag</th>
 			<th>Title</th>
 			<th>Text</th>
-			<th>idStudentt</th>
+			<th>IdStudentt</th>
 			<th></th>
 			<th></th>
 		</tr>
@@ -62,7 +62,7 @@
 		  <label for="tag">Tag</label>
 	    </div>
 	    <div class="col-75">
-	      <input type="text" id="content" name="tag" placeholder="inserisci tag">
+	      <input type="text" id="tag" name="tag" placeholder="inserisci tag">
     </div>
   </div>
   <div class="row">
@@ -70,7 +70,7 @@
 		  <label for="title">Title</label>
 	    </div>
 	    <div class="col-75">
-	      <input type="title" id="content" name="title" placeholder="inserisci title">
+	      <input type="text" id="title" name="title" placeholder="inserisci title">
     </div>
   </div>
   <div class="row">
@@ -78,7 +78,7 @@
 		  <label for="text">Text</label>
 	    </div>
 	    <div class="col-75">
-	      <input type="text" id="content" name="text" placeholder="inserisci text">
+	      <input type="text" id="text" name="text" placeholder="inserisci text">
     </div>
   </div>
   <div class="row">
@@ -86,7 +86,7 @@
      <label for="idstudent">idStudent</label>
     </div>
     <div class="col-75">
-      <input type="text" id="pass" name="idStudent" placeholder="inserisci idStudent"> 
+      <input type="text" id="idstudent" name="idStudent" placeholder="inserisci idStudent"> 
     </div>
   </div>
   
