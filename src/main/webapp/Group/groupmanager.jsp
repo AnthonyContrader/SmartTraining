@@ -20,6 +20,7 @@ import="it.contrader.dto.GroupDTO"%>
 	<table>
 		<tr>
 				<th>IdStudent</th>
+				<th>Groupcol</th>
 				<th>Id</th>			
 			</tr>
 			<%
@@ -30,6 +31,7 @@ import="it.contrader.dto.GroupDTO"%>
 			<td><a href=GroupServlet?mode=read&id=<%=g.getId() %>>
 				<%=g.getIdStudent() %>
 			</a></td>
+			<td><%=g.getGroupcol() %></td>
 			<td><%=g.getId()%> </td>
 			<td><a href=GroupServlet?mode&update=true&id=<%=g.getId() %>>Edit</a>
 			</td>
@@ -39,9 +41,9 @@ import="it.contrader.dto.GroupDTO"%>
 		<%
 			}
 		%>
-	
-	
 	</table>
+	
+	
 	<form id="floatright" action="GroupServlet?mode=insert" method="post">
 		<div class="row">
 			<div class="col-25">
@@ -52,10 +54,10 @@ import="it.contrader.dto.GroupDTO"%>
 			</div>
 			<div class="row">
 				<div class="col-75">
-					<label for="id">ID</label>
+					<label for="groupcol">Groupcol</label>
 				</div>	
 				<div class="col-75">
-					<input type="text" id="Id" placeholder="inserisci l'ID">
+					<input type="text" id="Groupcol" placeholder="inserisci il nome del Grouppo">
 				</div>		
 			</div>
 		</div>

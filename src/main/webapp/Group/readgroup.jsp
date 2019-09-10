@@ -16,10 +16,12 @@
 	<table>
 	<tr>
 		<th>idStudent</th>
+		<th>groupcol</th>
 		<th>id</th>
 	</tr>
 	<tr>
 		<td><%=g.getIdStudent()%></td>
+		<td><%=g.getGroupcol() %></td>
 		<td><%=g.getId() %></td>
 	</tr>
 	</table>

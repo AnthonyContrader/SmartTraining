@@ -16,14 +16,14 @@
 <%GroupDTO g = (GroupDTO) request.getAttribute("dto");%>
 
 
-<form id="floatleft" action="GroupServlet?mode=update&id=<%=g.getId()%>" method="post">
+<form id="floatleft" action="GroupServlet?mode=update&id=<%=g.getGroupcol()%>" method="post">
   <div class="row">
     <div class="col-25">
-     <label for="id">id</label>
+     <label for="groupcol">groupcol</label>
     </div>
     <div class="col-75">
       <input 
-      		 type="text" id="id" name="id" value=<%=g.getId()%>> 
+      		 type="text" id="groupcol" name="groupcol" value=<%=g.getGroupcol()%>> 
     </div>
   </div>
   <div class="row">
