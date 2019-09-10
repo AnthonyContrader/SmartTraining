@@ -19,6 +19,8 @@ public class ContentDAO  implements DAO<Content>{
 	private final String QUERY_UPDATE = "UPDATE content SET tag=?, title=?, text=?, idStudent=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM content WHERE id=?";
 
+	public ContentDAO() {
+	}
 	@Override
 	public List<Content> getAll() {
 		// TODO Auto-generated method stub

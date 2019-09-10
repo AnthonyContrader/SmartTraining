@@ -44,7 +44,7 @@
 	</div>
 	<div>
 		<div>
-			<label for="type">Text</label>
+			<label for="type">idStudent</label>
 		</div>
 			<div class="col-75">
 					<input type="number" id="idStudent" name="idStudent" value=<%c.getIdStudent(); %>>
