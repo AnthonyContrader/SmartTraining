@@ -11,14 +11,14 @@ public class GroupConverter implements Converter<Group, GroupDTO>{
 	@Override
 	public GroupDTO toDTO(Group group) {
 		// TODO Auto-generated method stub
-		GroupDTO groupDTO = new GroupDTO(group.getId(), group.getIdStudent());
+		GroupDTO groupDTO = new GroupDTO(group.getId(), group.getIdStudent(), group.getGroupcol());
 		return groupDTO;
 	}
 
 	@Override
 	public Group toEntity(GroupDTO groupDTO) {
 		// TODO Auto-generated method stub
-		Group group = new Group(groupDTO.getId(), groupDTO.getIdStudent());
+		Group group = new Group(groupDTO.getId(), groupDTO.getIdStudent(), groupDTO.getGroupcol());
 		return group;
 	}
 

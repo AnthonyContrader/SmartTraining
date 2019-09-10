@@ -14,9 +14,9 @@ import it.contrader.utils.ConnectionSingleton;
 public class GroupDAO implements DAO<Group> {
 	
 	private final String QUERY_ALL = "SELECT * FROM group";
-	private final String QUERY_CREATE = "INSERT INTO group (id, idStudent) VALUES (?,?)";
+	private final String QUERY_CREATE = "INSERT INTO group (idStudent, groupcol ) VALUES (?,?)";
 	private final String QUERY_READ = "SELECT * FROM group WHERE id=?";
-	private final String QUERY_UPDATE = "UPDATE group SET idStudent=? WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE group SET idStudent=? groupcol=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM group WHERE id=?";
 	
 	public GroupDAO() {
@@ -34,8 +34,9 @@ public class GroupDAO implements DAO<Group> {
 				
 				int id = resultSet.getInt("id");
 				int idStudent = resultSet.getInt("idStudent");
+				String groupcol = resultSet.getString("groupcol");
 				
-				group = new Group(id, idStudent);
+				group = new Group(id, idStudent, groupcol);
 				group.setId(id);
 				groupsList.add(group);
 			}
@@ -51,6 +52,7 @@ public class GroupDAO implements DAO<Group> {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 			preparedStatement.setInt(1, groupToInsert.getId());
 			preparedStatement.setInt(2, groupToInsert.getIdStudent());
+			preparedStatement.setString(3, groupToInsert.getGroupcol());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -70,10 +72,12 @@ public class GroupDAO implements DAO<Group> {
 			resultSet.next();
 			int id;
 			int idStudent;
+			String groupcol;
 
 			id = resultSet.getInt("id");
 			idStudent = resultSet.getInt("idStudent");
-			Group group = new Group(id, idStudent);
+			groupcol = resultSet.getString("groupcol");
+			Group group = new Group(id, idStudent, groupcol);
 			group.setId(resultSet.getInt("id"));
 
 			return group;
@@ -101,10 +105,15 @@ public class GroupDAO implements DAO<Group> {
 				if (groupToUpdate.getIdStudent() == 0) {
 					groupToUpdate.setIdStudent(groupRead.getIdStudent()); 
 				}
+				 
+				if (groupToUpdate.getGroupcol() == null || groupToUpdate.getGroupcol().equals(""));{
+					groupToUpdate.setGroupcol(groupRead.getGroupcol());
+				}
 
 				// Update the group
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
-				preparedStatement.setInt(1, groupToUpdate.getIdStudent());		
+				preparedStatement.setInt(1, groupToUpdate.getIdStudent());
+				preparedStatement.setString(1, groupToUpdate.getGroupcol());
 				preparedStatement.setInt(2, groupToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)

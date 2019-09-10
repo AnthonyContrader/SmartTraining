@@ -6,7 +6,7 @@ import="it.contrader.dto.GroupDTO"%>
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title"src/main/java/it/contrader/dto/TrainingDTO.java">Group Manager</title>
+<title>Group Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
