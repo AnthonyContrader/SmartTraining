@@ -12,7 +12,7 @@
 
 	<br>
 	<div class="main">
-	<%GroupDTO g = (GroupDTO) request.getAttribute("dto"); %>
+	<%GroupDTO u = (GroupDTO) request.getAttribute("dto"); %>
 	<table>
 	<tr>
 		<th>idStudent</th>
@@ -20,9 +20,9 @@
 		<th>id</th>
 	</tr>
 	<tr>
-		<td><%=g.getIdStudent()%></td>
-		<td><%=g.getGroupcol() %></td>
-		<td><%=g.getId() %></td>
+		<td><%=u.getIdStudent()%></td>
+		<td><%=u.getGroupcol() %></td>
+		<td><%=u.getId() %></td>
 	</tr>
 	</table>
 	<br>

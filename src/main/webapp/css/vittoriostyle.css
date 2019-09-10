@@ -15,7 +15,7 @@ div.text{
 	text-align: center;
 	font-size: 800%;
 	font-family: sans-serif;
-	color: #00a990;
+	color: #800080	;
 }
 
 .main {
@@ -30,8 +30,8 @@ div.text{
 .footer {
 	text-align: center;
 	font-size: 70%;
-	background-color: #00a990;
-	color: #ffffff;
+	background-color: #ffffff	;
+	color: #008080	;
 	width: 100%;
 	border-radius: 7px;
 	position: relative;
@@ -134,17 +134,17 @@ th, td {
 }
 
 tr:nth-child(even) {
-	background-color: #f2f2f2
+	background-color: #ffffff	
 }
 
 th {
-	background-color: #00a990;
-	color: #ffffff;
+	background-color: #ffffff	;
+	color: #000000;
 	
 }
 
 a:hover {
-	color: #999999;
+	color: #ffffff;
 }
 
 
@@ -155,16 +155,16 @@ select {
   padding: 14px 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #f2f2f2;
+  background-color: #ffffff	;
   margin: 8px 0;
 }
 select:hover {
-  background-color:  #00ccad;
+  background-color:  #ffffff;
 }
 
 option{
 width: 100%;
-  background-color: #ffff;
+  background-color: #ffffff	;
   color: #000000;
   padding: 14px 20px;
   margin: 8px 0;
@@ -179,8 +179,8 @@ width: 100%;
 
 input {
   width: 80%;
-  background-color: #ffff;
-  color: #000000;
+  background-color: #ffffff	;
+  color: #008080;
   padding: 14px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
@@ -190,7 +190,7 @@ input {
 }
 
 input:hover {
-  background-color:  #00ccad;
+  background-color:  #ffffff	;
 }
 
 
@@ -198,7 +198,7 @@ res {
 	float: left;
 	width: 25%;
 	margin-top: 3%;
-	background-color: #00a990;
+	background-color: #008080	;
 	border-radius: 7px;
 	color: #ffffff;
 	text-align:center;
@@ -239,7 +239,7 @@ label {
 button {
   -webkit-transition-duration: 0.1s; /* Safari */
   transition-duration: 0.1s;
-  background-color:  #00a990;
+  background-color:  #008080	;
   border: none;
   color: white;
   padding: 3% 3%;
@@ -257,7 +257,7 @@ button {
 }
 
 button:hover {
-  background-color:  #00ccad; 
+  background-color:  #008080	; 
   color: white;
 }
 
@@ -284,7 +284,7 @@ button:hover {
 
 /*Navigation bar*/
 div.navbar {
-	background: #00a990;
+	background: #008080	;
 	overflow: hidden;
 	position: sticky;
 	width: 100%;
@@ -304,16 +304,16 @@ div.navbar a {
 	text-decoration: none;
 	font-size: 17px;
 	border-radius: 7px;
-	background: #00a990;
+	background: #008080	;
 }
 
 div.navbar a:hover {
-	background: #00ccad;
+	background: #008080	;
 	color: #ffffff;
 }
 
 div.navbar a.active {
-	background: #00ccad;
+	background: #008080	;
 	color: #ffffff;
 }
 
