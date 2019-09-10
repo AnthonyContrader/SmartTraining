@@ -1,8 +1,11 @@
 package it.contrader.model;
 
 public class Group {
+	
 	private int id;
+	
 	private int idStudent;
+	
 	private String groupcol; 
 	
 	
@@ -10,7 +13,7 @@ public class Group {
 		
 	}
 
-	public Group(int idStudent, String groupcol) {
+	public Group (int idStudent, String groupcol) {
 		this.idStudent = idStudent;
 		this.groupcol = groupcol;
 	}

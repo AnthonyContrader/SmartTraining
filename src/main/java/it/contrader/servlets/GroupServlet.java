@@ -49,8 +49,9 @@ public class GroupServlet extends HttpServlet {
 				
 			}
 			else getServletContext().getRequestDispatcher("/group/updategroup.jsp").forward(request, response);
-			
+
 			break;
+			
 		case "INSERT":
 			int idStudent = Integer.parseInt(request.getParameter("idStudent").toString());
 			String groupcol = request.getParameter("groupcol").toString();

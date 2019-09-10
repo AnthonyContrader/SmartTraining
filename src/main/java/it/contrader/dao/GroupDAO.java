@@ -36,7 +36,7 @@ public class GroupDAO implements DAO<Group> {
 				int idStudent = resultSet.getInt("idStudent");
 				String groupcol = resultSet.getString("groupcol");
 				
-				group = new Group(id, idStudent, groupcol);
+				group = new Group(idStudent, groupcol);
 				group.setId(id);
 				groupsList.add(group);
 			}
@@ -50,9 +50,8 @@ public class GroupDAO implements DAO<Group> {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {	
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
-			preparedStatement.setInt(1, groupToInsert.getId());
-			preparedStatement.setInt(2, groupToInsert.getIdStudent());
-			preparedStatement.setString(3, groupToInsert.getGroupcol());
+			preparedStatement.setInt(1, groupToInsert.getIdStudent());
+			preparedStatement.setString(2, groupToInsert.getGroupcol());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -70,14 +69,12 @@ public class GroupDAO implements DAO<Group> {
 			preparedStatement.setInt(1, groupId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
-			int id;
 			int idStudent;
 			String groupcol;
 
-			id = resultSet.getInt("id");
 			idStudent = resultSet.getInt("idStudent");
 			groupcol = resultSet.getString("groupcol");
-			Group group = new Group(id, idStudent, groupcol);
+			Group group = new Group(idStudent, groupcol);
 			group.setId(resultSet.getInt("id"));
 
 			return group;
@@ -98,11 +95,7 @@ public class GroupDAO implements DAO<Group> {
 		if (!groupRead.equals(groupToUpdate)) {
 			try {
 				// Fill the groupToUpdate object
-				if (groupToUpdate.getId() == 0) {
-					groupToUpdate.setId(groupRead.getId()); 
-				}
-
-				if (groupToUpdate.getIdStudent() == 0) {
+			    if (groupToUpdate.getIdStudent() == 0) {
 					groupToUpdate.setIdStudent(groupRead.getIdStudent()); 
 				}
 				 
@@ -113,8 +106,8 @@ public class GroupDAO implements DAO<Group> {
 				// Update the group
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setInt(1, groupToUpdate.getIdStudent());
-				preparedStatement.setString(1, groupToUpdate.getGroupcol());
-				preparedStatement.setInt(2, groupToUpdate.getId());
+				preparedStatement.setString(2, groupToUpdate.getGroupcol());
+				preparedStatement.setInt(3, groupToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;

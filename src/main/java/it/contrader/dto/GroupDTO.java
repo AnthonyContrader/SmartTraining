@@ -1,8 +1,11 @@
 package it.contrader.dto;
 
 public class GroupDTO {
+	
 	private int id;
+	
 	private int idStudent;
+	
 	private String groupcol;
 	
 	public GroupDTO() {
@@ -13,6 +16,7 @@ public class GroupDTO {
 		this.idStudent = idStudent;
 		this.groupcol = groupcol;
 	}
+	
 	public GroupDTO(int id, int idStudent, String groupcol) {
 		this.id = id;
 		this.idStudent = idStudent;
@@ -28,7 +32,7 @@ public class GroupDTO {
 	}
 
 	public int getIdStudent() {
-		return idStudent;
+		return this.idStudent;
 	}
 
 	public void setIdStudent(int idStudent) {
