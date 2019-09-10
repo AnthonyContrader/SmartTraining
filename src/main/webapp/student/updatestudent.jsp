@@ -9,41 +9,37 @@
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
-<div class="navbar">
-  <a href="homeadmin.jsp">Home</a>
-  <a class="active" href="StudentServlet?mode=studentlist">Student</a>
-  <a href="LogoutServlet" id="logout">Logout</a>
-</div>
+
 <br>
 <div class="main">
 
-<%StudentDTO s = (StudentDTO) request.getAttribute("dto");%>
+<%StudentDTO u = (StudentDTO) request.getAttribute("dto");%>
 
 
-<form id="floatleft" action="StudentServlet?mode=update&id=<%=s.getId()%>" method="post">
+<form id="floatleft" action="StudentServlet?mode=update&id=<%=u.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="student">Name</label>
+      <label for="student">name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="student" name="name" value=<%=s.getName()%>>
+      <input type="text" id="student" name="name" value=<%=u.getName()%>>
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="text">Surname</label>
+     <label for="pass">Password</label>
     </div>
     <div class="col-75">
       <input
-			type="text" id="text" name="surname" value=<%=s.getSurname()%>> 
+			type="text" id="iduser" name="idUser" value=<%=u.getIdUser()%>> 
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="type">IdUser</label>
+      <label for="type">idUser</label>
     </div>
    		 <div class="col-75">
- 			
+ 		<input type="text" id="iduser" name="idUser" placeholder="inserisci idUser"> 
     	</div>
   </div>
       <button type="submit" >Edit</button>
