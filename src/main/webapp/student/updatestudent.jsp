@@ -19,7 +19,7 @@
 <form id="floatleft" action="StudentServlet?mode=update&id=<%=u.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="student">name</label>
+      <label for="student">Name</label>
     </div>
     <div class="col-75">
       <input type="text" id="student" name="name" value=<%=u.getName()%>>
@@ -31,7 +31,7 @@
     </div>
     <div class="col-75">
       <input
-			type="text" id="iduser" name="idUser" value=<%=u.getIdUser()%>> 
+			type="text" id="surname" name="surname" value=<%=u.getSurname()%>> 
     </div>
   </div>
   <div class="row">

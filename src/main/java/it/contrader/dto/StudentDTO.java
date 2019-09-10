@@ -54,6 +54,8 @@ public class StudentDTO {
 	public void setIdUser(int idUser) {
 		this.idUser = idUser;
 	}
-	
+	public String toString() {
+		return  id + "\t"  + name +"\t\t" +   surname + "\t\t" + idUser;
+	}
 
 }
