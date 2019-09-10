@@ -24,7 +24,7 @@ public class GroupDTO {
 	}
 
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
 	public void setId(int id) {
@@ -47,6 +47,9 @@ public class GroupDTO {
 		this.groupcol = groupcol;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return  id + "\t"  + idStudent +"\t\t" + groupcol;
+	}
 
 }

@@ -1,21 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="java.util.List"
-    import="it.contrader.dto.ContentDTO"%>
+pageEncoding="ISO-8859-1" import="java.util.List"
+import="it.contrader.dto.ContentDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Content Manager</title>
+<title"src/main/java/it/contrader/dto/ContentDTO.java"><title>Content Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
 
-<div class="navbar">
-  <a  href="homeadmin.jsp">Home</a>
-  <a class="active" href="ContentServlet?mode=contentlist">Contents</a>
-  <a href="LogoutServlet" id="logout">Logout</a>
-</div>
 <div class="main">
 	<%
 		List<ContentDTO> list = (List<ContentDTO>) request.getAttribute("list");
@@ -33,7 +28,7 @@
 			<th></th>
 		</tr>
 		<%
-			for (ContentDTO c : list) {
+		for (ContentDTO c : list) {
 			
 		%>
 		<tr>
@@ -94,7 +89,7 @@
 </form>
 
 </div>
-</br>
+<br>
 <%@ include file="../css/footer.jsp" %>
 </body>
 </html>

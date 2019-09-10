@@ -28,7 +28,6 @@ public class UserServlet extends HttpServlet {
 		request.setAttribute("list", listDTO);
 	}
 
-	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Service<UserDTO> service = new UserService();
 		String mode = request.getParameter("mode");
@@ -52,7 +51,6 @@ public class UserServlet extends HttpServlet {
 				 getServletContext().getRequestDispatcher("/user/readuser.jsp").forward(request, response);
 				
 			}
-			
 			else getServletContext().getRequestDispatcher("/user/updateuser.jsp").forward(request, response);
 			
 			break;
