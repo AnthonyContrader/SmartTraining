@@ -101,7 +101,7 @@ public class GroupDAO implements DAO<Group> {
 					groupToUpdate.setIdStudent(groupRead.getIdStudent()); 
 				}
 				 
-				if (groupToUpdate.getGroupcol() == null || groupToUpdate.getGroupcol().equals(""));{
+				if (groupToUpdate.getGroupcol() == null || groupToUpdate.getGroupcol().equals("")){
 					groupToUpdate.setGroupcol(groupRead.getGroupcol());
 				}
 
