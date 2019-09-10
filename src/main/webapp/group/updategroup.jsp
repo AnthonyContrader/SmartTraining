@@ -16,10 +16,10 @@
 <%GroupDTO g = (GroupDTO) request.getAttribute("dto");%>
 
 
-<form id="floatleft" action="GroupServlet?mode=update&id=<%=g.getGroupcol()%>" method="post">
+<form id="floatleft" action="GroupServlet?mode=update&id=<%=g.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
-     <label for="groupcol">groupcol</label>
+     <label for="groupcol">nomeGruppo</label>
     </div>
     <div class="col-75">
       <input 
@@ -32,7 +32,7 @@
     </div>
     <div class="col-75">
       <input 
-      		 type="text" id="group" name="idStudent" value=<%=g.getIdStudent()%>>
+      		 type="text" id="idStudent" name="idStudent" value=<%=g.getIdStudent()%>>
     </div>
   </div>
   

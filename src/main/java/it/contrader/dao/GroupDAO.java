@@ -16,7 +16,7 @@ public class GroupDAO implements DAO<Group> {
 	private final String QUERY_ALL = "SELECT * FROM smarttraining.group";
 	private final String QUERY_CREATE = "INSERT INTO smarttraining.group (idStudent, groupcol ) VALUES (?,?)";
 	private final String QUERY_READ = "SELECT * FROM smarttraining.group WHERE id=?";
-	private final String QUERY_UPDATE = "UPDATE smarttraining.group SET idStudent=? groupcol=? WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE smarttraining.group SET idStudent=?, groupcol=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM smarttraining.group WHERE id=?";
 	
 	public GroupDAO() {
@@ -27,7 +27,6 @@ public class GroupDAO implements DAO<Group> {
 		List<Group> groupsList = new ArrayList<>();
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
-			System.out.println("in getall");
 			Statement statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(QUERY_ALL);
 			Group group;
@@ -36,7 +35,6 @@ public class GroupDAO implements DAO<Group> {
 				int id = resultSet.getInt("id");
 				int idStudent = resultSet.getInt("idStudent");
 				String groupcol = resultSet.getString("groupcol");
-				System.out.println("groupcol: "+groupcol);
 				group = new Group(idStudent, groupcol);
 				group.setId(id);
 				groupsList.add(group);
@@ -91,10 +89,13 @@ public class GroupDAO implements DAO<Group> {
 		// Check if id is present
 		if (groupToUpdate.getId() == 0)
 			return false;
-
+		
+		
+		
 		Group groupRead = read(groupToUpdate.getId());
 		if (!groupRead.equals(groupToUpdate)) {
 			try {
+//fare modifica sul controllo del groupcol
 				// Fill the groupToUpdate object
 			    if (groupToUpdate.getIdStudent() == 0) {
 					groupToUpdate.setIdStudent(groupRead.getIdStudent()); 
@@ -110,10 +111,12 @@ public class GroupDAO implements DAO<Group> {
 				preparedStatement.setString(2, groupToUpdate.getGroupcol());
 				preparedStatement.setInt(3, groupToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
-				if (a > 0)
+				if (a > 0) {
 					return true;
-				else
+				}
+				else {
 					return false;
+				}
 
 			} catch (SQLException e) {
 				return false;
