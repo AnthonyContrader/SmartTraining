@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title"src/main/java/it/contrader/dto/StudentDTO.java">Student Manager</title>
+<title>Student Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
@@ -28,17 +28,17 @@
 			<th></th>
 		</tr>
 		<%
-			for (StudentDTO u : list) {
+			for (StudentDTO s : list) {
 		%>
 		<tr>
-			<td><a href=StudentServlet?mode=read&id=<%=u.getId()%>>
-					<%=u.getName()%>
+			<td><a href=StudentServlet?mode=read&id=<%=s.getId()%>>
+					<%=s.getName()%>
 			</a></td>
-			<td><%=u.getSurname()%></td>
-			<td><%=u.getIdUser()%></td>
-			<td><a href=StudentServlet?mode=read&update=true&id=<%=u.getId()%>>Edit</a>
+			<td><%=s.getSurname()%></td>
+			<td><%=s.getIdUser()%></td>
+			<td><a href=StudentServlet?mode=read&update=true&id=<%=s.getId()%>>Edit</a>
 			</td>
-			<td><a href=StudentServlet?mode=delete&id=<%=u.getId()%>>Delete</a>
+			<td><a href=StudentServlet?mode=delete&id=<%=s.getId()%>>Delete</a>
 			</td>
 
 		</tr>
@@ -52,7 +52,7 @@
 <form id="floatright" action="StudentServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="name">name</label>
+      <label for="name">Name</label>
     </div>
     <div class="col-75">
       <input type="text" id="name" name="name" placeholder="inserisci name">
@@ -70,7 +70,7 @@
   
   <div class="row">
     <div class="col-25">
-      <label for="type">idUser</label>
+      <label for="iduser">idUser</label>
     </div>
    		 <div class="col-75">
    		 <input type="text" id="iduser" name="idUser" placeholder="inserisci idUser"> 

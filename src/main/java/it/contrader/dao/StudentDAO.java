@@ -1,22 +1,14 @@
 package it.contrader.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.*;
 
 import it.contrader.utils.ConnectionSingleton;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import it.contrader.model.Student;
-import it.contrader.model.Training;
-
-import com.mysql.jdbc.Statement;
-
-import it.contrader.model.Student;
-import it.contrader.utils.ConnectionSingleton;
 
 public class StudentDAO implements DAO<Student> {
+	
 	private final String QUERY_ALL = "SELECT * FROM student";
 	private final String QUERY_CREATE = "INSERT INTO student (name, surname, idUser) VALUES (?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM student WHERE id=?";
@@ -26,11 +18,12 @@ public class StudentDAO implements DAO<Student> {
 	public StudentDAO() {
 		
 	}
+	
 	public List<Student> getAll(){
 		List<Student> studentsList= new ArrayList<>();
-		Connection connection=ConnectionSingleton.getInstance();
+		Connection connection = ConnectionSingleton.getInstance();
 		try {
-			java.sql.Statement statement=connection.createStatement();
+			Statement statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(QUERY_ALL);
 			Student student;
 			while (resultSet.next()) {
