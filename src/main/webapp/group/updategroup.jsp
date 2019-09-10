@@ -16,7 +16,7 @@
 <%GroupDTO g = (GroupDTO) request.getAttribute("dto");%>
 
 
-<form id="floatleft" action="GroupServlet?mode=update&id=<%=g.getGroupcol()%>" method="post">
+<form id="floatleft" action="GroupServlet?mode=update&id=<%=g.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
      <label for="groupcol">groupcol</label>
