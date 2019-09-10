@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import it.contrader.dto.GroupDTO;
-import it.contrader.dto.UserDTO;
 import it.contrader.service.Service;
 import it.contrader.service.GroupService;
 
@@ -33,7 +32,6 @@ public class GroupServlet extends HttpServlet {
 		int id;
 		boolean ans;
 		
-		Object idStudent;
 		switch (mode.toUpperCase()) {
 		
 		case "GROUPLIST":
@@ -54,8 +52,8 @@ public class GroupServlet extends HttpServlet {
 			
 			break;
 		case "INSERT":
-			int idStudent1 = Integer.parseInt(request.getParameter("idStudent"));
-			dto = new GroupDTO (idStudent1);
+			int idStudent = Integer.parseInt(request.getParameter("idStudent").toString());
+			dto = new GroupDTO (idStudent);
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
@@ -63,9 +61,9 @@ public class GroupServlet extends HttpServlet {
 			break;
 			
 		case "UPDATE":
-			idStudent1 = Integer.parseInt(request.getParameter("idStudent"));
+			idStudent = Integer.parseInt(request.getParameter("idStudent"));
 			id = Integer.parseInt(request.getParameter("id"));
-			dto = new GroupDTO (id, idStudent1);
+			dto = new GroupDTO (id, idStudent);
 			ans = service.update(dto);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/group/groupmanager.jsp").forward(request, response);

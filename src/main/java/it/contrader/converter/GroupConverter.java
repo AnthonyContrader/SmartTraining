@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.contrader.dto.GroupDTO;
-import it.contrader.dto.UserDTO;
 import it.contrader.model.Group;
 
 public class GroupConverter implements Converter<Group, GroupDTO>{

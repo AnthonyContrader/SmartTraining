@@ -6,16 +6,11 @@ import="it.contrader.dto.GroupDTO"%>
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Group Manager</title>
+<title"src/main/java/it/contrader/dto/TrainingDTO.java">Group Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
 
-<div class="navbar">
-	<a href="homeadmin.jsp">Home</a>
-	<a class="active" href="GroupServlet?mode=groupList">Group</a>
-	<a href="LogoutServlet" id="Logout">Logout</a>
-	</div>
 <div class="main">
 	<%
 		List<GroupDTO> list = (List<GroupDTO>) request.getAttribute("list");
@@ -50,14 +45,14 @@ import="it.contrader.dto.GroupDTO"%>
 	<form id="floatright" action="GroupServlet?mode=insert" method="post">
 		<div class="row">
 			<div class="col-25">
-				<lable for="group">IdStudent</lable>	
+				 <label for="group">idStudent</label>
 			</div>
 			<div class="col-75">
-				<input type="text" id="group" name="IdStudent" placeholdr="inserisci l'ID dello studente">
+				<input type="text" id="group" name="IdStudent" placeholder="inserisci l'ID dello studente">
 			</div>
 			<div class="row">
 				<div class="col-75">
-					<lable for="id">Id</lable>
+					<label for="id">ID</label>
 				</div>	
 				<div class="col-75">
 					<input type="text" id="Id" placeholder="inserisci l'ID">

@@ -9,11 +9,7 @@
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
-<div class="navbar">
-  <a href="homeadmin.jsp">Home</a>
-  <a class="active" href="GroupServlet?mode=grouplist">Groups</a>
-  <a href="LogoutServlet" id="logout">Logout</a>
-</div>
+
 <br>
 <div class="main">
 
@@ -23,11 +19,11 @@
 <form id="floatleft" action="GroupServlet?mode=update&id=<%=g.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
-     <label for="pass">id</label>
+     <label for="id">id</label>
     </div>
     <div class="col-75">
-      <input
-			type="text" id="id" name="id" value=<%=g.getId()%>> 
+      <input 
+      		 type="text" id="id" name="id" value=<%=g.getId()%>> 
     </div>
   </div>
   <div class="row">
@@ -35,9 +31,11 @@
       <label for="idStudent">idStudent</label>
     </div>
     <div class="col-75">
-      <input type="text" id="group" name="idStudent" value=<%=g.getIdStudent()%>>
+      <input 
+      		 type="text" id="group" name="idStudent" value=<%=g.getIdStudent()%>>
     </div>
   </div>
+  
       <button type="submit" >Edit</button>
 </form>
 

@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.contrader.model.Group;
-import it.contrader.model.User;
 import it.contrader.utils.ConnectionSingleton;
 
 public class GroupDAO implements DAO<Group> {
@@ -69,13 +68,12 @@ public class GroupDAO implements DAO<Group> {
 			preparedStatement.setInt(1, groupId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
-			int id, idStudent;
+			int id;
+			int idStudent;
 
 			id = resultSet.getInt("id");
 			idStudent = resultSet.getInt("idStudent");
-			
 			Group group = new Group(id, idStudent);
-			
 			group.setId(resultSet.getInt("id"));
 
 			return group;
@@ -106,8 +104,8 @@ public class GroupDAO implements DAO<Group> {
 
 				// Update the group
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
-				preparedStatement.setInt(1, groupToUpdate.getId());
-				preparedStatement.setInt(2, groupToUpdate.getIdStudent());		
+				preparedStatement.setInt(1, groupToUpdate.getIdStudent());		
+				preparedStatement.setInt(2, groupToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;

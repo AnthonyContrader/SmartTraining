@@ -9,11 +9,7 @@
 </head>
 <body>
 <%@include file="../css/header.jsp" %>
-<div class="navbar">
-	<a href="homeadmin.jsp">Home</a>
-	<a class="active" href="GroupServlet?mode=groupList">Groups</a>
-	<a href="LogoutServlet" id= "Logout">Logout</a>
-	</div>
+
 	<br>
 	<div class="main">
 	<%GroupDTO g = (GroupDTO) request.getAttribute("dto"); %>
