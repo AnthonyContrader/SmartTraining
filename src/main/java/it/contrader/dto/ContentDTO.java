@@ -75,7 +75,7 @@ public class ContentDTO {
 	public int getidTraining() {
 		return this.idTraining;
 	}
-	public void setIdStudent(int idTraining) {
+	public void setidTraining(int idTraining) {
 		this.idTraining = idTraining;
 	}
 
