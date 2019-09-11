@@ -1,58 +1,51 @@
 package it.contrader.dto;
 
+/**
+ * 
+ * @author Vittorio
+ *
+ *Il DTO è simile al Model ma può contenere meno attributi (ad esempio d dati sensibili
+ *che non devono arrivare alla View). GLi oggetti vengono trasformati da oggetti del Model
+ *a oggetti del DTO tramite i Converter (chiamati dai Service). 
+ *Per la descrizione della classe far riferimento al Model "User".
+ */
 public class ContentDTO {
 	
 	private int id;
+
+	private String tag;
 	
 	private String title;
 	
 	private String text;
 	
-	private String tag;
-	
 	private int idStudent;
+
 	
 	public ContentDTO() {
 		
 	}
-	
-	public ContentDTO(String title, String text, String tag, int idStudent) {
-		this.title = title;
+
+	public ContentDTO (String tag, String title, String text, int idStudent) {
 		this.tag = tag;
+		this.title = title;
 		this.text = text;
-		this.idStudent = idStudent;
+		this.idStudent=idStudent;
 	}
-	
-	public ContentDTO(int id, String title, String text, String tag, int idStudent) {
+
+	public ContentDTO (int id, String tag, String title, String text, int idStudent) {
 		this.id = id;
+		this.tag = tag;
 		this.title = title;
 		this.text = text;
-		this.tag = tag;
-		this.idStudent = idStudent;
+		this.idStudent=idStudent;
 	}
 
 	public int getId() {
 		return this.id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getTitle() {
-		return this.title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getText() {
-		return this.text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
 	}
 
 	public String getTag() {
@@ -63,16 +56,31 @@ public class ContentDTO {
 		this.tag = tag;
 	}
 
+
+	public String getTitle() {
+		return this.title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public String getText() {
+		return text;
+	}
 	public int getIdStudent() {
 		return this.idStudent;
 	}
-
 	public void setIdStudent(int idStudent) {
 		this.idStudent = idStudent;
 	}
-	
+
 	@Override
 	public String toString() {
-		return  id + "\t"  + title +"\t\t" +   text + "\t\t" + tag +"\t\t" + idStudent;
+		return  id + "\t"  + tag +"\t\t" +   title + "\t\t" + text + "\t\t" + idStudent;
 	}
 }

@@ -6,7 +6,7 @@ import="it.contrader.dto.ContentDTO"%>
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title"src/main/java/it/contrader/dto/ContentDTO.java"><title>Content Manager</title>
+<title>Content Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
@@ -23,9 +23,7 @@ import="it.contrader.dto.ContentDTO"%>
 			<th>Tag</th>
 			<th>Title</th>
 			<th>Text</th>
-			<th>IdStudentt</th>
-			<th></th>
-			<th></th>
+			<th>IdStudent</th>
 		</tr>
 		<%
 		for (ContentDTO c : list) {

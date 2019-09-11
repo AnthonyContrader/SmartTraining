@@ -1,18 +1,20 @@
 package it.contrader.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+
 import java.util.ArrayList;
 import java.util.List;
-
-
-import it.contrader.model.Content;
 import it.contrader.utils.ConnectionSingleton;
+import it.contrader.model.Content;
 
-public class ContentDAO  implements DAO<Content>{
+/**
+ * 
+ * @author Vittorio
+ *
+ *Per i dettagli della classe vedi Guida sez 6: DAO
+ */
+public class ContentDAO implements DAO<Content> {
+
 	private final String QUERY_ALL = "SELECT * FROM content";
 	private final String QUERY_CREATE = "INSERT INTO content (tag, title, text, idStudent) VALUES (?,?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM content WHERE id=?";
@@ -20,11 +22,11 @@ public class ContentDAO  implements DAO<Content>{
 	private final String QUERY_DELETE = "DELETE FROM content WHERE id=?";
 
 	public ContentDAO() {
+
 	}
-	@Override
+
 	public List<Content> getAll() {
-		// TODO Auto-generated method stub
-		List <Content> contentsList = new ArrayList<>();
+		List<Content> contentsList = new ArrayList<>();
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			Statement statement = connection.createStatement();
@@ -40,12 +42,12 @@ public class ContentDAO  implements DAO<Content>{
 				content.setId(id);
 				contentsList.add(content);
 			}
-		}catch (SQLException e){
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return contentsList;
 	}
-	
+
 	public boolean insert(Content contentToInsert) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {	
@@ -53,7 +55,7 @@ public class ContentDAO  implements DAO<Content>{
 			preparedStatement.setString(1, contentToInsert.getTag());
 			preparedStatement.setString(2, contentToInsert.getTitle());
 			preparedStatement.setString(3, contentToInsert.getText());
-			preparedStatement.setInt(4, contentToInsert.getIdStudent());
+			preparedStatement.setInt (4, contentToInsert.getIdStudent());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -61,7 +63,7 @@ public class ContentDAO  implements DAO<Content>{
 		}
 
 	}
-	
+
 	public Content read(int contentId) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
@@ -77,7 +79,7 @@ public class ContentDAO  implements DAO<Content>{
 			tag = resultSet.getString("tag");
 			title = resultSet.getString("title");
 			text = resultSet.getString("text");
-			idStudent = resultSet.getInt("idStudent");
+			idStudent=resultSet.getInt("idStudent");
 			Content content = new Content(tag, title, text, idStudent);
 			content.setId(resultSet.getInt("id"));
 
@@ -90,11 +92,11 @@ public class ContentDAO  implements DAO<Content>{
 
 	public boolean update(Content contentToUpdate) {
 		Connection connection = ConnectionSingleton.getInstance();
-		
-		if(contentToUpdate.getId() == 0) {
+
+		// Check if id is present
+		if (contentToUpdate.getId() == 0)
 			return false;
-		}
-		
+
 		Content contentRead = read(contentToUpdate.getId());
 		if (!contentRead.equals(contentToUpdate)) {
 			try {
@@ -110,27 +112,31 @@ public class ContentDAO  implements DAO<Content>{
 				if (contentToUpdate.getText() == null || contentToUpdate.getText().equals("")) {
 					contentToUpdate.setText(contentRead.getText());
 				}
-				if (contentToUpdate.getIdStudent() == 0) {
-					contentToUpdate.setIdStudent(contentRead.getIdStudent());
-				}
+				if (contentToUpdate.getIdStudent() == 0 ) {
+					contentToUpdate.setIdStudent (contentRead.getIdStudent());
 
+				// Update the user
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setString(1, contentToUpdate.getTag());
 				preparedStatement.setString(2, contentToUpdate.getTitle());
 				preparedStatement.setString(3, contentToUpdate.getText());
-				preparedStatement.setInt(4, contentToUpdate.getIdStudent());
+				preparedStatement.setInt (4, contentToUpdate.getIdStudent());
+				preparedStatement.setInt(5, contentToUpdate.getId());
+				
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;
 				else
 					return false;
-
-			} catch (SQLException e) {
+				}
+			}
+			catch (SQLException e) {
 				return false;
 			}
 		}
 
 		return false;
+
 	}
 
 	public boolean delete(int id) {
@@ -146,5 +152,6 @@ public class ContentDAO  implements DAO<Content>{
 		}
 		return false;
 	}
+
 
 }

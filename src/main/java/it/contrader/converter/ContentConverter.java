@@ -6,22 +6,38 @@ import java.util.List;
 import it.contrader.dto.ContentDTO;
 import it.contrader.model.Content;
 
-
-
-
-public class ContentConverter implements Converter<Content, ContentDTO> {
+/**
+ * 
+ * @author Vittorio
+ * 
+ * Implementando questa l'interfaccia converter la classe UserConverter è OBBLIGATA ad implementarne i metodi
+ *
+ */
+public class ContentConverter  implements Converter<Content, ContentDTO> {
 	
+	/**
+	 * Crea un oggetto di tipo UserDTO e lo riempie con i campi del parametro user di tipo User.
+	 * Notare l'uso del metodo get() per ottenere il valore dell'attributo-
+	 */
 	@Override
 	public ContentDTO toDTO(Content content) {
-		ContentDTO contentDTO = new ContentDTO(content.getId(), content.getTitle(), content.getText(), content.getTag(), content.getIdStudent());
+		ContentDTO contentDTO = new ContentDTO(content.getId(), content.getTag(), content.getTitle(), content.getText(), content.getIdStudent());
 		return contentDTO;
 	}
-	
+
+	/**
+	 * Crea un oggetto di tipo User e lo riempie con i campi del parametro user di tipo UserDTO.
+	 * Notare l'uso del metodo get() per ottenere il valore dell'attributo-
+	 */
+	@Override
 	public Content toEntity(ContentDTO contentDTO) {
-		Content content = new Content(contentDTO.getId(), contentDTO.getTitle(), contentDTO.getText(), contentDTO.getTag(), contentDTO.getIdStudent());
+		Content content = new Content (contentDTO.getId(), contentDTO.getTag(), contentDTO.getTitle(), contentDTO.getText(), contentDTO.getIdStudent());
 		return content;
 	}
 	
+	/**
+	 * Metodo per convertire le liste di User.
+	 */
 	@Override
 	public List<ContentDTO> toDTOList(List<Content> contentList) {
 		//Crea una lista vuota.
@@ -36,4 +52,6 @@ public class ContentConverter implements Converter<Content, ContentDTO> {
 		return contentDTOList;
 	}
 
+	
+	
 }

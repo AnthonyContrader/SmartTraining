@@ -30,7 +30,7 @@
 		</div>
 		<div class="col-75">
 			<input 
-					type="text" id="title" name="title" value=<%c.getTitle(); %>>
+					type="text" id="title" name="title" value<%=c.getTitle() %>>
 		</div>
 	</div>
 	<div class="row">
@@ -39,7 +39,7 @@
 		</div>
 		<div class="col-75">
 			<input 
-					type="text" id="text" name="text" value=<%c.getText(); %>>
+					type="text" id="text" name="text" value<%=c.getText() %>>
 		</div>
 	</div>
 	<div>
@@ -47,7 +47,7 @@
 			<label for="type">idStudent</label>
 		</div>
 			<div class="col-75">
-					<input type="number" id="idStudent" name="idStudent" value=<%c.getIdStudent(); %>>
+					<input type="number" id="idStudent" name="idStudent" value<%=c.getIdStudent() %>>
 			</div>
 	</div>
 		<button type="submit">Edit</button>
