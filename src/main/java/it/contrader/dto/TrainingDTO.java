@@ -5,7 +5,6 @@ public class TrainingDTO {
 	private int id;
 	private String nameTraining;
 	private int idGroup;
-	private int idStudent;
 	
 	public TrainingDTO() {
 		
@@ -13,7 +12,6 @@ public class TrainingDTO {
 	public TrainingDTO(String nameTraining, int idGroup, int idStudent) {
 		this.nameTraining=nameTraining;
 		this.idGroup=idGroup;
-		this.idStudent=idStudent;
 	}
 
 	
@@ -21,7 +19,6 @@ public class TrainingDTO {
 		this.id=id;
 		this.nameTraining=nameTraining;
 		this.idGroup=idGroup;
-		this.idStudent=idStudent;
 	}
 	public int getId() {
 		return this.id;
@@ -41,15 +38,9 @@ public class TrainingDTO {
 	public void setIdGroup(int idGroup) {
 		this.idGroup=idGroup;
 	}
-	public int getIdStudent() {
-		return this.idStudent;
-	}
-	public void setIdStudent(int idStudent) {
-		this.idStudent=idStudent;
-		
-	}
+	
 	public String toString() {
-		return  id + "\t"  + nameTraining +"\t\t" +   idGroup + "\t\t" + idStudent;
+		return  id + "\t"  + nameTraining +"\t\t" +   idGroup + "\t\t";
 }
 
 
