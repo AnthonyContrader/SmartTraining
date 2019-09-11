@@ -76,7 +76,7 @@ import="it.contrader.dto.ContentDTO"%>
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="idtraining">idStudent</label>
+     <label for="idtraining">idTrainingt</label>
     </div>
     <div class="col-75">
       <input type="text" id="idtraining" name="idTraining" placeholder="inserisci idTraining"> 
