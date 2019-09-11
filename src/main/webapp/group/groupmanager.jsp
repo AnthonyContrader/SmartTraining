@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1" import="java.util.List"
-import="it.contrader.dto.GroupDTO"%>
+import="it.contrader.dto.GroupDTO" import="it.contrader.dto.StudentDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +14,7 @@ import="it.contrader.dto.GroupDTO"%>
 <div class="main">
 	<%
 		List<GroupDTO> list = (List<GroupDTO>) request.getAttribute("list");
+	    List<StudentDTO> studlist = (List<StudentDTO>) request.getAttribute("studlist");
 	%>
 <br>
 
@@ -49,9 +50,11 @@ import="it.contrader.dto.GroupDTO"%>
 			<div class="col-25">
 				 <label for="group">idStudent</label>
 			</div>
-			<div class="col-75">
-				<input type="text" id="group" name="idStudent" placeholder="inserisci l'ID dello studente">
-			</div>
+			<select name="idStudent">
+      	<% for (StudentDTO s : studlist){ %>
+      		<option  value = <%= s.getId() %>> <%= s.getName() %></option>
+      	<% } %>
+      </select>
 			<div class="row">
 				<div class="col-75">
 					<label for="groupcol">Groupcol</label>

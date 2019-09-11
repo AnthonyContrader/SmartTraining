@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import it.contrader.dto.GroupDTO;
+import it.contrader.dto.StudentDTO;
 import it.contrader.service.Service;
+import it.contrader.service.StudentService;
 import it.contrader.service.GroupService;
 
 public class GroupServlet extends HttpServlet {
@@ -23,6 +25,10 @@ public class GroupServlet extends HttpServlet {
 		Service<GroupDTO> service = new GroupService();
 		List<GroupDTO>listDTO = service.getAll();
 		request.setAttribute("list", listDTO);
+		
+		Service<StudentDTO> services = new StudentService();
+		List<StudentDTO>studlistDTO = services.getAll();
+		request.setAttribute("studlist", studlistDTO);
 	}
 	
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -53,8 +59,9 @@ public class GroupServlet extends HttpServlet {
 			break;
 			
 		case "INSERT":			
-			int idStudent = Integer.parseInt(request.getParameter("idStudent").toString());
+			
 			String groupcol = request.getParameter("groupcol").toString();
+			int idStudent = Integer.parseInt(request.getParameter("idStudent").toString());
 			dto = new GroupDTO (idStudent, groupcol);
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
