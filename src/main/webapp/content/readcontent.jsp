@@ -19,9 +19,9 @@
 
 <table>
 	<tr> 
-		<th>tag</th>
 		<th>title</th>
 		<th>text</th>
+		<th>tag</th>
 		<th>idStudent</th>
 	</tr>
 	<tr>

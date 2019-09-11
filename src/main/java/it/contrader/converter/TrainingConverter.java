@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.contrader.dto.TrainingDTO;
-import it.contrader.dto.UserDTO;
 import it.contrader.model.Training;
-import it.contrader.model.User;
 
 public class TrainingConverter implements Converter <Training, TrainingDTO>{
 	
