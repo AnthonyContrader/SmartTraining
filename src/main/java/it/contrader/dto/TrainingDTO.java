@@ -9,13 +9,13 @@ public class TrainingDTO {
 	public TrainingDTO() {
 		
 	}
-	public TrainingDTO(String nameTraining, int idGroup, int idStudent) {
+	public TrainingDTO(String nameTraining, int idGroup) {
 		this.nameTraining=nameTraining;
 		this.idGroup=idGroup;
 	}
 
 	
-	public TrainingDTO (int id, String nameTraining, int idGroup, int idStudent) {
+	public TrainingDTO (int id, String nameTraining, int idGroup) {
 		this.id=id;
 		this.nameTraining=nameTraining;
 		this.idGroup=idGroup;
