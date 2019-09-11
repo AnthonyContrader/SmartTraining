@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import it.contrader.dto.GroupDTO;
 import it.contrader.dto.TrainingDTO;
+import it.contrader.service.GroupService;
 import it.contrader.service.Service;
 import it.contrader.service.TrainingService;
 
@@ -18,8 +20,11 @@ public class TrainingServlet extends HttpServlet {
 		}
 	public void updateList(HttpServletRequest request) {
 		Service<TrainingDTO> service = new TrainingService();
+		Service<GroupDTO> groupservice = new GroupService();
+		List<GroupDTO>grouplistDTO=groupservice.getAll();
 		List<TrainingDTO>listDTO = service.getAll();
 		request.setAttribute("list", listDTO);
+		request.setAttribute("listgroup", grouplistDTO);
 	}
 
 	@Override
