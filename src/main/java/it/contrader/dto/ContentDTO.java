@@ -19,26 +19,26 @@ public class ContentDTO {
 	
 	private String text;
 	
-	private int idTraining;
+	private int IdTraining;
 
 	
 	public ContentDTO() {
 		
 	}
 
-	public ContentDTO (String tag, String title, String text, int idTraining) {
+	public ContentDTO (String tag, String title, String text, int IdTraining) {
 		this.tag = tag;
 		this.title = title;
 		this.text = text;
-		this.idTraining=idTraining;
+		this.IdTraining=IdTraining;
 	}
 
-	public ContentDTO (int id, String tag, String title, String text, int idTraining) {
+	public ContentDTO (int id, String tag, String title, String text, int IdTraining) {
 		this.id = id;
 		this.tag = tag;
 		this.title = title;
 		this.text = text;
-		this.idTraining=idTraining;
+		this.IdTraining=IdTraining;
 	}
 
 	public int getId() {
@@ -72,15 +72,15 @@ public class ContentDTO {
 	public String getText() {
 		return text;
 	}
-	public int getidTraining() {
-		return this.idTraining;
+	public int getIdTraining() {
+		return this.IdTraining;
 	}
-	public void setidTraining(int idTraining) {
-		this.idTraining = idTraining;
+	public void setIdTraining(int IdTraining) {
+		this.IdTraining = IdTraining;
 	}
 
 	@Override
 	public String toString() {
-		return  id + "\t"  + tag +"\t\t" +   title + "\t\t" + text + "\t\t" + idTraining;
+		return  id + "\t"  + tag +"\t\t" +   title + "\t\t" + text + "\t\t" + IdTraining;
 	}
 }
