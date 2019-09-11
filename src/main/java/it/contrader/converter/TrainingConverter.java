@@ -10,13 +10,13 @@ public class TrainingConverter implements Converter <Training, TrainingDTO>{
 	
 	@Override
 	public TrainingDTO toDTO(Training training) {
-		TrainingDTO trainingDTO = new TrainingDTO(training.getId(), training.getNameTraining(), training.getIdGroup(), training.getIdStudent());
+		TrainingDTO trainingDTO = new TrainingDTO(training.getId(), training.getNameTraining(), training.getIdGroup());
 		return trainingDTO;
 	}
 
 	@Override
 	public Training toEntity(TrainingDTO trainingDTO) {
-		Training training = new Training (trainingDTO.getId(), trainingDTO.getNameTraining(), trainingDTO.getIdGroup(), trainingDTO.getIdStudent());
+		Training training = new Training (trainingDTO.getId(), trainingDTO.getNameTraining(), trainingDTO.getIdGroup());
 		return training;
 	}
 	
