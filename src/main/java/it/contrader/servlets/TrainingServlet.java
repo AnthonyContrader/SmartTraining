@@ -54,8 +54,7 @@ public class TrainingServlet extends HttpServlet {
 		case "INSERT":
 			String nameTraining = request.getParameter("nameTraining").toString();
 			int idGroup = Integer.parseInt(request.getParameter("idGroup").toString());
-			int idStudent = Integer.parseInt(request.getParameter("idStudent").toString());
-			dto = new TrainingDTO (nameTraining,idGroup,idStudent);
+			dto = new TrainingDTO (nameTraining,idGroup);
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
@@ -65,9 +64,8 @@ public class TrainingServlet extends HttpServlet {
 		case "UPDATE":
 			nameTraining = request.getParameter("nameTraining");
 			idGroup = Integer.parseInt(request.getParameter("idGroup"));
-			idStudent = Integer.parseInt(request.getParameter("idStudent"));
 			id = Integer.parseInt(request.getParameter("id"));
-			dto = new TrainingDTO (id,nameTraining, idGroup, idStudent);
+			dto = new TrainingDTO (id, nameTraining, idGroup);
 			ans = service.update(dto);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/training/trainingmanager.jsp").forward(request, response);

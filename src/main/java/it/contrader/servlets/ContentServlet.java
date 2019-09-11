@@ -73,6 +73,7 @@ public class ContentServlet extends HttpServlet {
 			text = request.getParameter("text");
 			idStudent = Integer.parseInt(request.getParameter("idStudent"));
 			id = Integer.parseInt(request.getParameter("id"));
+			System.out.println(id);
 			dto = new ContentDTO (id,tag, title, text, idStudent);
 			ans = service.update(dto);
 			updateList(request);
