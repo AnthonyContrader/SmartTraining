@@ -28,7 +28,7 @@
 		<td><%=c.getTag()%></td>
 		<td> <%=c.getTitle()%></td>
 		<td> <%=c.getText()%></td>
-		<td> <%=c.getIdStudent()%></td>
+		<td> <%=c.getIdTraining()%></td>
 	</tr>	
 </table>
 

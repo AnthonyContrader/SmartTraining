@@ -47,7 +47,7 @@
 			<label for="type">idStudent</label>
 		</div>
 			<div class="col-75">
-					<input type="number" id="idStudent" name="idStudent" value=<%=c.getIdStudent() %>>
+					<input type="number" id="idStudent" name="idStudent" value=<%=c.getIdTraining() %>>
 			</div>
 	</div>
 		<button type="submit">Edit</button>

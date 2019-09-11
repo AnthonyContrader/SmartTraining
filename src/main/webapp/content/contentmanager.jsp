@@ -23,7 +23,7 @@ import="it.contrader.dto.ContentDTO"%>
 			<th>Tag</th>
 			<th>Title</th>
 			<th>Text</th>
-			<th>IdStudent</th>
+			<th>IdTraining</th>
 		</tr>
 		<%
 		for (ContentDTO c : list) {
@@ -35,7 +35,7 @@ import="it.contrader.dto.ContentDTO"%>
 			</a></td>
 			<td><%=c.getTitle()%></td>
 			<td><%=c.getText()%></td>
-			<td><%=c.getIdStudent()%></td>
+			<td><%=c.getIdTraining()%></td>
 			<td><a href=ContentServlet?mode=read&update=true&id=<%=c.getId()%>>Edit</a>
 			</td>
 			<td><a href=ContentServlet?mode=delete&id=<%=c.getId()%>>Delete</a>
