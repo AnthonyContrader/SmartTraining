@@ -87,6 +87,7 @@ public class Content {
 	}
 
 	//Metodo per il confronto degli oggetti
+	@SuppressWarnings("unlikely-arg-type")
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

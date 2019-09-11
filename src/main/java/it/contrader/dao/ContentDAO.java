@@ -114,6 +114,7 @@ public class ContentDAO implements DAO<Content> {
 				}
 				if (contentToUpdate.getIdStudent() == 0 ) {
 					contentToUpdate.setIdStudent (contentRead.getIdStudent());
+				}
 
 				// Update the user
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
@@ -129,7 +130,7 @@ public class ContentDAO implements DAO<Content> {
 				else
 					return false;
 				}
-			}
+			
 			catch (SQLException e) {
 				return false;
 			}
