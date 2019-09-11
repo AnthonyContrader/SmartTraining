@@ -22,18 +22,18 @@
 	<table>
 		<tr>
 			<th>nameTraining</th>
-			<th>idGroup</th>
+			<th>GroupName</th>
 			<th></th>
 			<th></th>
 		</tr>
 		<%
-			for (TrainingDTO u : list) {
+			for (TrainingDTO u : list ) {
 		%>
 		<tr>
 			<td><a href=TrainingServlet?mode=read&id=<%=u.getId()%>>
 					<%=u.getNameTraining()%>
 			</a></td>
-			<td><%=u.getIdGroup()%></td>
+			<td><%=u.getIdGroup() %></td>
 			<td><a href=TrainingServlet?mode=read&update=true&id=<%=u.getId()%>>Edit</a>
 			</td>
 			<td><a href=TrainingServlet?mode=delete&id=<%=u.getId()%>>Delete</a>
