@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import it.contrader.dto.StudentDTO;
+import it.contrader.dto.UserDTO;
 import it.contrader.service.Service;
 import it.contrader.service.StudentService;
+import it.contrader.service.UserService;
 
 public class StudentServlet extends HttpServlet {
 	private static final long serialVersionUID=1L;
@@ -22,6 +24,9 @@ public class StudentServlet extends HttpServlet {
 		Service<StudentDTO> service = new StudentService();
 		List<StudentDTO>listDTO = service.getAll();
 		request.setAttribute("list", listDTO);
+		Service<UserDTO> userservice = new UserService();
+		List<UserDTO> userlistDTO = userservice.getAll();
+		request.setAttribute("listUser", userlistDTO);
 	}
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

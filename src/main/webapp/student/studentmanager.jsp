@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="java.util.List"
-	import="it.contrader.dto.StudentDTO"%>
+	import="it.contrader.dto.StudentDTO"
+	import ="it.contrader.dto.UserDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +16,7 @@
 <div class="main">
 	<%
 		List<StudentDTO> list = (List<StudentDTO>) request.getAttribute("list");
+		List<UserDTO> listUser = (List<UserDTO>) request.getAttribute("listUser");
 	%>
 
 <br>
@@ -73,7 +75,15 @@
       <label for="iduser">idUser</label>
     </div>
    		 <div class="col-75">
-   		 <input type="text" id="iduser" name="idUser" placeholder="inserisci idUser"> 
+   		 	<select name="idUser">
+			<%
+				for (UserDTO u : listUser) {
+			%>
+			<option value=<%=u.getId()%>><%=u.getUsername()%></option>
+			<%
+				}
+			%>
+   		 	</select> 
     	</div>
   </div>
   
