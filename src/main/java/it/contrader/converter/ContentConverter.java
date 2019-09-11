@@ -21,7 +21,7 @@ public class ContentConverter  implements Converter<Content, ContentDTO> {
 	 */
 	@Override
 	public ContentDTO toDTO(Content content) {
-		ContentDTO contentDTO = new ContentDTO(content.getId(), content.getTag(), content.getTitle(), content.getText(), content.getIdStudent());
+		ContentDTO contentDTO = new ContentDTO(content.getId(), content.getTag(), content.getTitle(), content.getText(), content.getIdTraining());
 		return contentDTO;
 	}
 
@@ -31,7 +31,7 @@ public class ContentConverter  implements Converter<Content, ContentDTO> {
 	 */
 	@Override
 	public Content toEntity(ContentDTO contentDTO) {
-		Content content = new Content (contentDTO.getId(), contentDTO.getTag(), contentDTO.getTitle(), contentDTO.getText(), contentDTO.getIdStudent());
+		Content content = new Content (contentDTO.getId(), contentDTO.getTag(), contentDTO.getTitle(), contentDTO.getText(), contentDTO.getIdTraining());
 		return content;
 	}
 	
