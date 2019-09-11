@@ -8,12 +8,12 @@ public class Training {
 	public Training() {
 		
 	}
-	 public Training (String nameTraining, int idGroup, int idStudent) {
+	 public Training (String nameTraining, int idGroup) {
 		 this.nameTraining=nameTraining;
 		 this.idGroup=idGroup;
 	 }
 	 
-	 public Training (int id, String nameTraining, int idGroup, int idStudent) {
+	 public Training (int id, String nameTraining, int idGroup) {
 		 this.id=id;
 		 this.nameTraining=nameTraining;
 		 this.idGroup=idGroup;
