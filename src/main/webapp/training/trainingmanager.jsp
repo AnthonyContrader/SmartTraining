@@ -6,7 +6,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title"src/main/java/it/contrader/dto/TrainingDTO.java">Training Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
