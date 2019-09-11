@@ -76,10 +76,10 @@ import="it.contrader.dto.ContentDTO"%>
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="idstudent">idStudent</label>
+     <label for="idtraining">idStudent</label>
     </div>
     <div class="col-75">
-      <input type="text" id="idstudent" name="idStudent" placeholder="inserisci idStudent"> 
+      <input type="text" id="idtraining" name="idTraining" placeholder="inserisci idTraining"> 
     </div>
   </div>
   
