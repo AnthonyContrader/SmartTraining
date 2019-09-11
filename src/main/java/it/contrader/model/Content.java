@@ -15,7 +15,7 @@ public class Content {
 	
 	private String text;
 	
-	private int idStudent;
+	private int idTraining;
 
 	/**
 	 * Definisco i due costruttori, uno vuoto e uno con tre parametri per costrire oggetti di tipo User
@@ -24,19 +24,19 @@ public class Content {
 		
 	}
 
-	public Content (String tag, String title, String text, int idStudent) {
+	public Content (String tag, String title, String text, int idTraining) {
 		this.tag = tag;
 		this.title = title;
 		this.text = text;
-		this.idStudent=idStudent;
+		this.idTraining = idTraining;
 	}
 
-	public Content (int id, String tag, String title, String text, int idStudent) {
+	public Content (int id, String tag, String title, String text, int idTraining) {
 		this.id = id;
 		this.tag = tag;
 		this.title = title;
 		this.text = text;
-		this.idStudent=idStudent;
+		this.idTraining = idTraining;
 	}
 
 	/**
@@ -73,17 +73,17 @@ public class Content {
 	public String getText() {
 		return text;
 	}
-	public int getIdStudent() {
-		return this.idStudent;
+	public int getIdTraining() {
+		return this.idTraining;
 	}
-	public void setIdStudent(int idStudent) {
-		this.idStudent = idStudent;
+	public void setIdTraining(int idTraining) {
+		this.idTraining = idTraining;
 	}
 
 	//Trasforma un oggetto in una stringa
 	@Override
 	public String toString() {
-		return  id + "\t"  + tag +"\t\t" +   title + "\t\t" + text +  "\t\t" + idStudent;
+		return  id + "\t"  + tag +"\t\t" +   title + "\t\t" + text +  "\t\t" + idTraining;
 	}
 
 	//Metodo per il confronto degli oggetti
@@ -114,10 +114,10 @@ public class Content {
 				return false;
 		} else if (!text.equals(other.text))
 			return false;
-		if (idStudent == 0) {
-			if (other.idStudent != 0)
+		if (idTraining == 0) {
+			if (other.idTraining != 0)
 				return false;
-		} else if (!(Integer.toString(idStudent).equals(other.idStudent)))
+		} else if (!(Integer.toString(idTraining).equals(other.idTraining)))
 			return false;
 		return true;
 	}

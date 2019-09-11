@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="java.util.List"
-    import="it.contrader.dto.UserDTO"%>
+    import="it.contrader.dto.UserDTO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +9,16 @@
 <link href="css/vittoriostyle.css" rel="stylesheet">
 </head>
 <body>
-<%@include file="css/header.jsp"%>
-<div class="navbar">
+
+
+<%@include file="css/headerStudent.jsp"%>
+<!--  <div class="navbar">
   <a class="active" href="homeadmin.jsp">Home</a>
   <a href="LogoutServlet" id="logout">Logout</a>
-</div>
+</div>-->
 <div class="main">
 <h1>Welcome ${user.getUsername()}</h1>
-
+	
 
 
 </div>
