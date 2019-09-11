@@ -21,12 +21,12 @@
 	<tr> 
 		<th>nameTraining</th>
 		<th>idGroup</th>
-		<th>idStudent</th>
+		
 	</tr>
 	<tr>
 		<td><%=u.getNameTraining()%></td>
 		<td> <%=u.getIdGroup()%></td>
-		<td> <%=u.getIdStudent()%></td>
+		
 	</tr>	
 </table>
 
