@@ -72,7 +72,7 @@ public class ContentDTO {
 	public String getText() {
 		return text;
 	}
-	public int getIdStudent() {
+	public int getidTraining() {
 		return this.idTraining;
 	}
 	public void setIdStudent(int idTraining) {
