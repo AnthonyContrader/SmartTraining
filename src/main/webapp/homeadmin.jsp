@@ -30,4 +30,13 @@
 <%@ include file="css/footer.jsp" %>
 
 </body>
+<head>
+	<title>mybottonnews</title>
+	<link rel="stylesheet" type="text/css" href="css/vittoriostyle.css"/>
+</head>
+<body>
+<a href="css/vittoriostyle.css">
+	<div class="mybotton"> News </div>
+</a>
+</body>
 </html>

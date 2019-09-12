@@ -325,3 +325,24 @@ div.navbar a.active {
 	width: 8%;
 }
 }
+.mybotton{
+	width: 200px;
+	height: 80px;
+	padding: 3% 3%;
+	background-color: #960018;
+	color: #960018;
+	text-align: centre;
+	font-size: 130%;
+	line-heigh:80px;
+	text-transform: uppercase;
+	border-radius: 20px;
+	margin-left: 10%;
+  	margin-right: 10%;
+ 	margin-top: 5%;
+ 	margin-bottom: 5%;
+ 	cursor: pointer;
+}
+
+  
+  
+ 
