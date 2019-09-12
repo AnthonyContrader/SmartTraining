@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.GroupDTO"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.GroupDTO"
+    import="it.contrader.dto.StudentDTO"
+    import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +15,8 @@
 <br>
 <div class="main">
 
-<%GroupDTO g = (GroupDTO) request.getAttribute("dto");%>
+<%GroupDTO g = (GroupDTO) request.getAttribute("dto");
+List<StudentDTO> studentlist = (List<StudentDTO>) request.getAttribute("studlist");%>
 
 
 <form id="floatleft" action="GroupServlet?mode=update&id=<%=g.getId()%>" method="post">
@@ -31,8 +34,13 @@
       <label for="idStudent">idStudent</label>
     </div>
     <div class="col-75">
-      <input 
-      		 type="text" id="idStudent" name="idStudent" value=<%=g.getIdStudent()%>>
+      <select id="groupcol" name="idStudent">
+			<% 
+      	for (StudentDTO s : studentlist){ %>
+      		<option  value = <%= s.getId() %>><%= s.getName() %></option>  
+      		
+      	<% } %>
+      </select>
     </div>
   </div>
   

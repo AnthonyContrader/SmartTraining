@@ -6,7 +6,6 @@ import="it.contrader.dto.GroupDTO" import="it.contrader.dto.StudentDTO"%>
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Group Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
@@ -14,7 +13,7 @@ import="it.contrader.dto.GroupDTO" import="it.contrader.dto.StudentDTO"%>
 <div class="main">
 	<%
 		List<GroupDTO> list = (List<GroupDTO>) request.getAttribute("list");
-	    List<StudentDTO> studlist = (List<StudentDTO>) request.getAttribute("studlist");
+	    List<StudentDTO> studentlist = (List<StudentDTO>) request.getAttribute("studlist");
 	%>
 <br>
 
@@ -48,22 +47,28 @@ import="it.contrader.dto.GroupDTO" import="it.contrader.dto.StudentDTO"%>
 	<form id="floatright" action="GroupServlet?mode=INSERT" method="post">
 		<div class="row">
 			<div class="col-25">
-				 <label for="group">idStudent</label>
+				 <label for="idStudent">idStudent</label>
 			</div>
-			<select name="idStudent">
-      	<% for (StudentDTO s : studlist){ %>
-      		<option  value = <%= s.getId() %>> <%= s.getName() %></option>
+			<div class="col-75">
+			<select id="groupcol" name="idStudent">
+			<% 
+      	for (StudentDTO s : studentlist){ %>
+      		<option  value = <%= s.getId() %>><%= s.getName() %></option>  
+      		
       	<% } %>
       </select>
-			<div class="row">
-				<div class="col-75">
-					<label for="groupcol">Groupcol</label>
-				</div>	
-				<div class="col-75">
+      </div>    
+            </div>    
+      
+      
+      	 <div class="row">
+   			 <div class="col-25">
+   		 		  <label for="groupcol">nameGroup</label>
+   			 </div>
+			<div class="col-75">
 					<input type="text" id="groupcol" name="groupcol" placeholder="inserisci il nome del Grouppo">
-				</div>		
 			</div>
-		</div>
+		</div>	
 			<button type="submit"> Insert</button>
 	</form>
 	

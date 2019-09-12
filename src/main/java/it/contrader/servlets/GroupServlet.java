@@ -23,14 +23,13 @@ public class GroupServlet extends HttpServlet {
 	
 	public void updateList(HttpServletRequest request) {
 		Service<GroupDTO> service = new GroupService();
-		List<GroupDTO>listDTO = service.getAll();
-		request.setAttribute("list", listDTO);
-		
 		Service<StudentDTO> services = new StudentService();
+		List<GroupDTO>listDTO = service.getAll();
 		List<StudentDTO>studlistDTO = services.getAll();
+		request.setAttribute("list", listDTO);
 		request.setAttribute("studlist", studlistDTO);
 	}
-	
+	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		Service<GroupDTO> service = new GroupService();
 		String mode = request.getParameter("mode");
@@ -49,6 +48,8 @@ public class GroupServlet extends HttpServlet {
 			id = Integer.parseInt(request.getParameter("id"));
 			dto = service.read(id);
 			request.setAttribute("dto", dto);
+
+			updateList(request);
 			
 			if(request.getParameter("update") == null) {
 				getServletContext().getRequestDispatcher("/group/readgroup.jsp").forward(request, response);

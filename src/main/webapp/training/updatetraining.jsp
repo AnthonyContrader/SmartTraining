@@ -15,7 +15,7 @@
 <div class="main">
 
 <%TrainingDTO u = (TrainingDTO) request.getAttribute("dto");
-			List<GroupDTO> listgroup = (List<GroupDTO>) request.getAttribute("listgroup");
+  List<GroupDTO> listgroup = (List<GroupDTO>) request.getAttribute("listgroup");
 	%>
 
 <form id="floatleft" action="TrainingServlet?mode=update&id=<%=u.getId()%>" method="post">
