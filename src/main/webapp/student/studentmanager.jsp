@@ -25,7 +25,7 @@
 		<tr>
 			<th>name</th>
 			<th>surname</th>
-			<th>idUser</th>
+			<th>Username</th>
 			<th></th>
 			<th></th>
 		</tr>
@@ -37,7 +37,8 @@
 					<%=s.getName()%>
 			</a></td>
 			<td><%=s.getSurname()%></td>
-			<td><%=s.getIdUser()%></td>
+			<td><%=s.getIdUser()%> </td> 
+			<!-combiare la visual di idUser in Username ->
 			<td><a href=StudentServlet?mode=read&update=true&id=<%=s.getId()%>>Edit</a>
 			</td>
 			<td><a href=StudentServlet?mode=delete&id=<%=s.getId()%>>Delete</a>
@@ -72,7 +73,7 @@
   
   <div class="row">
     <div class="col-25">
-      <label for="iduser">idUser</label>
+      <label for="iduser">Username</label>
     </div>
    		 <div class="col-75">
    		 	<select name="idUser">

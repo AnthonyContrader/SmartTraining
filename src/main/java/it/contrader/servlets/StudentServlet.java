@@ -24,6 +24,7 @@ public class StudentServlet extends HttpServlet {
 		Service<StudentDTO> service = new StudentService();
 		List<StudentDTO>listDTO = service.getAll();
 		request.setAttribute("list", listDTO);
+		
 		Service<UserDTO> userservice = new UserService();
 		List<UserDTO> userlistDTO = userservice.getAll();
 		request.setAttribute("listUser", userlistDTO);
@@ -36,17 +37,22 @@ public class StudentServlet extends HttpServlet {
 		int id;
 		boolean ans;
 
+		
 		switch (mode.toUpperCase()) {
 		
 		case "STUDENTLIST":
 			updateList(request);
 			getServletContext().getRequestDispatcher("/student/studentmanager.jsp").forward(request, response);
 			break;
-
+			
+		
 		case "READ":
 			id = Integer.parseInt(request.getParameter("id"));
 			dto = service.read(id);
 			request.setAttribute("dto", dto);
+			
+			updateList(request);
+			getServletContext().getRequestDispatcher("/student/updatestudent.jsp").forward(request, response);
 			
 			if (request.getParameter("update") == null) {
 				 getServletContext().getRequestDispatcher("/student/readstudent.jsp").forward(request, response);
@@ -54,7 +60,6 @@ public class StudentServlet extends HttpServlet {
 			}
 			
 			else getServletContext().getRequestDispatcher("/student/updatestudent.jsp").forward(request, response);
-			
 			break;
 
 		case "INSERT":

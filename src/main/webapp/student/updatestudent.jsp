@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.StudentDTO"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.StudentDTO"
+    import = "it.contrader.dto.UserDTO"
+    import = "java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,16 +15,18 @@
 <br>
 <div class="main">
 
-<%StudentDTO u = (StudentDTO) request.getAttribute("dto");%>
+<%StudentDTO s = (StudentDTO) request.getAttribute("dto");
+
+  List<UserDTO> listUser = (List<UserDTO>) request.getAttribute("listUser");%>
 
 
-<form id="floatleft" action="StudentServlet?mode=update&id=<%=u.getId()%>" method="post">
+<form id="floatleft" action="StudentServlet?mode=update&id=<%=s.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
       <label for="student">Name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="student" name="name" value=<%=u.getName()%>>
+      <input type="text" id="student" name="name" value=<%=s.getName() %>>
     </div>
   </div>
   <div class="row">
@@ -31,16 +35,25 @@
     </div>
     <div class="col-75">
       <input
-			type="text" id="surname" name="surname" value=<%=u.getSurname()%>> 
+			type="text" id="surname" name="surname" value=<%=s.getSurname()%>> 
     </div>
   </div>
   <div class="row">
-    <div class="col-25">
-      <label for="type">idUser</label>
-    </div>
-   		 <div class="col-75">
- 		<input type="text" id="iduser" name="idUser" placeholder="inserisci idUser"> 
-    	</div>
+  	<div>
+  	<label for="idUser"> idUser
+  	</label>
+  	</div>
+    <div class="col-75">
+      <select name="idUser">
+			<%
+				for (UserDTO u : listUser) {
+			%>
+			<option value=<%=u.getId()%>><%=u.getUsername()%></option>
+			<%
+				}
+			%>
+   		 	</select> 
+  	</div>
   </div>
       <button type="submit" >Edit</button>
 </form>
