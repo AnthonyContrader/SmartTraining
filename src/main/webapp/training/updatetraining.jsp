@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.TrainingDTO"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.TrainingDTO" 
+	import="it.contrader.dto.GroupDTO" import= "java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +14,9 @@
 <br>
 <div class="main">
 
-<%TrainingDTO u = (TrainingDTO) request.getAttribute("dto");%>
-
+<%TrainingDTO u = (TrainingDTO) request.getAttribute("dto");
+			List<GroupDTO> listgroup = (List<GroupDTO>) request.getAttribute("listgroup");
+	%>
 
 <form id="floatleft" action="TrainingServlet?mode=update&id=<%=u.getId()%>" method="post">
   <div class="row">
@@ -27,11 +29,16 @@
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="pass">Password</label>
+    	<label for="idgroup">IdGroup</label>
     </div>
     <div class="col-75">
-      <input
-			type="text" id="idgroup" name="idGroup" value=<%=u.getIdGroup()%>> 
+    <input type="text" id=idgroup name = "idGroup" value=<%= u.getIdGroup() %>>
+     <select name="idGroup">
+      	<% for (GroupDTO g : listgroup){ %>
+      		<option value = <%= g.getId() %>> <%= g.getGroupcol() %></option>
+      	<% } %>
+      </select> 
+      
     </div>
   </div>
   

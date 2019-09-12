@@ -47,6 +47,9 @@ public class TrainingServlet extends HttpServlet {
 			dto = service.read(id);
 			request.setAttribute("dto", dto);
 			
+			updateList(request);
+			getServletContext().getRequestDispatcher("/training/updatetraining.jsp").forward(request, response);
+			
 			if (request.getParameter("update") == null) {
 				 getServletContext().getRequestDispatcher("/training/readtraining.jsp").forward(request, response);
 				
