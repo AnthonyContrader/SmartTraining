@@ -27,14 +27,14 @@ DROP TABLE IF EXISTS `content`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `content` (
   `tag` varchar(50) NOT NULL,
-  `title` varchar(50) DEFAULT NULL,
+  `title` varchar(50) NOT NULL,
   `text` varchar(300) NOT NULL,
-  `idTraining` int(11) NOT NULL,
+  `IdTraining` int(11) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
-  KEY `IdTraining_training_idx` (`idTraining`),
-  CONSTRAINT `IdTraining_training` FOREIGN KEY (`idTraining`) REFERENCES `training` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `IdTraining_training_idx` (`IdTraining`),
+  CONSTRAINT `IdTraining_training` FOREIGN KEY (`IdTraining`) REFERENCES `training` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

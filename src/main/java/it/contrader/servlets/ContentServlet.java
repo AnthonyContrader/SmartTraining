@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import it.contrader.dto.ContentDTO;
+import it.contrader.dto.TrainingDTO;
 import it.contrader.service.Service;
 import it.contrader.service.ContentService;
+import it.contrader.service.TrainingService;
 
 /*
  * Per dettagli vedi Guida sez Servlet
@@ -26,12 +28,17 @@ public class ContentServlet extends HttpServlet {
 		Service<ContentDTO> service = new ContentService();
 		List<ContentDTO>listDTO = service.getAll();
 		request.setAttribute("list", listDTO);
+		
+		Service<TrainingDTO> service2 = new TrainingService();
+		List<TrainingDTO> list2DTO = service2.getAll();
+		request.setAttribute("list2DTO", list2DTO);
 	}
 
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Service<ContentDTO> service = new ContentService();
 		String mode = request.getParameter("mode");
 		ContentDTO dto;
+		
 		int id;
 		boolean ans;
 
@@ -46,7 +53,7 @@ public class ContentServlet extends HttpServlet {
 			id = Integer.parseInt(request.getParameter("id"));
 			dto = service.read(id);
 			request.setAttribute("dto", dto);
-			
+			updateList(request);
 			if (request.getParameter("update") == null) {
 				 getServletContext().getRequestDispatcher("/content/readcontent.jsp").forward(request, response);
 				
@@ -59,8 +66,8 @@ public class ContentServlet extends HttpServlet {
 			String tag = request.getParameter("tag").toString();
 			String title = request.getParameter("title").toString();
 			String text = request.getParameter("text").toString();
-			int idStudent = Integer.parseInt(request.getParameter("idStudent").toString());
-			dto = new ContentDTO (tag,title,text, idStudent);
+			int IdTraining = Integer.parseInt(request.getParameter("IdTraining").toString());
+			dto = new ContentDTO (tag,title,text,IdTraining);
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
@@ -71,10 +78,10 @@ public class ContentServlet extends HttpServlet {
 			tag = request.getParameter("tag");
 			title = request.getParameter("title");
 			text = request.getParameter("text");
-			idStudent = Integer.parseInt(request.getParameter("idStudent"));
+			IdTraining = Integer.parseInt(request.getParameter("IdTraining"));
 			id = Integer.parseInt(request.getParameter("id"));
-			System.out.println(id);
-			dto = new ContentDTO (id,tag, title, text, idStudent);
+			//System.out.println(id);
+			dto = new ContentDTO (id,tag, title, text, IdTraining);
 			ans = service.update(dto);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/content/contentmanager.jsp").forward(request, response);

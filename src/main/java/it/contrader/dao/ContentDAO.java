@@ -16,9 +16,9 @@ import it.contrader.model.Content;
 public class ContentDAO implements DAO<Content> {
 
 	private final String QUERY_ALL = "SELECT * FROM content";
-	private final String QUERY_CREATE = "INSERT INTO content (tag, title, text, idTraining) VALUES (?,?,?,?)";
+	private final String QUERY_CREATE = "INSERT INTO content (tag, title, text, IdTraining) VALUES (?,?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM content WHERE id=?";
-	private final String QUERY_UPDATE = "UPDATE content SET tag=?, title=?, text=?, idTraining=? WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE content SET tag=?, title=?, text=?, IdTraining=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM content WHERE id=?";
 
 	public ContentDAO() {
@@ -37,8 +37,8 @@ public class ContentDAO implements DAO<Content> {
 				String tag = resultSet.getString("tag");
 				String title = resultSet.getString("title");
 				String text = resultSet.getString("text");
-				int idTraining = resultSet.getInt("idTraining");
-				content = new Content(tag, title, text, idTraining);
+				int IdTraining = resultSet.getInt("IdTraining");
+				content = new Content(tag, title, text, IdTraining);
 				content.setId(id);
 				contentsList.add(content);
 			}
@@ -55,7 +55,7 @@ public class ContentDAO implements DAO<Content> {
 			preparedStatement.setString(1, contentToInsert.getTag());
 			preparedStatement.setString(2, contentToInsert.getTitle());
 			preparedStatement.setString(3, contentToInsert.getText());
-			preparedStatement.setInt (4, contentToInsert.getIdTraining());
+			preparedStatement.setInt(4, contentToInsert.getIdTraining());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -74,13 +74,13 @@ public class ContentDAO implements DAO<Content> {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			String tag, title, text;
-			int idTraining;
+			int IdTraining;
 
 			tag = resultSet.getString("tag");
 			title = resultSet.getString("title");
 			text = resultSet.getString("text");
-			idTraining=resultSet.getInt("idTraining");
-			Content content = new Content(tag, title, text, idTraining);
+			IdTraining=resultSet.getInt("IdTraining");
+			Content content = new Content(tag, title, text, IdTraining);
 			content.setId(resultSet.getInt("id"));
 
 			return content;
