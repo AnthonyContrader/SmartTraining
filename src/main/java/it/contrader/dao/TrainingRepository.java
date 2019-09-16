@@ -11,7 +11,7 @@ import it.contrader.model.Training;
 @Transactional
 public interface TrainingRepository extends CrudRepository<Training, Long> {
 
-	Training findByNameTrainingAndIdGroup (String nameTraining, int idGroup);
+	Training findTrainingById (Long id);
 
 }
 
