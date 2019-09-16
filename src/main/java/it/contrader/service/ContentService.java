@@ -17,8 +17,8 @@ public class ContentService extends AbstractService<Content, ContentDTO> {
 	@Autowired
 	private ContentRepository repository;
 
-	public ContentDTO findByUsernameAndPassword(String tag, String title, String text, int idTraining) {
-		return converter.toDTO(repository.findByUsernameAndPassword(tag, title, text, idTraining));
+	public ContentDTO findContentById(long id) {
+		return converter.toDTO(repository.findContentById(id));
 	}
 
 }

@@ -11,6 +11,6 @@ import it.contrader.model.Content;
 @Transactional
 public interface ContentRepository extends CrudRepository<Content, Long> {
 
-Content findByUsernameAndPassword(String tag, String title, String text, int idTraining);
+Content findContentById(long id);
 
 }
