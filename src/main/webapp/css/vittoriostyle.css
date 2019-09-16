@@ -15,7 +15,7 @@ div.text{
 	text-align: center;
 	font-size: 800%;
 	font-family: sans-serif;
-	color: #960018	;
+	color: #00a990;
 }
 
 .main {
@@ -30,15 +30,15 @@ div.text{
 .footer {
 	text-align: center;
 	font-size: 70%;
-	background-color: #ffffff	;
-	color: #960018	;
+	background-color: #00a990;
+	color: #ffffff;
 	width: 100%;
 	border-radius: 7px;
 	position: relative;
 	padding: 3px;
 	clear:both;
 	margin-top: 5%;
-	margin-bottom: 15%;
+	margin-bottom: 1%;
 }
 
 /* headers */
@@ -134,17 +134,17 @@ th, td {
 }
 
 tr:nth-child(even) {
-	background-color: #ffffff	
+	background-color: #f2f2f2
 }
 
 th {
-	background-color: #ffffff	;
-	color: #000000;
+	background-color: #00a990;
+	color: #ffffff;
 	
 }
 
 a:hover {
-	color: #ffffff;
+	color: #999999;
 }
 
 
@@ -155,16 +155,16 @@ select {
   padding: 14px 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #ffffff	;
+  background-color: #f2f2f2;
   margin: 8px 0;
 }
 select:hover {
-  background-color:  #ffffff;
+  background-color:  #00ccad;
 }
 
 option{
 width: 100%;
-  background-color: #ffffff	;
+  background-color: #ffff;
   color: #000000;
   padding: 14px 20px;
   margin: 8px 0;
@@ -179,8 +179,8 @@ width: 100%;
 
 input {
   width: 80%;
-  background-color: #ffffff	;
-  color: #960018;
+  background-color: #ffff;
+  color: #000000;
   padding: 14px 20px;
   margin: 8px 0;
   border: 1px solid #ccc;
@@ -190,7 +190,7 @@ input {
 }
 
 input:hover {
-  background-color:  #ffffff	;
+  background-color:  #00ccad;
 }
 
 
@@ -198,7 +198,7 @@ res {
 	float: left;
 	width: 25%;
 	margin-top: 3%;
-	background-color: #960018	;
+	background-color: #00a990;
 	border-radius: 7px;
 	color: #ffffff;
 	text-align:center;
@@ -239,7 +239,7 @@ label {
 button {
   -webkit-transition-duration: 0.1s; /* Safari */
   transition-duration: 0.1s;
-  background-color:  #960018	;
+  background-color:  #00a990;
   border: none;
   color: white;
   padding: 3% 3%;
@@ -257,7 +257,7 @@ button {
 }
 
 button:hover {
-  background-color:  #CD5C5C		; 
+  background-color:  #00ccad; 
   color: white;
 }
 
@@ -284,7 +284,7 @@ button:hover {
 
 /*Navigation bar*/
 div.navbar {
-	background: #960018		;
+	background: #00a990;
 	overflow: hidden;
 	position: sticky;
 	width: 100%;
@@ -304,16 +304,16 @@ div.navbar a {
 	text-decoration: none;
 	font-size: 17px;
 	border-radius: 7px;
-	background: #960018		;
+	background: #00a990;
 }
 
 div.navbar a:hover {
-	background: #CD5C5C		;
+	background: #00ccad;
 	color: #ffffff;
 }
 
 div.navbar a.active {
-	background: #960018		;
+	background: #00ccad;
 	color: #ffffff;
 }
 
@@ -325,24 +325,3 @@ div.navbar a.active {
 	width: 8%;
 }
 }
-.mybotton{
-	width: 200px;
-	height: 80px;
-	padding: 3% 3%;
-	background-color: #960018;
-	color: #960018;
-	text-align: centre;
-	font-size: 130%;
-	line-heigh:80px;
-	text-transform: uppercase;
-	border-radius: 20px;
-	margin-left: 10%;
-  	margin-right: 10%;
- 	margin-top: 5%;
- 	margin-bottom: 5%;
- 	cursor: pointer;
-}
-
-  
-  
- 

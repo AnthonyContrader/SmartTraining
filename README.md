@@ -1,1 +1,2 @@
-# DORSE
+# SAMPLE
+Sample Projects
