@@ -1,1 +1,2 @@
-# SmartTraining
+# SAMPLE
+Sample Projects
