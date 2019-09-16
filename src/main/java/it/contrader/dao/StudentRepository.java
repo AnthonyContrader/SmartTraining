@@ -11,6 +11,6 @@ import it.contrader.model.Student;
 @Transactional
 public interface StudentRepository extends CrudRepository<Student, Long>{
 	
-	Student findByNameAndSurname(String name, String surname);
+	Student findStudentById(Long id);
 
 }

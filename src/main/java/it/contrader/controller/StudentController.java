@@ -21,7 +21,7 @@ public class StudentController {
 	
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
-		getAll(request);
+		setAll(request);
 		return "students";
 	}
 	
@@ -45,7 +45,21 @@ public class StudentController {
 		dto.setName(name);
 		dto.setSurname(surname);
 		dto.setIdUser(idUser);
+		service.update(dto);
+		setAll(request);
 		return "students";
+	}
+	
+	@PostMapping("/insert")
+	public String insert(HttpServletRequest request, @RequestParam("name") String name,
+			@RequestParam("surname") String surname, @RequestParam("idUser") Long idUser) {
+		StudentDTO dto = new StudentDTO();
+		dto.setName(name);
+		dto.setSurname(surname);
+		dto.setIdUser(idUser);
+		service.insert(dto);
+		setAll(request);
+		return "students";		
 	}
 	
 	@GetMapping("/read")

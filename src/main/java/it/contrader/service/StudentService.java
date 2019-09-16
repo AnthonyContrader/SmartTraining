@@ -16,8 +16,8 @@ public class StudentService extends AbstractService<Student, StudentDTO>{
 	@Autowired
 	private StudentRepository repository;
 	
-	public StudentDTO findByUsernameAndPassword(String name, String surname) {
-		return converter.toDTO(repository.findByUsernameAndPassword(name, surname));
+	public StudentDTO findStudentById(Long id) {
+		return converter.toDTO(repository.findStudentById(id));
 	}
 
 }
