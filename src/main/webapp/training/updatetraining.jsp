@@ -14,21 +14,17 @@
 </head>
 <body>
 <%@ include file="./css/header.jsp" %>
-<div class="navbar">
-  <a href="/homeadmin.jsp">Home</a>
-  <a class="active" href="/user/getall">Users</a>
-  <a href="/user/logout" id="logout">Logout</a>
-</div>
+
 <br>
 <div class="main">
 
 <%TrainingDTO t = (TrainingDTO) request.getSession().getAttribute("dto");%>
 
 
-<form id="floatleft" action="/user/update" method="post">
+<form id="floatleft" action="/training/update" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="user">NameTraining</label>
+      <label for="training">NameTraining</label>
     </div>
     <div class="col-75">
       <input type="text" id="user" name="nameTraining" value=<%=t.getNameTraining()%>>
