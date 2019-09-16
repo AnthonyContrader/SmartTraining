@@ -10,8 +10,10 @@
 
 	<div class="header">SAMPLE Project</div>
 	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> <a class="active"
-			href="/user/getall">Users</a> <a href="/user/logout" id="logout">Logout</a>
+		<a href="/homeadmin.jsp">Home</a> 
+		<a class="active" href="/user/getall">Users</a>
+		<a href="/student/getall">Students</a> 
+		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 
 </body>
