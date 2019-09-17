@@ -1,4 +1,5 @@
-<%@ page import="it.contrader.dto.ContentDTO" import="java.util.*"%>
+<%@ page language="java" import="it.contrader.dto.ContentDTO" import="java.util.*"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -11,7 +12,7 @@
 
 </head>
 <body>
-	<%@ include file="./css/header.jsp"%>
+	<%@ include file="/css/header.jsp"%>
 
 	<div class="main">
 		<%
@@ -33,7 +34,7 @@
 				for (ContentDTO c : list) {
 			%>
 			<tr>
-				<td><a href="/content/read?id=<%=c.getId()%>"> <%=c.getTag()%><%=c.getTitle()%><%=c.getText()%><%=c.getIdTraining()%>
+				<td><a href="/content/read?id=<%=c.getId()%><%=c.getTag()%><%=c.getTitle()%><%=c.getText()%><%=c.getIdTraining()%>"> 
 				</a></td>
 				<td><%=c.getTag()%></td>
 				<td><%=c.getTitle()%></td>
@@ -103,6 +104,6 @@
 
 	</div>
 	<br>
-	<%@ include file="./css/footer.jsp"%>
+	<%@ include file="/css/footer.jsp"%>
 </body>
 </html>

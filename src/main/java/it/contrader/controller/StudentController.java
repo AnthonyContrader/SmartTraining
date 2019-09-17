@@ -22,20 +22,20 @@ public class StudentController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
-		return "students";
+		return "student/students";
 	}
 	
 	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
 		service.delete(id);
 		setAll(request);
-		return "students";
+		return "student/students";
 	}
 	
 	@GetMapping("/preupdate")
 	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "updatestudent";
+		return "student/updatestudent";
 	}
 	
 	@PostMapping("/update")
@@ -47,7 +47,7 @@ public class StudentController {
 		dto.setIdUser(idUser);
 		service.update(dto);
 		setAll(request);
-		return "students";
+		return "student/students";
 	}
 	
 	@PostMapping("/insert")
@@ -59,13 +59,13 @@ public class StudentController {
 		dto.setIdUser(idUser);
 		service.insert(dto);
 		setAll(request);
-		return "students";		
+		return "student/students";		
 	}
 	
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "readstudents";
+		return "student/readstudents";
 	}
 	
 	@GetMapping("/logout")

@@ -22,20 +22,20 @@ public class ContentController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
-		return "contents";
+		return "content/contents";
 	}
 
 	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
 		service.delete(id);
 		setAll(request);
-		return "contents";
+		return "content/contents";
 	}
 
 	@GetMapping("/preupdate")
 	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "updatecontent";
+		return "content/updatecontent";
 	}
 
 	@PostMapping("/update")
@@ -50,7 +50,7 @@ public class ContentController {
 		dto.setIdTraining(idTraining);
 		service.update(dto);
 		setAll(request);
-		return "contents";
+		return "content/contents";
 
 	}
 
@@ -64,13 +64,13 @@ public class ContentController {
 		dto.setIdTraining(idTraining);
 		service.insert(dto);
 		setAll(request);
-		return "users";
+		return "content/content";
 	}
 
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "readcontent";
+		return "content/readcontent";
 	}
 
 	@GetMapping("/logout")

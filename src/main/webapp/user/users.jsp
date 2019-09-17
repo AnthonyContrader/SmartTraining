@@ -1,4 +1,4 @@
-<%@ page import="it.contrader.dto.UserDTO" import="java.util.*"%>
+<%@ page language="java" import="it.contrader.dto.UserDTO" import="java.util.*"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -11,12 +11,8 @@
 
 </head>
 <body>
-	<%@ include file="./css/header.jsp"%>
+	<%@ include file="/css/header.jsp"%>
 
-	<div class="navbar">
-		<a href="/homeadmin.jsp">Home</a> <a class="active"
-			href="/user/getall">Users</a> <a href="/user/logout" id="logout">Logout</a>
-	</div>
 	<div class="main">
 		<%
 			List<UserDTO> list = (List<UserDTO>) request.getSession().getAttribute("list");
@@ -36,7 +32,7 @@
 				for (UserDTO u : list) {
 			%>
 			<tr>
-				<td><a href="/user/read?id=<%=u.getId()%>"> <%=u.getUsername()%>
+				<td><a href="/user/read?id=<%=u.getId()%><%=u.getUsername()%>">
 				</a></td>
 				<td><%=u.getPassword()%></td>
 				<td><%=u.getUsertype()%></td>
@@ -89,6 +85,6 @@
 
 	</div>
 	<br>
-	<%@ include file="./css/footer.jsp"%>
+	<%@ include file="/css/footer.jsp"%>
 </body>
 </html>

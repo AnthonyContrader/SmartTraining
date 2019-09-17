@@ -9,8 +9,8 @@
 
 <title>Home</title>
 
-<!-- Bootstrap core CSS -->
-<link href="/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap core CSS 
+<link href="/css/bootstrap.min.css" rel="stylesheet"> -->
 
 <!-- Custom styles for this template -->
 <link href="/css/vittoriostyle.css" rel="stylesheet">
