@@ -55,7 +55,7 @@
 					<label for="training">NameTraining</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="training" name="nametraining"
+					<input type="text" id="nameTraining" name="nameTraining"
 						placeholder="inserisci nomeTraining">
 				</div>
 			</div>
