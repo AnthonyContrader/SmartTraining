@@ -25,12 +25,12 @@
 			<tr>
 				<th>ID</th>
 				<th>NameTraining</th>
-				<th>IdGroup</th>
+				<th>IdGruppo</th>
 			</tr>
 			<tr>
 				<td><%=t.getId()%></td>
 				<td><%=t.getNameTraining()%></td>
-				<td><%=t.getIdGroup()%></td>
+				<td><%=t.getIdGruppo()%></td>
 			</tr>
 		</table>
 

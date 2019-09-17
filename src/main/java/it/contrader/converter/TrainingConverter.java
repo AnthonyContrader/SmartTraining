@@ -12,7 +12,7 @@ public class TrainingConverter  extends AbstractConverter <Training, TrainingDTO
 	public Training toEntity (TrainingDTO trainingDTO) {
 		Training training =null;
 		if (trainingDTO!=null) {
-			training = new Training (trainingDTO.getId(), trainingDTO.getNameTraining(), trainingDTO.getIdGroup());
+			training = new Training (trainingDTO.getId(), trainingDTO.getNameTraining(), trainingDTO.getIdGruppo());
 			
 		}
 		return training;
@@ -22,7 +22,7 @@ public class TrainingConverter  extends AbstractConverter <Training, TrainingDTO
 	public TrainingDTO toDTO (Training training) {
 		TrainingDTO trainingDTO=null;
 		if (training != null) {
-			trainingDTO=new TrainingDTO (training.getId(), training.getNameTraining(), training.getIdGroup());
+			trainingDTO=new TrainingDTO (training.getId(), training.getNameTraining(), training.getIdGruppo());
 			
 		}
 		return trainingDTO;

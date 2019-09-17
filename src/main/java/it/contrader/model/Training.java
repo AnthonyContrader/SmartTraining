@@ -21,7 +21,7 @@ public class Training {
 
 	private String nameTraining;
 	
-	private int idGroup;
+	private int idGruppo;
 
 
 }

@@ -25,7 +25,7 @@
 		<table>
 			<tr>
 				<th>NameTraining</th>
-				<th>IdGroup</th>
+				<th>IdGruppo</th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -35,7 +35,7 @@
 			<tr>
 				<td><a href="/training/read?id=<%=t.getId()%>"> <%=t.getNameTraining()%>
 				</a></td>
-				<td><%=t.getIdGroup()%></td>
+				<td><%=t.getIdGruppo()%></td>
 				<td><a href="/training/preupdate?id=<%=t.getId()%>">Edit</a></td>
 
 
@@ -62,7 +62,7 @@
 			
 			<div class="row">
 				<div class="col-25">
-					<label for="type">IdGroup</label>
+					<label for="type">IdGruppo</label>
 				</div>
 				<div class="col-75">
 					<input type="number" id="idGroup" name="idGroup"

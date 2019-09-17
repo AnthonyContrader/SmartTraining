@@ -40,11 +40,11 @@ public class TrainingController {
 
 	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("nameTraining") String nameTraining,
-			@RequestParam("idGroup") int idGroup) {
+			@RequestParam("idGruppo") int idGruppo) {
 		TrainingDTO dto = new TrainingDTO();
 		dto.setId(id);
 		dto.setNameTraining (nameTraining);
-		dto.setIdGroup (idGroup);
+		dto.setIdGruppo (idGruppo);
 		service.update(dto);
 		setAll(request);
 		return "training/trainings";
@@ -53,10 +53,10 @@ public class TrainingController {
 
 	@PostMapping("/insert")
 	public String insert(HttpServletRequest request, @RequestParam("nameTraining") String nameTraining,
-			@RequestParam("idGroup") int idGroup) {
+			@RequestParam("idGruppo") int idGruppo) {
 		TrainingDTO dto = new TrainingDTO();
 		dto.setNameTraining(nameTraining);
-		dto.setIdGroup(idGroup);
+		dto.setIdGruppo (idGruppo);
 		service.insert(dto);
 		setAll(request);
 		return "training/trainings";
