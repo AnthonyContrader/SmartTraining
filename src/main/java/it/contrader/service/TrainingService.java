@@ -16,7 +16,8 @@ public class TrainingService extends AbstractService<Training, TrainingDTO> {
 	private TrainingConverter converter;
 	@Autowired
 	private TrainingRepository repository;
-
+	
+	
 	public TrainingDTO findTrainingById(Long id) {
 		return converter.toDTO(repository.findTrainingById(id));
 	}

@@ -22,20 +22,20 @@ public class TrainingController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
-		return "trainings";
+		return "training/trainings";
 	}
 
 	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
 		service.delete(id);
 		setAll(request);
-		return "trainings";
+		return "training/trainings";
 	}
 
 	@GetMapping("/preupdate")
 	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "updatetraining";
+		return "training/updatetraining";
 	}
 
 	@PostMapping("/update")
@@ -48,7 +48,7 @@ public class TrainingController {
 		dto.setIdGroup (idGroup);
 		service.update(dto);
 		setAll(request);
-		return "trainings";
+		return "training/trainings";
 
 	}
 
@@ -60,13 +60,13 @@ public class TrainingController {
 		dto.setIdGroup(idGroup);
 		service.insert(dto);
 		setAll(request);
-		return "trainings";
+		return "training/trainings";
 	}
 
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "readtraining";
+		return "training/trainings";
 	}
 
 	@GetMapping("/logout")

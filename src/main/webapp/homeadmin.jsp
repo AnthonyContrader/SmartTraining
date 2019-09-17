@@ -17,7 +17,7 @@
 </head>
 
 <body>
-	<%@include file="css/header.jsp"%>
+	<%@include file="/css/header.jsp"%>
 
 
 	<div class="navbar">
@@ -67,7 +67,7 @@
 	</div>
 
 
-	<%@ include file="css/footer.jsp"%>
+	<%@ include file="/css/footer.jsp"%>
 
 </body>
 </html>

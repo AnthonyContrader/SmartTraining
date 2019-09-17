@@ -8,7 +8,7 @@
 <meta name="description" content="Training Read">
 <meta name="author" content="Vittorio Valent">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
-<title>Read Training</title>
+<title>Read User</title>
 </head>
 <body>
 	<%@ include file="./css/header.jsp"%>

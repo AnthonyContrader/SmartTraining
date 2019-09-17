@@ -15,6 +15,5 @@ public class TrainingDTO {
 	private String nameTraining;
 
 	private int idGroup;
-
-
+	
 }
