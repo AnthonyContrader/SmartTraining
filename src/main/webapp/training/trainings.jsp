@@ -52,10 +52,10 @@
 		<form id="floatright" action="/training/insert" method="post">
 			<div class="row">
 				<div class="col-25">
-					<label for="user">NameTraining</label>
+					<label for="training">NameTraining</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="nameTraining" name="nameTraining"
+					<input type="text" id="training" name="nametraining"
 						placeholder="inserisci nomeTraining">
 				</div>
 			</div>

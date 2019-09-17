@@ -34,6 +34,7 @@
       <input type="text" id="name" name="name" value=<%=s.getName()%>>
     </div>
   </div>
+  
   <div class="row">
     <div class="col-25">
      <label for="pass">Surname</label>

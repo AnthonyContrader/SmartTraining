@@ -63,7 +63,7 @@
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="pass">Surname</label>
+					<label for="user">Surname</label>
 				</div>
 				<div class="col-75">
 					<input type="text" id="surname" name="surname"

@@ -41,7 +41,6 @@ public class TrainingController {
 	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("nameTraining") String nameTraining,
 			@RequestParam("idGroup") int idGroup) {
-
 		TrainingDTO dto = new TrainingDTO();
 		dto.setId(id);
 		dto.setNameTraining (nameTraining);

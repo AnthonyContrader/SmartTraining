@@ -28,10 +28,10 @@
 <form id="floatleft" action="/training/update" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="user">NameTraining</label>
+      <label for="training">NameTraining</label>
     </div>
     <div class="col-75">
-      <input type="text" id="nametraining" name="nametraining" value=<%=t.getNameTraining()%>>
+      <input type="text" id="nameTraining" name="nameTraining" value=<%=t.getNameTraining()%>>
     </div>
   </div>
   
@@ -40,7 +40,7 @@
       <label for="type">IdGroup</label>
     </div>
    		 <div class="col-75">
- 			<input type="number" name="idGroup" id="idGroup" value=<%=t.getIdGroup() %>>
+ 			<input type="number" id="idGroup" name="idGroup"  value=<%=t.getIdGroup() %>>
     	</div>
     	<input type="hidden" name="id" value =<%=t.getId() %>>
   </div>
