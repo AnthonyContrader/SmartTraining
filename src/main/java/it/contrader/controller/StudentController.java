@@ -35,13 +35,14 @@ public class StudentController {
 	@GetMapping("/preupdate")
 	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "student/updatestudent";
+		return "student/updatestudent"; 
 	}
 	
 	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("name") String name,
 			@RequestParam("surname") String surname, @RequestParam("idUser") Long idUser) {
 		StudentDTO dto = new StudentDTO();
+		dto.setId(id);
 		dto.setName(name);
 		dto.setSurname(surname);
 		dto.setIdUser(idUser);

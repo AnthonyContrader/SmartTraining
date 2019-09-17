@@ -83,15 +83,6 @@
 			</div>
 			<div class="row">
 				<div class="col-25">
-					<label for="content">Title</label>
-				</div>
-				<div class="col-75">
-					<input type="text" id="title" name="title"
-						placeholder="inserisci il titolo">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-25">
 					<label for="content">IdTraining</label>
 				</div>
 				<div class="col-75">
