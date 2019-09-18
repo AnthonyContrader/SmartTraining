@@ -69,7 +69,7 @@ public class ContentController {
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "content/readcontents";
+		return "content/readcontent";
 	}
 
 	@GetMapping("/logout")

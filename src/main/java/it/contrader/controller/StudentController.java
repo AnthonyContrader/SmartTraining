@@ -66,7 +66,7 @@ public class StudentController {
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "student/readstudents";
+		return "student/readstudent";
 	}
 	
 	@GetMapping("/logout")

@@ -26,7 +26,7 @@
 			<tr>
 				<th>Name</th>
 				<th>Surname</th>
-				<th>IdGroup</th>
+				<th>IdUser</th>
 				<th></th>
 				<th></th>
 			</tr>
