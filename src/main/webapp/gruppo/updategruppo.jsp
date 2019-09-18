@@ -39,7 +39,7 @@
 			type="text" id="IdStudent" name="idStudent" value=<%=g.getIdStudent()%>> 
     </div>
   </div>
- <input type="hidden" name="idd" value =<%=g.getId() %>>
+ <input type="hidden" name="id" value =<%=g.getId() %>>
       <button type="submit" >Edit</button>
 </form>
 

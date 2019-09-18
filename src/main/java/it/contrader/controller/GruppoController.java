@@ -41,7 +41,7 @@ public class GruppoController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("idd") Long id, @RequestParam("idStudent") Long idStudent,
+	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("idStudent") Long idStudent,
 			@RequestParam("gruppo") String grupponame) {
 
 		GruppoDTO dto = new GruppoDTO();
@@ -68,7 +68,7 @@ public class GruppoController {
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "gruppo/readgruppos";
+		return "gruppo/readgruppo";
 	}
 
 	@GetMapping("/logout")
