@@ -28,7 +28,7 @@ import="java.util.*"%>
 			<tr>
 				<th>Grupponame</th>
 				<th>id_student</th>
-				<th></th>
+			    <th></th>
 				<th></th>
 			</tr>
 			<%
@@ -37,7 +37,6 @@ import="java.util.*"%>
 			<tr>
 				<td><a href="/gruppo/read?id=<%=g.getId()%>"> <%=g.getGrupponame()%>
 				</a></td>
-				<td></td>
 				<td><%=g.getIdStudent()%></td>
 				<td><a href="/gruppo/preupdate?id=<%=g.getId()%>">Edit</a></td>
 
