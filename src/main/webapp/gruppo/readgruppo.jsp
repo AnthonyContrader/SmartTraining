@@ -11,7 +11,7 @@
 <title>Read Gruppo</title>
 </head>
 <body>
-	<%@ include file="./css/header.jsp"%>
+	<%@ include file="/css/header.jsp"%>
 	
 	<br>
 
@@ -41,6 +41,6 @@
 
 	</div>
 
-	<%@ include file="./css/footer.jsp"%>
+	<%@ include file="/css/footer.jsp"%>
 </body>
 </html>
