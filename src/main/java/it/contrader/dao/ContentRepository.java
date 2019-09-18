@@ -11,6 +11,6 @@ import it.contrader.model.Content;
 @Transactional
 public interface ContentRepository extends CrudRepository<Content, Long> {
 
-	Content findContentById(long id);
+	Content findContentById(Long id);
 
 }

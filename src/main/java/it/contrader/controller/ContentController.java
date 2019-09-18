@@ -41,7 +41,6 @@ public class ContentController {
 	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("tag") String tag,
 			@RequestParam("title") String title, @RequestParam("text") String text, @RequestParam("idTraining") int idTraining) {
-
 		ContentDTO dto = new ContentDTO();
 		dto.setId(id);
 		dto.setTag(tag);
@@ -64,13 +63,13 @@ public class ContentController {
 		dto.setIdTraining(idTraining);
 		service.insert(dto);
 		setAll(request);
-		return "content/content";
+		return "content/contents";
 	}
 
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "content/readcontent";
+		return "content/readcontents";
 	}
 
 	@GetMapping("/logout")

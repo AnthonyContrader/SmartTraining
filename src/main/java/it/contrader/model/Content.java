@@ -17,6 +17,7 @@ public class Content {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	private Long id;
 
 	private String tag;

@@ -58,7 +58,7 @@
     </div>
     <div class="col-75">
       <input
-			type="text" id="idt" name="idtraining" value=<%=c.getIdTraining()%>> 
+			type="text" id="idTraining" name="idTraining" value=<%=c.getIdTraining()%>> 
     </div>
   </div>
       <button type="submit" >Edit</button>

@@ -1,4 +1,6 @@
-<%@ page language="java" import="it.contrader.dto.ContentDTO" import="java.util.*"%>
+<%@ page language="java" 
+import="it.contrader.dto.ContentDTO" 
+import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,9 +36,8 @@
 				for (ContentDTO c : list) {
 			%>
 			<tr>
-				<td><a href="/content/read?id=<%=c.getId()%><%=c.getTag()%><%=c.getTitle()%><%=c.getText()%><%=c.getIdTraining()%>"> 
+				<td><a href="/content/read?id=<%=c.getId()%>"> <%=c.getTag()%>
 				</a></td>
-				<td><%=c.getTag()%></td>
 				<td><%=c.getTitle()%></td>
 				<td><%=c.getText()%></td>
 				<td><%=c.getIdTraining()%></td>
@@ -86,8 +87,8 @@
 					<label for="content">IdTraining</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="training" name="idtraining"
-						placeholder="inserisci l'id del training">
+					<input type="number" id="idTraining" name="idTraining"
+						placeholder="inserisci l'id del Training">
 				</div>
 			</div>
 			<button type="submit">Insert</button>
