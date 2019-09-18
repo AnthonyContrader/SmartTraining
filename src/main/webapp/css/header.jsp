@@ -13,7 +13,7 @@
 		<a href="/homeadmin.jsp">Home</a> 
 		<a class="active" href="/user/getall">Users</a>
 		<a href="/student/getall">Students</a> 
-		<a href="/group/getall">Groups </a> 
+		<a href="/gruppo/getall">Groups </a> 
 		<a href="/content/getall">Contents</a> 
 		<a href="/training/getall">Trainings</a> 
 		<a href="/user/logout" id="logout">Logout</a>

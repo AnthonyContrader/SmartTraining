@@ -21,7 +21,7 @@ public class Gruppo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private int idStudent;
+	private Long idStudent;
 
 	private String grupponame;
 

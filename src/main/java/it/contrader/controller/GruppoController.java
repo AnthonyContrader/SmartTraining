@@ -24,24 +24,24 @@ public class GruppoController {
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
-		return "gruppos";
+		return "gruppo/gruppos";
 	}
 
 	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
 		service.delete(id);
 		setAll(request);
-		return "gruppos";
+		return "gruppo/gruppos";
 	}
 
 	@GetMapping("/preupdate")
 	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "updategruppo";
+		return "gruppo/updategruppo";
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("idStudent") int idStudent,
+	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("idStudent") Long idStudent,
 			@RequestParam("grupponame") String grupponame) {
 
 		GruppoDTO dto = new GruppoDTO();
@@ -50,25 +50,25 @@ public class GruppoController {
 		dto.setGrupponame(grupponame);
 		service.update(dto);
 		setAll(request);
-		return "gruppos";
+		return "gruppo/gruppos";
 
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("idStudent") int idStudent,
-					@RequestParam("grupponame") String grupponame) {
+	public String insert(HttpServletRequest request, @RequestParam("idStudent") Long idStudent,
+					@RequestParam("gruppo") String grupponame) {
 		GruppoDTO dto = new GruppoDTO();
 		dto.setIdStudent(idStudent);
 		dto.setGrupponame(grupponame);
 		service.insert(dto);
 		setAll(request);
-		return "gruppos";
+		return "gruppo/gruppos";
 	}
 
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "readgruppos";
+		return "gruppo/readgruppos";
 	}
 
 	@GetMapping("/logout")

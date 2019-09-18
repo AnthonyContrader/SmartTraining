@@ -18,7 +18,7 @@ public class GruppoService extends AbstractService<Gruppo, GruppoDTO> {
 	private GruppoRepository repository;
 
 	public GruppoDTO findGruppoById(Long id) {
-		return converter.toDTO(repository. findGruppoById(id));
+		return converter.toDTO(repository.findGruppoById(id));
 	}
 
 }

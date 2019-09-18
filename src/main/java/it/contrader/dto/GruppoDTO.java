@@ -12,7 +12,7 @@ public class GruppoDTO {
 
 	private Long id;
 
-	private int idStudent;
+	private Long idStudent;
 
 	private String grupponame;
 
