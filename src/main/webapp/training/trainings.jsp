@@ -62,11 +62,11 @@
 			
 			<div class="row">
 				<div class="col-25">
-					<label for="type">IdGruppo</label>
+					<label for="training">IdGruppo</label>
 				</div>
 				<div class="col-75">
-					<input type="number" id="idGroup" name="idGroup"
-						placeholder="inserisci id Group">
+					<input type="number" id="idGruppo" name="idGruppo"
+						placeholder="inserisci id Gruppo">
 				</div>
 			</div>
 			<button type="submit">Insert</button>
