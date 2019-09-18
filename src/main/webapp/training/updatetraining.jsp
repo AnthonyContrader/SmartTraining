@@ -37,10 +37,10 @@
   
   <div class="row">
     <div class="col-25">
-      <label for="type">IdGruppo</label>
+      <label for="training">IdGruppo</label>
     </div>
    		 <div class="col-75">
- 			<input type="number" id="idGroup" name="idGroup"  value=<%=t.getIdGruppo() %>>
+ 			<input type="number" id="idGruppo" name="idGruppo"  value=<%=t.getIdGruppo() %>>
     	</div>
     	<input type="hidden" name="id" value =<%=t.getId() %>>
   </div>
