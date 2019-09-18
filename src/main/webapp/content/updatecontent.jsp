@@ -60,6 +60,7 @@
       <input
 			type="text" id="idTraining" name="idTraining" value=<%=c.getIdTraining()%>> 
     </div>
+    <input type="hidden" name="id" value =<%=c.getId() %>>
   </div>
       <button type="submit" >Edit</button>
 </form>
