@@ -65,7 +65,7 @@ public class TrainingController {
 	@GetMapping("/read")
 	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
 		request.getSession().setAttribute("dto", service.read(id));
-		return "training/training";
+		return "training/readtraining";
 	}
 
 	@GetMapping("/logout")
