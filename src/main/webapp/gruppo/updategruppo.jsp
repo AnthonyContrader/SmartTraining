@@ -40,10 +40,10 @@
     </div>
     <div class="col-75">
       <input
-			type="text" id="IdStudent" name="IdStudent" value=<%=g.getIdStudent()%>> 
+			type="text" id="IdStudent" name="idStudent" value=<%=g.getIdStudent()%>> 
     </div>
   </div>
- 
+ <input type="hidden" name="idd" value =<%=g.getId() %>>
       <button type="submit" >Edit</button>
 </form>
 

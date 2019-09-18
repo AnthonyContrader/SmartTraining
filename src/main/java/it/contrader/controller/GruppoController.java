@@ -41,8 +41,8 @@ public class GruppoController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("idStudent") Long idStudent,
-			@RequestParam("grupponame") String grupponame) {
+	public String update(HttpServletRequest request, @RequestParam("idd") Long id, @RequestParam("idStudent") Long idStudent,
+			@RequestParam("gruppo") String grupponame) {
 
 		GruppoDTO dto = new GruppoDTO();
 		dto.setId(id);
