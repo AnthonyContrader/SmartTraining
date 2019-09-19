@@ -1,5 +1,6 @@
 package it.contrader.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,7 +25,9 @@ public class Student {
 	private String surname;
 	
 	@OneToOne
+	//@Column(unique=true)
 	private User user;
+	
 	
 	
 

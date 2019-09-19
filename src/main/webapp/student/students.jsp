@@ -1,7 +1,8 @@
 <%@ page language="java" 
     import="java.util.*"
     import="it.contrader.dto.StudentDTO"
-     import="it.contrader.dto.UserDTO"%>
+     import="it.contrader.dto.UserDTO"
+     import="it.contrader.converter.UserConverter"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +21,8 @@
 		<%
 			List<StudentDTO> list = (List<StudentDTO>) request.getSession().getAttribute("list");
 		    List<UserDTO> Userlist = (List<UserDTO>) request.getSession().getAttribute("Userlist");
+		    //ArrayList<UserDTO> userDto = new ArrayList<UserDTO>();
+		    //UserConverter con = new UserConverter();
 		%>
 
 		<br>
@@ -46,6 +49,8 @@
 
 			</tr>
 			 <%
+			 			//userDto.add(con.toDTO(s.getUser()));
+			 			//System.out.println(userDto.size());
 				}
 			%>
 		</table>
@@ -78,11 +83,19 @@
 			<div class="col-75">
 			<select id ="User" name ="user" >
 					<%
-					  for (UserDTO u : Userlist) {
+					  	for (UserDTO u : Userlist) {
+					  		System.out.println("false");	
+					  				//for(int n = 0; n > userDto.size(); n++){
+							  			//System.out.println("true");
+							  			//if(userDto.get(n).getId() != u.getId()){
+									  	//System.out.println("Dto1: " + userDto.get(n).getId() + " -  Dto2: " + u.getId());
+							  
 					%>
 					<option value=<%=u.getId()%>><%=u.getUsername()%></option>
 					<%
-					}
+								//}
+					  		//}
+					 	}
 					%>
 					</select>
 					</div>
