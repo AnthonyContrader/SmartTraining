@@ -1,6 +1,7 @@
 <%@ page language="java" 
     import="java.util.*"
-    import="it.contrader.dto.TrainingDTO"%>
+    import="it.contrader.dto.TrainingDTO"
+    import="it.contrader.dto.GruppoDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +19,7 @@
 	<div class="main">
 		<%
 			List<TrainingDTO> list = (List<TrainingDTO>) request.getSession().getAttribute("list");
+			List<GruppoDTO> Gruppolist = (List<GruppoDTO>) request.getSession().getAttribute("Gruppolist");
 		%>
 
 		<br>
@@ -25,8 +27,7 @@
 		<table>
 			<tr>
 				<th>NameTraining</th>
-				<th>IdGruppo</th>
-				<th></th>
+				<th> GruppoName</th>
 				<th></th>
 			</tr>
 			<%
@@ -35,7 +36,7 @@
 			<tr>
 				<td><a href="/training/read?id=<%=t.getId()%>"> <%=t.getNameTraining()%>
 				</a></td>
-				<td><%=t.getIdGruppo()%></td>
+				<td><%=t.getGruppo().getGrupponame() %></td>
 				<td><a href="/training/preupdate?id=<%=t.getId()%>">Edit</a></td>
 
 
@@ -59,20 +60,27 @@
 						placeholder="inserisci nomeTraining">
 				</div>
 			</div>
-			
 			<div class="row">
 				<div class="col-25">
-					<label for="training">IdGruppo</label>
+					<label for="gruppo">Grupponome</label>
 				</div>
-				<div class="col-75">
-					<input type="number" id="idGruppo" name="idGruppo"
-						placeholder="inserisci id Gruppo">
-				</div>
-			</div>
+			<div class="col-75">
+			<select id ="Gruppo" name ="gruppo" >
+					<%
+					  for (GruppoDTO g : Gruppolist) {
+					%>
+					<option value=<%=g.getId()%>><%=g.getGrupponame()%> </option>
+					<%
+					}
+					%>
+					</select>
+					</div>
+					</div>
+						
+			
 			<button type="submit">Insert</button>
 		</form>
-
-	</div>
+</div>
 	<br>
 	<%@ include file="/css/footer.jsp"%>
 

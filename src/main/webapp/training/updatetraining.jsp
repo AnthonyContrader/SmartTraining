@@ -33,13 +33,13 @@
   
   <div class="row">
     <div class="col-25">
-      <label for="training">IdGruppo</label>
+      <label for="training">Gruppo</label>
     </div>
    		 <div class="col-75">
- 			<input type="number" id="idGruppo" name="idGruppo"  value=<%=t.getIdGruppo() %>>
+ 			<input type="number" id="Gruppo" name="Gruppo"  value=<%=t.getGruppo() %>>
     	</div>
-    	<input type="hidden" name="id" value =<%=t.getId() %>>
   </div>
+  	<input type="hidden" name="id" value =<%=t.getGruppo().getGrupponame() %>>
       <button type="submit" >Edit</button>
 </form>
 

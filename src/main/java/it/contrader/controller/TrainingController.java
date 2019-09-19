@@ -1,6 +1,7 @@
 package it.contrader.controller;
 
-import org.apache.catalina.servlet4preview.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.TrainingDTO;
+import it.contrader.model.Gruppo;
+import it.contrader.service.GruppoService;
 import it.contrader.service.TrainingService;
 
 @Controller
@@ -17,11 +20,15 @@ public class TrainingController {
 
 	@Autowired
 	private TrainingService service;
+	
+	@Autowired
+	private GruppoService gService;
 
 	
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
+		setAllGruppo(request);
 		return "training/trainings";
 	}
 
@@ -29,6 +36,7 @@ public class TrainingController {
 	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
 		service.delete(id);
 		setAll(request);
+		setAllGruppo(request);
 		return "training/trainings";
 	}
 
@@ -39,31 +47,30 @@ public class TrainingController {
 	}
 
 	@PostMapping("/update")
-	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("nameTraining") String nameTraining,
-			@RequestParam("idGruppo") int idGruppo) {
+	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("nameTraining") String nameTraining, @RequestParam("gruppo") Gruppo gruppo) {
 		TrainingDTO dto = new TrainingDTO();
 		dto.setId(id);
 		dto.setNameTraining (nameTraining);
-		dto.setIdGruppo (idGruppo);
+		dto.setGruppo(gruppo);
 		service.update(dto);
 		setAll(request);
+		setAllGruppo(request);
 		return "training/trainings";
 
 	}
 
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("nameTraining") String nameTraining,
-			@RequestParam("idGruppo") int idGruppo) {
+	public String insert(HttpServletRequest request, @RequestParam("nameTraining") String nameTraining, @RequestParam ("gruppo") Gruppo gruppo) {
 		TrainingDTO dto = new TrainingDTO();
 		dto.setNameTraining(nameTraining);
-		dto.setIdGruppo (idGruppo);
+		dto.setGruppo(gruppo);
 		service.insert(dto);
 		setAll(request);
 		return "training/trainings";
 	}
 
 	@GetMapping("/read")
-	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
+	public String read(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("gruppo") String gruppo) {
 		request.getSession().setAttribute("dto", service.read(id));
 		return "training/readtraining";
 	}
@@ -73,8 +80,11 @@ public class TrainingController {
 		request.getSession().invalidate();
 		return "index";
 	}
-
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", service.getAll());
+	}
+		
+	private void setAllGruppo(HttpServletRequest request) {
+		request.getSession().setAttribute("Gruppolist", gService.getAll());
 	}
 }

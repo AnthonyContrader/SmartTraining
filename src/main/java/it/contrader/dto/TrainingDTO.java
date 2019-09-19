@@ -1,5 +1,6 @@
 package it.contrader.dto;
 
+import it.contrader.model.Gruppo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,6 @@ public class TrainingDTO {
 
 	private String nameTraining;
 
-	private int idGruppo;
+	private Gruppo gruppo;
 	
 }
