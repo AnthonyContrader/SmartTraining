@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.StudentDTO;
+import it.contrader.model.User;
 import it.contrader.service.StudentService;
+import it.contrader.service.UserService;
 
 @Controller
 @RequestMapping("/student")
@@ -19,15 +21,20 @@ public class StudentController {
 	@Autowired
 	private StudentService service;
 	
+	@Autowired
+	private UserService uService;
+	
 	@GetMapping("/getall")
 	public String getAll(HttpServletRequest request) {
 		setAll(request);
+		setAllUser(request);
 		return "student/students";
 	}
 	
 	@GetMapping("/delete")
 	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
 		service.delete(id);
+		setAll(request);
 		setAll(request);
 		return "student/students";
 	}
@@ -40,31 +47,33 @@ public class StudentController {
 	
 	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("name") String name,
-			@RequestParam("surname") String surname, @RequestParam("idUser") Long idUser) {
+			@RequestParam("surname") String surname, @RequestParam("user") User user) {
 		StudentDTO dto = new StudentDTO();
 		dto.setId(id);
 		dto.setName(name);
 		dto.setSurname(surname);
-		dto.setIdUser(idUser);
+		dto.setUser(user);
 		service.update(dto);
 		setAll(request);
+		setAllUser(request);
 		return "student/students";
 	}
 	
 	@PostMapping("/insert")
-	public String insert(HttpServletRequest request, @RequestParam("name") String name,
-			@RequestParam("surname") String surname, @RequestParam("idUser") Long idUser) {
+	public String insert(HttpServletRequest request, @RequestParam("name") String name, 
+			@RequestParam("surname") String surname, @RequestParam("user") User user) {
 		StudentDTO dto = new StudentDTO();
 		dto.setName(name);
 		dto.setSurname(surname);
-		dto.setIdUser(idUser);
+		dto.setUser(user);
 		service.insert(dto);
 		setAll(request);
 		return "student/students";		
 	}
 	
 	@GetMapping("/read")
-	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
+	public String read(HttpServletRequest request,@RequestParam("id") Long id, @RequestParam("name") String name,
+			@RequestParam("surname") String surname, @RequestParam("user") String user) {
 		request.getSession().setAttribute("dto", service.read(id));
 		return "student/readstudent";
 	}
@@ -77,6 +86,9 @@ public class StudentController {
 	
 	private void setAll(HttpServletRequest request) {
 		request.getSession().setAttribute("list", service.getAll());
+	}
+	private void setAllUser(HttpServletRequest request) {
+		request.getSession().setAttribute("Userlist", uService.getAll());
 	}
 
 }

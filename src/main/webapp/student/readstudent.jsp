@@ -26,13 +26,11 @@
 				<th>ID</th>
 				<th>Name</th>
 				<th>Surname</th>
-				<th>IdUser</th>
 			</tr>
 			<tr>
 				<td><%=s.getId()%></td>
 				<td><%=s.getName()%></td>
 				<td><%=s.getSurname()%></td>
-				<td><%=s.getIdUser()%></td>
 			</tr>
 		</table>
 

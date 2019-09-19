@@ -40,15 +40,6 @@
 			type="text" id="surname" name="surname" value=<%=s.getSurname()%>> 
     </div>
   </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="type">IdUser</label>
-    </div>
-   		 <div class="col-75">
- 			<input type="number" name="idUser" id="idUser" value=<%=s.getIdUser() %>>
-    	</div>
-    	<input type="hidden" name="id" value =<%=s.getId() %>>
-  </div>
       <button type="submit" >Edit</button>
 </form>
 
