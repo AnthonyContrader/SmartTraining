@@ -41,7 +41,7 @@
 				<td><a href="/student/read?id=<%=s.getId()%>"> <%=s.getName()%>
 				</a></td>
 				<td><%=s.getSurname()%></td>
-				<td><%=s.getUser().getId()%></td>
+				<td><%=s.getUser().getUsername() %></td>
 				<td><a href="/student/preupdate?id=<%=s.getId()%>">Edit</a></td>
 
 
