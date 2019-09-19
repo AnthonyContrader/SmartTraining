@@ -55,7 +55,7 @@ List<UserDTO> Userlist = (List<UserDTO>) request.getSession().getAttribute("User
 			<select id ="User" name ="user" >
 					<%
 					  	for (UserDTO u : Userlist) {
-					  		System.out.println("false");	
+					  		//System.out.println("false");	
 					  				//for(int n = 0; n > userDto.size(); n++){
 							  			//System.out.println("true");
 							  			//if(userDto.get(n).getId() != u.getId()){

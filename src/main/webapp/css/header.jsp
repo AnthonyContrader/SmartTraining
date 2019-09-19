@@ -8,10 +8,10 @@
 </head>
 <body>
 
-	<div class="header">SAMPLE Project</div>
+	<div class="header">You Porn </div>
 	<div class="navbar">
 		<a href="/homeadmin.jsp">Home</a> 
-		<a class="active" href="/user/getall">Users</a>
+		<a href="/user/getall">Users</a>
 		<a href="/student/getall">Students</a> 
 		<a href="/gruppo/getall">Groups </a> 
 		<a href="/content/getall">Contents</a> 
