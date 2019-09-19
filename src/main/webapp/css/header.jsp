@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<div class="header">You Porn </div>
+	<div class="header">Smart Training </div>
 	<div class="navbar">
 		<a href="/homeadmin.jsp">Home</a> 
 		<a href="/user/getall">Users</a>
