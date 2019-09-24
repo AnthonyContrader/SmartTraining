@@ -35,6 +35,16 @@ custom e sono definite nel CSS-->
             </a>
         </button>
     </div>
+    <button class="menubtn" (click)="studentcollapse()">
+        <i class="fas fa-users"></i>Student
+    </button>
+    <div *ngIf="isStudentCollapsed">
+        <button class="collapsebtn">
+            <a [routerLink]="['/admin-dashboard/student']">
+                <i class="fas fa-edit"></i> Manage Student
+            </a>
+        </button>
+    </div>
     <button class="menubtn" (click)="logout()">
         <i class="fas fa-sign-out-alt"></i>Logout
     </button>
