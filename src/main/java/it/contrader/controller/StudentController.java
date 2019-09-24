@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import it.contrader.dto.StudentDTO;
 import it.contrader.service.StudentService;
+import it.contrader.service.UserService;
 
 
 /**
@@ -29,6 +30,8 @@ public class StudentController extends AbstractController<StudentDTO>{
 	
 	@Autowired
 	private StudentService studentService;
+	@Autowired
+	private UserService uService;
 
 
 	/**
