@@ -3,16 +3,11 @@ package it.contrader.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import it.contrader.dto.LoginDTO;
 import it.contrader.dto.StudentDTO;
-import it.contrader.dto.UserDTO;
 import it.contrader.service.StudentService;
-import it.contrader.service.UserService;
 
 
 /**
@@ -30,13 +25,13 @@ import it.contrader.service.UserService;
  */
 @RestController
 @RequestMapping("/student")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin()
 public class StudentController extends AbstractController<StudentDTO>{
 	
 	@Autowired
 	private StudentService studentService;
-	@Autowired
-	private UserService uService;
+	//@Autowired
+	//private UserService uService;
 
 
 	/**

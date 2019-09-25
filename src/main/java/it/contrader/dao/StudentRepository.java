@@ -1,9 +1,14 @@
 package it.contrader.dao;
 
+import java.util.List;
+
+import javax.transaction.Transactional;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import it.contrader.model.Student;
+import it.contrader.model.User;
 
 
 /**
@@ -20,6 +25,8 @@ import it.contrader.model.Student;
 public interface StudentRepository extends CrudRepository<Student, Long>{
 
 	
-	Student findStudentById (Long id);
+	Student findStudentById (long id);
+	List<Student> findAllByUser(User user);
+
 	
 }

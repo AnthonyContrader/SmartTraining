@@ -28,7 +28,7 @@ public class StudentService extends AbstractService<Student, StudentDTO> {
 	// ALL crud methods in AbstractService
 
 	// LOGIN method
-	public StudentDTO findStudentById(Long id) {
+	public StudentDTO findById(Long id) {
 		return converter.toDTO(repository.findStudentById(id));
 	}
 

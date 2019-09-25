@@ -3,9 +3,9 @@ package it.contrader.converter;
 import org.springframework.stereotype.Component;
 
 import it.contrader.dto.StudentDTO;
-import it.contrader.dto.UserDTO;
+//import it.contrader.dto.UserDTO;
 import it.contrader.model.Student;
-import it.contrader.model.User;
+//import it.contrader.model.User;
 
 /**
  * Questa classe implementa i metodi di conversione dell'entità {@link User} a {@link UserDTO}
@@ -24,7 +24,7 @@ public class StudentConverter extends AbstractConverter<Student, StudentDTO> {
 	public Student toEntity(StudentDTO studentDTO) {
 		Student student = null;
 		if (studentDTO != null) {
-			student = new Student( studentDTO.getId(), studentDTO.getName(), studentDTO.getSurname(), studentDTO.getUser());	
+			student = new Student(studentDTO.getId(), studentDTO.getName(), studentDTO.getSurname(), studentDTO.getUser());	
 		}
 		return student;
 	}
