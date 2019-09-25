@@ -7,5 +7,7 @@ export class StudentDTO{
     name:string;
     surname:string;
 
-    user: string;
+    user: UserDTO;
+
+    
 }

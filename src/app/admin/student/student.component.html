@@ -36,7 +36,7 @@
             </td>
             <td>
               <select placeholder="user" [(ngModel)]="studenttoinsert.user">
-                <option [ngValue]="user.login" *ngFor="let user of users">{{user.login}}</option>
+                <option [ngValue]="student.user" *ngFor="let user of users">{{user.login}}</option>
               </select>
             </td>
             <td>
@@ -55,6 +55,9 @@
             </td>
             <td>
               <input [(ngModel)]="student.surname">
+            </td>
+            <td>
+              <input [(ngModel)]="student.user.id">
             </td>
             <td>
               {{student.user}}
