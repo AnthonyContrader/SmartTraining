@@ -24,11 +24,7 @@ public class StudentConverter extends AbstractConverter<Student, StudentDTO> {
 	public Student toEntity(StudentDTO studentDTO) {
 		Student student = null;
 		if (studentDTO != null) {
-			student = new Student();
-			studentDTO.getId();
-			studentDTO.getName();
-			studentDTO.getSurname();
-			studentDTO.getUser();
+			student = new Student( studentDTO.getId(), studentDTO.getName(), studentDTO.getSurname(), studentDTO.getUser());	
 		}
 		return student;
 	}
@@ -37,12 +33,8 @@ public class StudentConverter extends AbstractConverter<Student, StudentDTO> {
 	public StudentDTO toDTO(Student student) {
 		StudentDTO studentDTO = null;
 		if (student != null) {
-			studentDTO = new StudentDTO();
-			student.getId();
-			student.getName();
-			student.getSurname();
-			studentDTO.getUser();
-			
+			studentDTO = new StudentDTO(student.getId(),student.getName(), student.getSurname(), student.getUser());
+						
 		}
 		return studentDTO;
 	}

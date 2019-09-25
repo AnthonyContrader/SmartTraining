@@ -1,5 +1,7 @@
 package it.contrader.model;
 
+import javax.persistence.Entity;
+
 import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
@@ -14,7 +16,7 @@ import lombok.NoArgsConstructor;
  * @author Vittorio Valent
  * @author Girolamo Murdaca
  * 
- * @see UserDTO
+ * @see StudentDTO
  */
 @Data
 @Entity
