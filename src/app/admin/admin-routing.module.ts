@@ -5,6 +5,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UsersComponent } from './users/users.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 import { AuthGuard } from '../../guard/auth/auth.guard';
+import { StudentComponent } from './student/student.component';
 
 /**
  * Modulo di routing dell'admin. Qui ci sono i percorsi che un admin può seguire:
@@ -24,6 +25,7 @@ const routes: Routes = [
     path: 'admin-dashboard', component: AdminLayoutComponent, canActivate: [AuthGuard], children: [
       { path: '', component: AdminDashboardComponent },
       { path: 'users', component: UsersComponent },
+      { path: 'student', component: StudentComponent},
       { path: 'work-in-progress', component: WorkInProgressComponent }
     ]
   }
