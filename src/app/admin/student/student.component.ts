@@ -11,11 +11,12 @@ import { AbstractCrudComponent } from 'src/app/utils/abstractcomponent';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
+ 
   students: StudentDTO[];
   studenttoinsert: StudentDTO = new StudentDTO();
   users: UserDTO[];
 
-  constructor(private service: StudentService, private uService: UserService) {}
+  constructor(private service: StudentService, private uService: UserService) { }
 
   ngOnInit() {
     this.getUser();
