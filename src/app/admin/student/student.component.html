@@ -1,6 +1,9 @@
 <div class="container">
     <div class="row mt-5">
       <div class="col-md-12">
+
+      </div>
+      <div class="col-md-10">
         <table>
           <tr>
             <th>
@@ -19,7 +22,7 @@
               Delete
             </th>
             <th>
-              Student
+              Details
             </th>
           </tr>
           <tr>
@@ -37,10 +40,10 @@
               </select>
             </td>
             <td>
-              <button (click)="insert(dto)"><i class="fas fa-plus"></i>Insert</button>
+              <button (click)="insert(studenttoinsert)">Insert</button>
             </td>
             <td>
-              <button (click)="clear()"><i class="fas fa-times"></i>Clear</button>
+              <button (click)="clear()">Clear</button>
             </td>
             <td>
               <button (click)="close()">Close Details</button>
@@ -57,26 +60,28 @@
               {{student.user}}
             </td>
             <td>
-              <button (click)=update(student)><i class="fas fa-edit"></i>Edit</button>
+              <button (click)=update(student)>Edit</button>
             </td>
             <td>
-              <button (click)="delete(student)"><i class="fas fa-trash"></i>Delete</button>
+              <button (click)="delete(student)">>Delete</button>
             </td>
             <td>
-              <button (click)="select(student)"><i class="fas fa-binoculars"></i>Details</button>
+              <button (click)="select(student)">Details</button>
             </td>
           </tr>
         </table>
-      </div>
+ 
     </div>
     <div class="row mt-5">
       <div class="col-md-1">
         <!-- colonna vuota per centrare i dettagli-->
       </div>
+      <!--
       <div class="col-md-10">
-        <!-- Se "selected" non è nullo, viene passato il suo valore sotto la chiave dto alla compoment
-          figlia. Questo è un esempio di binding unidirezionale tra ts e ts-->
+         Se "selected" non è nullo, viene passato il suo valore sotto la chiave dto alla compoment
+          figlia. Questo è un esempio di binding unidirezionale tra ts e ts
         <app-user-details *ngIf="selected" [dto]="selected"></app-user-details>
+        -->
       </div>
       <div class="col-md-1">
         <!-- colonna vuota per centrare i dettagli-->
