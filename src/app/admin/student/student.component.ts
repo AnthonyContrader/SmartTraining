@@ -10,42 +10,40 @@ import { AbstractCrudComponent } from 'src/app/utils/abstractcomponent';
   templateUrl: './student.component.html',
   styleUrls: ['./student.component.css']
 })
-export class StudentComponent extends AbstractCrudComponent<StudentDTO> implements OnInit {
+export class StudentComponent implements OnInit {
   students: StudentDTO[];
   studenttoinsert: StudentDTO = new StudentDTO();
   users: UserDTO[];
 
-  constructor(service: StudentService, private uService: UserService) {
-    super(service);
-  }
+  constructor(private service: StudentService, private uService: UserService) {}
 
   ngOnInit() {
-    this.clear();
     this.getUser();
-    this.getAll();
+    this.getStudent();
   }
+
+  getStudent(){
+    this.service.getAll().subscribe(students=>this.students=students);
+  }
+
   getUser(){
     this.uService.getAll().subscribe(users=>users=users);
   }
-  /*
-  delete(student: StudentDTO){
-    this.service.delete(student.id).subscribe(() => this.getStudent());
+
+  delete(student:StudentDTO){
+    this.service.delete(student.id).subscribe(()=> this.getStudent());
   }
 
-  update(student: StudentDTO){
-    this.service.update(student).subscribe(() => this.getStudent());
+  update(student:StudentDTO){
+    this.service.update(student).subscribe(()=> this.getStudent());
   }
 
-  insert(student: StudentDTO){
-    this.service.insert(student).subscribe(() => this.getStudent());
-  }*/
+  insert(student:StudentDTO){
+    this.service.insert(student).subscribe(()=> this.getStudent());
+  }
 
   clear(){
     this.studenttoinsert = new StudentDTO();
-  }
-
-  close(){
-    this.selected = null;
   }
 
 }
