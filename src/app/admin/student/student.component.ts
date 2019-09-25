@@ -11,7 +11,7 @@ import { StudentDTO } from 'src/dto/studentdto';
 })
 export class StudentComponent implements OnInit {
   students: StudentDTO[];
-  studentinsert: StudentDTO = new StudentDTO();
+  studenttoinsert: StudentDTO = new StudentDTO();
   users: UserDTO[];
 
   constructor(private service: StudentService, private uService: UserService) {}
@@ -42,7 +42,7 @@ export class StudentComponent implements OnInit {
   }
 
   clear(){
-    this.studentinsert = new StudentDTO();
+    this.studenttoinsert = new StudentDTO();
   }
 
 }

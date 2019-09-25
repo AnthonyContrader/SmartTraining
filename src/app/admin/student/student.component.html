@@ -26,13 +26,13 @@
             <td>
               <!-- con il binding bidirezionale [(ngModel)] mentre scriviamo nell'input
               viene modificato l'attributo di dto in tempo reale-->
-              <input placeholder="name" [(ngModel)]="studentinsert.name">
+              <input placeholder="name" [(ngModel)]="studenttoinsert.name">
             </td>
             <td>
-              <input placeholder="surname" [(ngModel)]="studentinsert.surname">
+              <input placeholder="surname" [(ngModel)]="studenttoinsert.surname">
             </td>
             <td>
-              <select placeholder="user" [(ngModel)]="studentinsert.user">
+              <select placeholder="user" [(ngModel)]="studenttoinsert.user">
                 <option [ngValue]="user.login" *ngFor="let user of users">{{user.login}}</option>
               </select>
             </td>

@@ -22,7 +22,7 @@ import { StudentComponent } from './student/student.component';
  */
 const routes: Routes = [
   {
-    path: 'admin-dashboard', component: AdminLayoutComponent, canActivate: [AuthGuard], children: [
+    path: 'admin-dashboard', component: AdminLayoutComponent, children: [
       { path: '', component: AdminDashboardComponent },
       { path: 'users', component: UsersComponent },
       { path: 'student', component: StudentComponent},
