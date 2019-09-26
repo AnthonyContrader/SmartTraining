@@ -26,4 +26,8 @@ import { StudentDTO } from 'src/dto/studentdto';
         super(http);
         this.type = 'student';
  }
+ getAllUser(user: UserDTO): Observable<StudentDTO[]>{
+   
+    return this.http.post<StudentDTO[]>('http://localhost:' + this.port + '/' + this.type + '/getAllUser', user);
+ }
 }

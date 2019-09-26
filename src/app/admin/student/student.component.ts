@@ -19,8 +19,8 @@ export class StudentComponent implements OnInit {
   constructor(private service: StudentService, private uService: UserService) { }
 
   ngOnInit() {
-    this.getUser();
     this.getStudent();
+    this.getUser();
   }
 
   getStudent(){
@@ -28,7 +28,7 @@ export class StudentComponent implements OnInit {
   }
 
   getUser(){
-    this.uService.getAll().subscribe(users=>users=users);
+    this.uService.getAll().subscribe(users=> this.users=users);
   }
 
   delete(student:StudentDTO){
