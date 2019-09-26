@@ -34,7 +34,6 @@ public class Student {
 	
 	@Column(unique = true)
 	private String name;
-	
 	private String surname;
 
 	@OneToOne

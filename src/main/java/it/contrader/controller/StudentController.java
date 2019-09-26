@@ -25,13 +25,11 @@ import it.contrader.service.StudentService;
  */
 @RestController
 @RequestMapping("/student")
-@CrossOrigin()
+@CrossOrigin
 public class StudentController extends AbstractController<StudentDTO>{
 	
 	@Autowired
 	private StudentService studentService;
-	//@Autowired
-	//private UserService uService;
 
 
 	/**

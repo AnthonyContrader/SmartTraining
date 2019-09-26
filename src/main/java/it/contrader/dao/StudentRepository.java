@@ -22,10 +22,11 @@ import it.contrader.model.User;
  *
  */
 @Repository
+@Transactional
 public interface StudentRepository extends CrudRepository<Student, Long>{
 
 	
-	Student findStudentById (long id);
+	Student findStudentById(long id);
 	List<Student> findAllByUser(User user);
 
 	
