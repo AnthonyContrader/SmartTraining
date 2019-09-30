@@ -3,9 +3,7 @@ package it.contrader.converter;
 import org.springframework.stereotype.Component;
 
 import it.contrader.dto.StudentDTO;
-//import it.contrader.dto.UserDTO;
 import it.contrader.model.Student;
-//import it.contrader.model.User;
 
 /**
  * Questa classe implementa i metodi di conversione dell'entità {@link User} a {@link UserDTO}
