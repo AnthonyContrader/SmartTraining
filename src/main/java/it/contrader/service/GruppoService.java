@@ -1,20 +1,22 @@
 package it.contrader.service;
 
+import it.contrader.model.Gruppo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import it.contrader.converter.GruppoConverter;
 import it.contrader.dao.GruppoRepository;
-import it.contrader.model.Gruppo;
+import it.contrader.dto.GruppoDTO;
 
 @Service
 public class GruppoService extends AbstractService<Gruppo, GruppoDTO>{
 	@Autowired
 	private GruppoConverter converter;
-	
 	@Autowired
 	private GruppoRepository repository;
 	
-	public GroupDTO findById(Long id) {
+	public GruppoDTO findById(Long id) {
 		return converter.toDTO(repository.findGruppoById(id));
 	}
 

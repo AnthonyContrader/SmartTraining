@@ -1,6 +1,9 @@
 package it.contrader.dto;
 
-import javax.persistence.Entity;
+import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import it.contrader.model.Student;
 import lombok.AllArgsConstructor;
@@ -8,15 +11,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class GruppoDTO {
 	
 	private Long id;
 	
-	private Student student;
-	
 	private String grupponame;
+	
+	private Set<Student> student;
 
 }
