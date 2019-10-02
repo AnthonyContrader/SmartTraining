@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-12">
+
+    </div>
+    <div class="col-md-10">
+      <table>
+        <tr>
+          <th>
+            Tag
+          </th>
+          <th>
+            Text
+          </th>
+          <th>
+            Title
+          </th>
+          <th>
+            IdTraining
+          </th>
+          <th>
+            Edit
+          </th>
+          <th>
+            Delete
+          </th>
+          <th>
+            Details
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <!-- con il binding bidirezionale [(ngModel)] mentre scriviamo nell'input
+            viene modificato l'attributo di dto in tempo reale-->
+            <input placeholder="tag" [(ngModel)]="contenttoinsert.tag">
+          </td>
+          <td>
+            <input placeholder="text" [(ngModel)]="contenttoinsert.text">
+          </td>
+          <td>
+            <input placeholder="title" [(ngModel)]="contenttoinsert.title">
+          </td>
+          <td>
+            <select placeholder="training" [(ngModel)]="contenttoinsert.training">
+              <option [ngValue]="training" *ngFor="let training of trainings">{{training.nameTraining}}</option>
+            </select>
+          </td>
+          <td>
+            <button (click)="insert(contentttoinsert)">Insert</button>
+          </td>
+          <td>
+            <button (click)="clear()">Clear</button>
+          </td>
+          <td>
+            <button (click)="close()">Close Details</button>
+          </td>
+        </tr>
+        <tr *ngFor="let content of contents">
+          <td>
+            <input [(ngModel)]="content.tag">
+          </td>
+          <td>
+            <input [(ngModel)]="content.text">
+          </td>
+          <td>
+            <input [(ngModel)]="content.title">
+          </td>
+          <td>
+            <input [(ngModel)]="content.training.nameTraining">
+          </td>
+         
+          <td>
+            <button (click)=update(content)>Edit</button>
+          </td>
+          <td>
+            <button (click)="delete(content)">>Delete</button>
+          </td>
+          <td>
+            <button (click)="select(content)">Details</button>
+          </td>
+        </tr>
+      </table>
+
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-1">
+      <!-- colonna vuota per centrare i dettagli-->
+    </div>
+    
+    <div class="col-md-10">
+      <!-- Se "selected" non è nullo, viene passato il suo valore sotto la chiave dto alla compoment
+        figlia. Questo è un esempio di binding unidirezionale tra ts e ts-->
+      <app-user-details *ngIf="selected" [dto]="selected"></app-user-details>
+      
+    </div>
+    <div class="col-md-1">
+      <!-- colonna vuota per centrare i dettagli-->
+    </div>
+  </div>
+</div>
