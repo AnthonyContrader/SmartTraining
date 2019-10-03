@@ -13,18 +13,7 @@ custom e sono definite nel CSS-->
         <i class="fas fa-user"></i> Account
     </button>
     <!-- La direttiva *ngIf mostra il contenuto del div solo se "isAccountCollapsed" è true -->
-    <div *ngIf="isAccountCollapsed">
-        <button class="collapsebtn">
-            <a [routerLink]="['/admin-dashboard/work-in-progress']">
-                <i class="fas fa-user-edit"></i> Edit Profile
-            </a>
-        </button>
-        <button class="collapsebtn">
-            <a [routerLink]="['/admin-dashboard/work-in-progress']">
-                <i class="fas fa-file-alt"></i>General Info
-            </a>
-        </button>
-    </div>
+
     <button class="menubtn" (click)="userscollapse()">
         <i class="fas fa-users"></i>Users
     </button>
