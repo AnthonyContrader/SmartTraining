@@ -24,8 +24,7 @@ import { GruppoDTO } from 'src/dto/gruppodto';
 
     constructor(http: HttpClient){
         super(http);
-        this.type = 'gruppos';
-        this.name = 'micro1';
+        this.type = 'gruppo';
  }
  getAllUser(student: StudentDTO): Observable<GruppoDTO[]>{
    
