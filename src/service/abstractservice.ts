@@ -22,7 +22,7 @@ export abstract class AbstractService<DTO> implements Service<DTO> {
     }
 
     auth() {
-        const user = JSON.parse(localStorage.getItem('autoken')) as UserDTO;
+        const user = JSON.parse(localStorage.getItem('currentUser')) as UserDTO;
         if (user) {
           console.log('Bearer' + user.authorities);
           return 'Bearer ' + user.authorities;
@@ -106,7 +106,7 @@ export abstract class AbstractService<DTO> implements Service<DTO> {
         }else{
           return this.http.delete<DTO>('http://localhost:' + this.port + '/' + this.name + '/api' + '/' + this.type + '/' + login , {
             headers: {
-              Authorization : this.auth()
+              Authorization : this.auth() 
             }
           });
         }
@@ -114,14 +114,12 @@ export abstract class AbstractService<DTO> implements Service<DTO> {
     
       insert(dto: DTO): Observable<DTO> {
         if(this.name == null){
-          console.log('insert ', dto);
           return this.http.post<DTO>('http://localhost:' + this.port + '/' + 'api' + '/' + this.type, dto , {
             headers: {
               Authorization : this.auth()
             }
           });
         }else{
-          console.log('insert ', dto);
           return this.http.post<DTO>('http://localhost:' + this.port + '/' + this.name + '/api' + '/' + this.type, dto , {
             headers: {
               Authorization : this.auth()

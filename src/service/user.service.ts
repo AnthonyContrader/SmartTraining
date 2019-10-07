@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { LoginDTO } from 'src/dto/logindto';
 import { Observable } from 'rxjs';
 
+
 /**
  * I service sono decorati da @Injectable. 
  * Qui trovate, oltre ai metodi ereditati dall'Abstract,
@@ -18,16 +19,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService extends AbstractService<UserDTO>{
- 
 
   constructor(http: HttpClient) {
     super(http);
     this.type = 'users';
     this.port = '8080';
-  }
-
-  login(loginDTO: LoginDTO): Observable<UserDTO> {
-    return this.http.post<any>('http://localhost:8080/api/authenticate', loginDTO);
   }
 
   auth() {
@@ -40,14 +36,25 @@ export class UserService extends AbstractService<UserDTO>{
   }
 
 
-  userLogged(username: string) {
-    // console.log('qua: ', this.auth());
-     console.log(this.auth());
-     return this.http.get('http://localhost:8080/api/users/' + username, {
-       headers: {
-         Authorization: this.auth()
-       }
-     });
-   }
+  login(loginDTO: LoginDTO): Observable<UserDTO> {
+    return this.http.post<any>('http://localhost:8080/api/authenticate', loginDTO);
+  }
 
+  userLogged(username: string) {
+   // console.log('qua: ', this.auth());
+    console.log(this.auth());
+    return this.http.get('http://localhost:8080/api/users/' + username, {
+      headers: {
+        Authorization: this.auth()
+      }
+    });
+  }
+  register(userdto: UserDTO): Observable<UserDTO> {
+    return this.http.post<UserDTO>('http://localhost:8080/api/register', userdto )
+  };
+
+  activated(userdto: UserDTO): Observable<UserDTO> {
+    return this.http.post<UserDTO>('http://localhost:8080/api/activate', userdto )
+  };
+ 
 }

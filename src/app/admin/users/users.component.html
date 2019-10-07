@@ -16,6 +16,9 @@
             Usertype
           </th>
           <th>
+            Status
+          </th>
+          <th>
             Edit
           </th>
           <th>
@@ -36,6 +39,12 @@
             </select>
           </td>
           <td>
+            <select placeholder="status" [(ngModel)]="usertoinsert.activated">
+              <option value="true">true</option>
+              <option value="false">false</option>
+            </select>
+          </td>
+          <td>
             <button (click)="insert(usertoinsert)">Insert</button>
           </td>
           <td>
@@ -53,10 +62,13 @@
             <input [(ngModel)] = "user.authorities">
           </td>
           <td>
+            <input [(ngModel)]="user.activated">
+          </td>
+          <td>
             <button (click)=update(user)>Update</button>
           </td>
           <td>
-            <button (click)="deleteU(user)">Delete</button>
+            <button (click)="deleteUser(user)">Delete</button>
           </td>
         </tr>
       </table>

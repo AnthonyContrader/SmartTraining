@@ -19,5 +19,7 @@ export class UserDTO {
    password: string;
 
    authorities: string;
+
+   activated: boolean;
 }
 

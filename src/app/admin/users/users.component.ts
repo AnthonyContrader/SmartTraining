@@ -8,7 +8,6 @@ import { UserDTO } from 'src/dto/userdto';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-
   users: UserDTO[];
   usertoinsert: UserDTO = new UserDTO();
 
@@ -22,10 +21,12 @@ export class UsersComponent implements OnInit {
     this.service.getAll().subscribe(users => this.users = users);
   }
 
+  deleteUser(user: UserDTO) {
+    this.service.deleteUser(user.login).subscribe(() => this.getUsers());
+  }
   delete(user: UserDTO) {
     this.service.delete(user.id).subscribe(() => this.getUsers());
   }
-
 
   update(user: UserDTO) {
     this.service.update(user).subscribe(() => this.getUsers());
@@ -33,6 +34,7 @@ export class UsersComponent implements OnInit {
 
   insert(user: UserDTO) {
     this.service.insert(user).subscribe(() => this.getUsers());
+    console.log(UserDTO);
   }
 
   clear(){
