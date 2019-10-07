@@ -34,11 +34,7 @@
             <td>
               <input placeholder="surname" [(ngModel)]="studenttoinsert.surname">
             </td>
-            <td>
-              <select placeholder="user" [(ngModel)]="studenttoinsert.user">
-                <option [ngValue]="user" *ngFor="let user of users">{{user.username}}</option>
-              </select>
-            </td>
+            
 
             <td>
                 <button (click)="insert(studenttoinsert)"><i class="fas fa-plus"></i>Insert</button>
@@ -52,13 +48,10 @@
           </tr>
           <tr *ngFor="let student of students">
             <td>
-              <input [(ngModel)]="studenttoinsert.name">
+              <input [(ngModel)]="student.name">
             </td>
             <td>
-              <input [(ngModel)]="studenttoinsert.surname">
-            </td>
-            <td>
-              <input [(ngModel)]="studenttoinsert.user.username">
+              <input [(ngModel)]="student.surname">
             </td>
            
             <td>

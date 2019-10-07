@@ -6,7 +6,7 @@ import { Usertype } from './usertype';
  * 
  * @see Usertype
  * 
- * @author Vittorio Valent
+ * @author 
  */
 export class UserDTO {
 
@@ -19,6 +19,5 @@ export class UserDTO {
    password: string;
 
    authorities: string;
-
 }
 
