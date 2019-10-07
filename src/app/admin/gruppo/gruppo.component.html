@@ -10,10 +10,6 @@
                   GruppoName
                 </th>
             <th>
-              Student
-            </th>
-                        
-            <th>
               Edit
             </th>
             <th>
@@ -30,11 +26,6 @@
               <input placeholder="grupponame" [(ngModel)]="gruppotoinsert.grupponame">
             </td>
             <td>
-              <select placeholder="student" [(ngModel)]="gruppotoinsert.student">
-                <option [ngValue]="student" *ngFor="let student of students">{{student.surname}}</option>
-              </select>
-            </td>
-            <td>
               <button (click)="insert(gruppotoinsert)">Insert</button>
             </td>
             <td>
@@ -48,13 +39,6 @@
             <td>
               <input [(ngModel)]="gruppo.grupponame">
             </td>
-            <td>
-              <input [(ngModel)]="gruppo.student.surname">
-            </td>
-            <td>
-              {{gruppo.student.surname}}
-            </td>
-           
             <td>
               <button (click)=update(gruppo)>Edit</button>
             </td>

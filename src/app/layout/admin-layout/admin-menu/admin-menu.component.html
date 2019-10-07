@@ -44,26 +44,6 @@ custom e sono definite nel CSS-->
                 </a>
             </button>
         </div>
-        <button class="menubtn" (click)="trainingcollapse()">
-            <i class="fas fa-users"></i>Training
-        </button>
-        <div *ngIf="isTrainingCollapsed">
-            <button class="collapsebtn">
-                <a [routerLink]="['/admin-dashboard/training']">
-                    <i class="fas fa-edit"></i> Manage Training
-                </a>
-            </button>
-        </div>
-        <button class="menubtn" (click)="contentcollapse()">
-            <i class="fas fa-users"></i>Content
-        </button>
-        <div *ngIf="isContentCollapsed">
-            <button class="collapsebtn">
-                <a [routerLink]="['/admin-dashboard/content']">
-                    <i class="fas fa-edit"></i> Manage Content
-                </a>
-            </button>
-        </div>
     <button class="menubtn" (click)="logout()">
         <i class="fas fa-sign-out-alt"></i>Logout
     </button>

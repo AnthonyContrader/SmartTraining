@@ -7,8 +7,6 @@ import { WorkInProgressComponent } from './work-in-progress/work-in-progress.com
 import { AuthGuard } from '../../guard/auth/auth.guard';
 import { StudentComponent } from './student/student.component';
 import { GruppoComponent } from './gruppo/gruppo.component';
-import { TrainingComponent } from './training/training.component';
-import { ContentComponent } from './content/content.component';
 
 
 /**
@@ -31,8 +29,6 @@ const routes: Routes = [
       { path: 'users', component: UsersComponent },
       { path: 'student', component: StudentComponent},
       { path: 'gruppo', component: GruppoComponent},
-      { path: 'training', component: TrainingComponent},
-      { path: 'content', component: ContentComponent},
 
       { path: 'work-in-progress', component: WorkInProgressComponent }
     ]
