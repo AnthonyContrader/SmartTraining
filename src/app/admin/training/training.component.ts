@@ -20,7 +20,6 @@ export class TrainingComponent implements OnInit {
 
   ngOnInit() {
     this.getTraining();
-    this.getGruppo();
   }
 
   getTraining(){

@@ -23,7 +23,7 @@ import { StudentDTO } from 'src/dto/studentdto';
 
     constructor(http: HttpClient){
         super(http);
-        this.name = 'Micro1';
+        this.name = 'micro1';
         this.type = 'students';
  }
  auth() {

@@ -7,9 +7,6 @@ export class ContentDTO{
     tag:string;
     text:string;
     title:string;
-    idTraining:number;
-
-    training: TrainingDTO;
 
     
 }

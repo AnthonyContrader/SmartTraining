@@ -10,10 +10,6 @@
             NameTraining
           </th>
           <th>
-            IdGruppo
-          </th>
-          
-          <th>
             Edit
           </th>
           <th>
@@ -29,12 +25,6 @@
             viene modificato l'attributo di dto in tempo reale-->
             <input placeholder="nameTraining" [(ngModel)]="trainingtoinsert.nameTraining">
           </td>
-          
-          <td>
-            <select placeholder="gruppo" [(ngModel)]="trainingtoinsert.gruppo">
-              <option [ngValue]="gruppo" *ngFor="let user of users">{{gruppo.IdGruppo}}</option>
-            </select>
-          </td>
           <td>
             <button (click)="insert(trainingtoinsert)">Insert</button>
           </td>
@@ -45,23 +35,20 @@
             <button (click)="close()">Close Details</button>
           </td>
         </tr>
-        <tr *ngFor="let student of students">
+        <tr *ngFor="let training of trainings">
           <td>
-            <input [(ngModel)]="training.nameTraining">
+            <input [(ngModel)]="trainings.nameTraining">
           </td>
           
-          <td>
-            <input [(ngModel)]="training.gruppo.IdGruppo">
-          </td>
          
           <td>
-            <button (click)=update(training)>Edit</button>
+            <button (click)=update(trainings)>Edit</button>
           </td>
           <td>
-            <button (click)="delete(training)">>Delete</button>
+            <button (click)="delete(trainings)">Delete</button>
           </td>
           <td>
-            <button (click)="select(training)">Details</button>
+            <button (click)="select(trainings)">Details</button>
           </td>
         </tr>
       </table>

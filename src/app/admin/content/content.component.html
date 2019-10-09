@@ -41,11 +41,6 @@
             <input placeholder="title" [(ngModel)]="contenttoinsert.title">
           </td>
           <td>
-            <select placeholder="training" [(ngModel)]="contenttoinsert.training">
-              <option [ngValue]="training" *ngFor="let training of trainings">{{training.nameTraining}}</option>
-            </select>
-          </td>
-          <td>
             <button (click)="insert(contentttoinsert)">Insert</button>
           </td>
           <td>
@@ -64,9 +59,6 @@
           </td>
           <td>
             <input [(ngModel)]="content.title">
-          </td>
-          <td>
-            <input [(ngModel)]="content.training.nameTraining">
           </td>
          
           <td>
