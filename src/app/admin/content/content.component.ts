@@ -20,7 +20,6 @@ export class ContentComponent implements OnInit {
 
   ngOnInit() {
     this.getContent();
-    this.getTraining();
   }
 
   getContent(){
@@ -41,6 +40,7 @@ export class ContentComponent implements OnInit {
 
   insert(content:ContentDTO){
     this.service.insert(content).subscribe(()=> this.getContent());
+    console.log(content.tag);
   }
 
   clear(){

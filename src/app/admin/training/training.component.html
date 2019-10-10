@@ -23,7 +23,7 @@
           <td>
             <!-- con il binding bidirezionale [(ngModel)] mentre scriviamo nell'input
             viene modificato l'attributo di dto in tempo reale-->
-            <input placeholder="nameTraining" [(ngModel)]="trainingtoinsert.nameTraining">
+            <input placeholder="nameTraining" [(ngModel)]="trainingtoinsert.nametraining">
           </td>
           <td>
             <button (click)="insert(trainingtoinsert)">Insert</button>
@@ -37,18 +37,18 @@
         </tr>
         <tr *ngFor="let training of trainings">
           <td>
-            <input [(ngModel)]="trainings.nameTraining">
+            <input [(ngModel)]="training.nametraining">
           </td>
           
          
           <td>
-            <button (click)=update(trainings)>Edit</button>
+            <button (click)=update(training)>Edit</button>
           </td>
           <td>
-            <button (click)="delete(trainings)">Delete</button>
+            <button (click)="delete(training)">Delete</button>
           </td>
           <td>
-            <button (click)="select(trainings)">Details</button>
+            <button (click)="select(training)">Details</button>
           </td>
         </tr>
       </table>
