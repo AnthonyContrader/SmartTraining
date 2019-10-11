@@ -3,23 +3,21 @@
   ogni riga) -->
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-7">
-        <img src="../../assets/logo.svg" alt="logo">
+      <div id="divImg" class="col-md-7">
+        <img src="../../assets/logo1.png" alt="logo">
       </div>
       <div class="col-md-5">
         <form #f="ngForm">
-          <p>Please insert username and password to Login or Sign Up</p>
-          <div class="form-group">
-            <input class="form-control" type="text" id="user" name="username" placeholder="Username" ngModel>
+          <div class="col-md-7" id="inputusername" >
+            <input class="form-control" type="text" rows="5" cols="40" id="user" name="username" placeholder="Enter Username" ngModel>
           </div>
-          <div class="form-group">
-            <input class="form-control" type="password" id="pass" name="password" placeholder="Password" ngModel>
+          <div class="form-group col-md-8" id="inputpassword">
+            <input class="form-control" type="password" rows="5" cols="40" id="pass" name="password" placeholder="Enter Password" ngModel>
           </div>
           <!-- "(click)"" è un tipo di binding unidirezionale (dal template al ts): quando l'utente clicca
           sul bottone viene eseguito il metodo login(f) del ts. f non è altro che la form con tutti i valori
         inseriti (verranno poi spacchettati dal ts) -->
-          <button type="submit" (click)="login(f)">Login</button>
-          <button type="submit">Sign Up</button>
+          <button id="sub" type="submit" (click)="login(f)">Login</button>
         </form>
       </div>
     </div>

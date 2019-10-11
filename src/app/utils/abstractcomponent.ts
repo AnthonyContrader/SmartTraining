@@ -26,7 +26,6 @@ export abstract class AbstractCrudComponent<DTO>{
     this.service.delete(id).subscribe(() => this.getAll());
   }
 
-
   update(user: DTO) {
     this.service.update(user).subscribe(() => this.getAll());
   }

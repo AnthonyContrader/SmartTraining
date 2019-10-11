@@ -16,7 +16,7 @@ export class ContentComponent implements OnInit {
   contenttoinsert: ContentDTO = new ContentDTO();
   trainings: TrainingDTO[];
 
-  constructor(private service: ContentService, private tService: TrainingService) { }
+  constructor(private service: ContentService, private tService: TrainingService) {   }
 
   ngOnInit() {
     this.getContent();
@@ -40,7 +40,6 @@ export class ContentComponent implements OnInit {
 
   insert(content:ContentDTO){
     this.service.insert(content).subscribe(()=> this.getContent());
-    console.log(content.tag);
   }
 
   clear(){
