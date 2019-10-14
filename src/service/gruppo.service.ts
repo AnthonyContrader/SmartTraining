@@ -18,7 +18,7 @@ import { GruppoDTO } from 'src/dto/gruppodto';
 
     constructor(http: HttpClient){
         super(http);
-        this.type = 'groups';
+        this.type = 'gruppos';
         this.name = 'Micro1';
  }
 }
