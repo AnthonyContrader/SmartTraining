@@ -30,8 +30,6 @@ import { UserDTO } from 'src/dto/userdto';
  }
  auth() {
     const user = JSON.parse(localStorage.getItem('currentUser')) as UserDTO;
-
-    console.log(user.authorities + 'user');
     if (user) {
       return 'Bearer ' + user.authorities;
     } else {
