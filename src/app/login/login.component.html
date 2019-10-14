@@ -1,12 +1,12 @@
 <!-- Il grid layout di Bootstrap prevede che il contentuto sia inserito dentro un div di classe 
   "container", poi le row e infine le col (in tutto devono essere ESATTAMENTE 12 colonne per 
   ogni riga) -->
-  <div class="container-fluid">
+  <div id= "sopra" class="container-fluid">
     <div class="row">
       <div id="divImg" class="col-md-7">
         <img src="../../assets/logo1.png" alt="logo">
       </div>
-      <div class="col-md-5">
+      <div id="login" class="col-md-5">
         <form #f="ngForm">
           <div class="col-md-7" id="inputusername" >
             <input class="form-control" type="text" rows="5" cols="40" id="user" name="username" placeholder="Enter Username" ngModel>

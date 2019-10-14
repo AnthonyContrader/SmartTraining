@@ -1,4 +1,5 @@
 form {
+    border: black;
     position: relative;
     margin-top: 270px;
     width: 55%;
@@ -50,22 +51,35 @@ img {
 }
 
 input, input:hover, input::selection, input:checked, input:focus {
-    border: 0;
+    border: 0.5;
     background-color: white;
     border-radius: 0;
     color:#3b5998;
-    border-bottom: 1px solid crimson;
+    border-bottom: 1px solid white;
     margin: 0px;
 }
 
 .container-fluid {
     background-color: #3b5998;
-    height: 100vh;
+    height: 100h;
 }
 
 input::placeholder {
     color: #3b5998;
 }
+
+#sopra{
+    background-color: #3b5998;
+    height: 50vh;
+}
+
+#login{
+    background-color: white;
+    z-index: -1;
+    
+}
+
+
 
 .form-control {
     border: none;
@@ -75,7 +89,7 @@ input::placeholder {
 }
 
 .login {
-    border: none;
+    border: black;
     background-color: white;
     color: #3b5998;
     border: 1px solid white;
