@@ -7,14 +7,11 @@ import { Observable } from 'rxjs';
 
 
 /**
- * I service sono decorati da @Injectable. 
- * Qui trovate, oltre ai metodi ereditati dall'Abstract,
- *  il metodo per il login (in mirror con il backend).
- * 
  * @author Spleynac
  * 
  * @see AbstractService
  */
+
 @Injectable({
   providedIn: 'root'
 })
