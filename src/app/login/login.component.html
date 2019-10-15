@@ -1,24 +1,52 @@
-<!-- Il grid layout di Bootstrap prevede che il contentuto sia inserito dentro un div di classe 
-  "container", poi le row e infine le col (in tutto devono essere ESATTAMENTE 12 colonne per 
-  ogni riga) -->
-  <div id= "sopra" class="container-fluid">
-    <div class="row">
-      <div id="divImg" class="col-md-7">
-        <img src="../../assets/logo1.png" alt="logo">
-      </div>
-      <div id="login" class="col-md-5">
-        <form #f="ngForm">
-          <div class="col-md-7" id="inputusername" >
-            <input class="form-control" type="text" rows="5" cols="40" id="user" name="username" placeholder="Enter Username" ngModel>
-          </div>
-          <div class="form-group col-md-8" id="inputpassword">
-            <input class="form-control" type="password" rows="5" cols="40" id="pass" name="password" placeholder="Enter Password" ngModel>
-          </div>
-          <!-- "(click)"" è un tipo di binding unidirezionale (dal template al ts): quando l'utente clicca
-          sul bottone viene eseguito il metodo login(f) del ts. f non è altro che la form con tutti i valori
-        inseriti (verranno poi spacchettati dal ts) -->
-          <button id="sub" type="submit" (click)="login(f)">Login</button>
+<div class="limiter">
+		<div class="container-login100">
+        <div class="login100-form-title" style="background-image: url(../src/assets/images/bg-01.jpg);">
+					<div class="row">
+              <div class="col-lg-3">
+                <a href="https://accounts.google.com/login/signinchooser?hl=it&flowName=GlifWebSignIn&flowEntry=ServiceLogin"><img
+                    id="g" src="../../assets/g+.png" alt="g+"></a>
+                <img id="forgot" src="../../assets/forgotpassword.png" alt="forgot">
+              </div>
+              <div class="col-lg-3">
+          
+                <img id="reg" src="../../assets/register.png" alt="register">
+              </div>
+              <div class="col-lg-3">
+                <img id="logo" src="../../assets/logo0.png" alt="logo">
+              </div>
+              <div class="col-lg-3">
+                <a href="http://localhost:4200/login"><img id="login" src="../../assets/login.png" alt="login"></a>
+                
+              </div>
+              <div class="col-lg-3">
+                  <a href="https://www.facebook.com"><img id="fb" src="../../assets/fb.png" alt="fb"></a>
+                  <a href="https://it.indeed.com/?r=us"><img id="in" src="../../assets/indeed.png" alt="in"></a>
+              </div>
+          
+            </div>
+				</div>
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" #f="ngForm">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Username</span>
+						<input class="input100" type="text" name="username" placeholder="Enter username" ngModel>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="password" placeholder="Enter password" ngModel>
+						<span class="focus-input100"></span>
+					</div>
+
+
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit" (click)="login(f)" >
+							Login
+						</button>
+					</div>
         </form>
-      </div>
-    </div>
-  </div>
+        </div>
+		</div>
+	</div>

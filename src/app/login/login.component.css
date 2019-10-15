@@ -1,113 +1,64 @@
-form {
-    border: black;
+#logo {
     position: relative;
-    margin-top: 270px;
-    width: 55%;
-    padding: 10px;
-    border-radius: 0;
-    border-color: rgb(240, 17, 62);
-    top: 100px;
-    left: 100%;
+    width: 126%;
+    left: -247px;
+    top: -18px;
+    /* margin: 20%; */
+    transform: scale(0.9, 0.9);
+    z-index: 2;
 }
-#inputusername{
-    position: absolute;
-    right: 80%;
-    border-radius: 12px;
-}
-#user{
-    border-radius: 12px;
-}
-#inputpassword{
-    position: absolute;
-    left: 80%;
-}
-#pass{
-    border-radius: 12px;
-}
-#sub{
-    position: absolute;
-    top: 300%;
-}
-
-img {
+#login {
     position: relative;
-    width: 55%;
+    width: 114%;
+    left: -403px;
+    top: -83px;
     margin: 20%;
-    transform: scale(1.19, 1.19);
+    transform: scale(0.7,0.7);
+    z-index: 1;
 }
-
-#divImg{
-    position: absolute;
-    margin: auto;
-    top: 50px;
-    left: 0;
-    right: 0;
-    background-color: whitesmoke;
-    max-width: 23.5%;
-    height: 45%;
-    border-radius: 100%;
-    transform: scale(0.75 , 0.8);
-    
+#reg {
+    position: relative;
+    width: 114%;
+    left: -102px;
+    transform: scale(0.7,0.7);
+    top: -15px;
 }
-
-input, input:hover, input::selection, input:checked, input:focus {
-    border: 0.5;
-    background-color: white;
-    border-radius: 0;
-    color:#3b5998;
-    border-bottom: 1px solid white;
-    margin: 0px;
+#forgot {
+    position: relative;
+    width: 73%;
+    top: -311px;
+    left: -22px;
+    transform: scale(0.5,0.5);
 }
-
-.container-fluid {
-    background-color: #3b5998;
-    height: 100h;
+#g{
+    position: relative;
+    width: 107%;
+    top: 4px;
+    left: 76px;
+    transform: scale(0.5,0.5);
 }
-
-input::placeholder {
-    color: #3b5998;
+#fb {
+    position: relative;
+    left: 958px;
+    top: -739px;
+    transform: scale(0.35,0.35);
 }
-
-#sopra{
-    background-color: #3b5998;
-    height: 50vh;
+#in {
+    position: relative;
+    width: 105%;
+    left: 1227px;
+    top: -1213px;
+    transform: scale(0.35,0.35);
+    z-index: 1;
 }
-
-#login{
-    background-color: white;
-    z-index: -1;
-    
+.login{
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 43px 88px 93px 190px;
 }
-
-
-
-.form-control {
-    border: none;
-    background-color: white;
-    color: #3b5998;
-    border-bottom: 1px solid white;
-}
-
-.login {
-    border: black;
-    background-color: white;
-    color: #3b5998;
-    border: 1px solid white;
-    border-radius: 50%;
-    padding-top: 10px;
-    padding-right: auto;
-    padding-bottom: 10px;
-    padding-left: auto;
-}
-
-p {
-    font-size: 14px;
-    color: white;
-}
-button{
-    border-radius: 100%;
-    text-align: center;
-    color: white;
-    border-color: #3b5998;
-    
-  }
