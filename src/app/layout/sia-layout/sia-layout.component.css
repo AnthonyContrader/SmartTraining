@@ -1,0 +1,6 @@
+.background {
+    background-image: url("../../../assets/backSiaLog.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 137.5ch;
+}

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-7 searchbar">
+      <input type="text" placeholder="parlami" style="margin: 2ch" [(ngModel)]="questionDTO.siaword">
+        <button class="fas fa-search button" (click)="search()" ></button>
+    </div>
+    <div class="col-md-5">
+      <p></p>
+    </div>
+  </div>
+  <br>
+  <div class="row no-gutters">
+    <div class="col-md-7 back">
+      ciao
+      {{risposta.answer}}
+    </div>
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-3 back">
+        <h3>Libri</h3>
+      <div *ngFor="let book of risposta.bookvet">      
+        {{book}}
+      </div>
+      <h3>Video</h3>
+      <div *ngFor="let video of risposta.videovet">
+        {{video}}
+      </div>
+    </div>
+  </div>
+</div>

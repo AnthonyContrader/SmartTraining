@@ -1,0 +1,66 @@
+.back {
+    position: relative;
+    top: -150px;
+    left:250px;
+    height: 12ch;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+    border: none;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    color: rgba(255,255,255,1);
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    background: #ffb116;
+    opacity: 0.7;
+    
+}
+
+.background {
+    background-image: url('../../../assets/graphic/Star_Training-02.png');
+}
+
+.searchbar {
+    
+    position: relative;
+    top: 525px;
+    left:-350px;
+    height:15ch;
+    margin: auto;
+    overflow: hidden;
+    border: none;
+    -webkit-border-radius: 10px;
+    border-radius: 15px;
+    color: rgba(255,255,255,1);
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    opacity: 0.7;
+}
+
+.button {
+    background-color: #00a79b;
+    border: none;
+    width: 10ch;
+    height: 5ch;
+    -webkit-border-radius: 10px;
+}
+
+input {
+    font-size:16px;
+    border-color:#cccccc;
+    border-style:solid;
+    padding:18px;
+    border-width:0px;
+    border-radius:41px;
+    color:#ffffff;
+    background-color:#000000;
+    text-shadow:-50px 0px 0px rgba(42,42,42);
+    opacity: 0.5;
+}
+
+input:focus {
+    outline:none;
+}

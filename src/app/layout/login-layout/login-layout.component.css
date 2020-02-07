@@ -1,0 +1,6 @@
+.background {
+    background-image: url("../../../assets/backgroundSia.svg") !important;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 137.5ch;
+}

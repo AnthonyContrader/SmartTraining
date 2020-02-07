@@ -1,0 +1,105 @@
+form{
+    position: fixed ;
+    top: 480px;
+    bottom: 50ch;
+    right: 50ch;
+    left: 95ch;
+    width: 18%;
+    border-radius: 30;
+}
+input, input:hover, input::selection, input:checked, input:focus{
+    height: 20px;
+    border: 0;
+    background-color: rgba(255, 140, 0, 0);
+    border-radius: 50;
+    color: grey;
+    border-bottom: 1px solid rgb(214, 139, 1);
+    margin: 0ch; 
+    font-size: large;
+}
+
+.logo{
+    animation: fadein 7s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+button {
+    background-color: #00a79b;
+    color: white !important;
+    border: none;
+    width: 10ch;
+    height: 5ch;
+    -webkit-border-radius: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+
+img.google{
+    position: absolute;
+    left: 498px;
+    bottom: -38px;
+    width: 3%;
+    transform: translatey(0px);
+    -webkit-animation: float1 6s linear infinite;
+    animation: float1 6s linear infinite;
+    -moz-animation:float1 6s linear infinite ;
+}
+
+img.fb{
+    position: absolute;
+    right: 463px;
+bottom: 5px;
+    width: 3%;
+    overflow: hidden;
+    box-shadow: 0 0px 0px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+    -webkit-animation: float 6s linear infinite;
+    animation: float 6s linear infinite;
+    -moz-animation:float1 6s linear infinite ;
+}
+
+
+img.insta{
+    position: absolute;
+    right: 542px;
+    bottom: 108px;
+    width: 3%;
+    overflow: hidden;
+    box-shadow: 0 0px 0px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+    -webkit-animation: float 6s linear infinite;
+     animation: float 6s linear infinite;
+     -moz-animation:float1 6s linear infinite ;
+}
+
+
+img.in{
+    position: absolute;
+    left: 566px;
+    bottom: -45px;
+    width: 3%;
+    overflow: hidden;
+    box-shadow: 0 0px 0px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+    -webkit-animation: float1 6s linear infinite;
+    animation: float1 6s linear infinite;
+    -moz-animation:float1 6s linear infinite ;
+}
+
+
+@keyframes float {
+    0% { transform: rotate(0deg) translateX(3px) rotate(0deg); }
+    100%   { transform: rotate(360deg) translateX(3px) rotate(-360deg); }
+}
+@keyframes float1 {
+    0%   { transform: rotate(360deg) translateX(3px) rotate(-360deg); }
+    100% { transform: rotate(0deg) translateX(3px) rotate(0deg); }
+    
+}

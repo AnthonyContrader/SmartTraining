@@ -1,0 +1,48 @@
+.header {
+    margin: 3ch;
+}
+button {
+    background-color: #00a79b;
+    color: rgb(9, 0, 59);
+    border: none;
+    width: 13ch;
+    height: 6ch;
+  
+    
+}
+
+
+
+
+.logo{
+    animation: heartbeat 10s;
+}
+
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( .96 );
+  }
+  20%
+  {
+    transform: scale( 1.2 );
+  }
+  40%
+  {
+    transform: scale( .96 );
+  }
+  60%
+  {
+    transform: scale( 1.2 );
+  }
+  80%
+  {
+    transform: scale( .96 );
+  }
+  100%
+  {
+    transform: scale( 1.2 );
+  }
+}

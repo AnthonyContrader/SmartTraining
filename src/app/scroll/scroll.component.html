@@ -1,0 +1,159 @@
+
+<div class="container"  >
+
+	<!-- Riga con il libri -->
+	<div class="row no-gutters swiper-container " >
+
+		
+
+		<!-- Slider -->
+		<br>
+		<br>
+		<br>
+		<div class="swiper-wrapper" >
+			<div *ngFor="let dto of dtolist" class="swiper-slide">
+					<img src= {{dto.path}} style="width: 60%;">
+			</div>
+		</div>
+		
+		
+		<!-- bottoni in basso delle pagine -->
+		<div class="swiper-pagination">
+		</div>
+		
+		<!-- bottoni per scorrere a destra e a sinistra -->
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+		
+		<!-- scrollbar -->
+		<div class="swiper-scrollbar"></div>
+	</div>
+	<!-- Riga con i filtri-->
+	<div class="row no-gutters">
+			<div class="col-md-3">
+					IDE
+					<br>
+					<br>
+					<button (click)="inversione ('eclipse')" *ngIf="!eclipse">
+						Eclipse
+					</button>
+	
+					<button class="select" *ngIf="eclipse" (click)="inversione ('eclipse')">
+						Eclipse
+					</button>
+	
+					<br>
+					<br>
+
+					<button (click)="inversione ('mysql')" *ngIf="!mysql">
+						MySql
+					</button>
+	
+					<button class="select" *ngIf="mysql" (click)="inversione ('mysql')">
+						MySql
+					</button>
+			</div>
+					
+					<div class="col-md-3">
+							FRAMEWORK&LIBRERIE
+							<br>
+							<br>
+							<button (click)="inversione('angular')" *ngIf="!angular">
+								Angular
+							</button>
+			
+							<button class="select" *ngIf="angular" (click)="inversione ('angular')">
+								Angular
+							</button>
+							
+							<br>
+							<br>
+
+							<button (click)="inversione('spring')" *ngIf="!spring">
+								Spring
+							</button>
+				
+							<button class="select" *ngIf="spring" (click)="inversione ('spring')">
+								Spring
+							</button>
+								
+							<br>
+							<br>
+					</div>
+
+							<div class="col-md-3">
+								LINGUAGGI
+								<br>
+								<br>
+								<button (click)="inversione('html')" *ngIf="!html">
+									HTML
+								</button>
+					
+								<button class="select" *ngIf="html" (click)="inversione ('html')">
+									HTML
+								</button>
+
+								<br>
+								<br>
+								
+								<button (click)="inversione('java')" *ngIf="!java">
+									Java
+								</button>
+
+								<button class="select" *ngIf="java" (click)="inversione ('java')"> 
+									Java
+								</button>
+								<br>
+								<br>
+
+								<button (click)="inversione('jsp')" *ngIf="!jsp">
+									JSP
+								</button>
+					
+								<button class="select" *ngIf="jsp" (click)="inversione ('jsp')">
+									JSP
+								</button>
+								<br>
+								<br>
+								<button (click)="inversione('js')" *ngIf="!js">
+									JavaScript
+								</button>
+					
+								<button class="select" *ngIf="js" (click)="inversione ('js')">
+									JavaScript
+								</button>
+								<br>
+								<br>
+								<button (click)="inversione('python')" *ngIf="!python">
+									Python
+								</button>
+						
+								<button class="select" *ngIf="python" (click)="inversione ('python')">
+									Python
+								</button>
+								<br>
+								<br>
+							</div>
+
+							<div class="col-md-3">
+									PATTERN
+									<br>
+									<br>
+									<button (click)="inversione('mvc')" *ngIf="!mvc">
+										MVC
+									</button>
+						
+									<button class="select" *ngIf="mvc" (click)="inversione ('mvc')">
+										MVC
+									</button>
+									
+		</div>
+
+		
+
+
+
+
+</div>
+<a [routerLink]="['']"> <button class="siabutton" typer="submit" (click)="leggi()">SIA</button> </a>
+</div>

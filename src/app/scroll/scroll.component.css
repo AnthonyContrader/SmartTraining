@@ -1,0 +1,55 @@
+p {
+    font-size: 14px;
+}
+
+body {         
+    border: 5px solid rgb(0, 1, 87);
+    border-width: 10px;
+    padding: 300px;
+    background-size: -70px 70px;
+    text-align: center;
+    position: relative;
+    top:30px;
+    background: #fff;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 0;
+    padding: 0;
+
+}
+.swiper-container {
+  top: -50px;
+  height: 400px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.swiper-slide {
+  background-size: cover;
+  width: 400px;
+  height: 550px;
+  padding: -400px;
+}
+
+img{
+  margin: auto;
+  top: 10;
+  left: -20;
+  right: -20;
+  bottom: 0;
+}
+button{
+  border-radius: 35px; 
+}
+
+.background {
+  background-image: url("../../assets/backgroundScroll.svg") !important;
+}
+.select{
+  background-color: #c7b408;
+}
+.siabutton{
+  position: relative;
+  top: 50px;
+  left: 1300px;
+}
